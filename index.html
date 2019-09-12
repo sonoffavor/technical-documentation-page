@@ -1068,7 +1068,7 @@
 
                                 <p>Refer to the example and code on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website</p>
 
-                                <h2>Colors</h2>
+                                <h2>Color</h2>
                                 <p>There are many ways to specify color in CSS, some of which are more recently implemented than others. The same color values can be used everywhere in CSS, whether you are specifying text color, background color, or whatever else.</p>
 
                                 <p>The standard color system available in modern computers is 24 bit, which allows the display of about 16.7 million distinct colors via a combination of different red, green and blue channels with 256 different values per channel (256 x 256 x 256 = 16,777,216.) Let's have a look at some of the ways in which we can specify colors in CSS.</p>
@@ -1110,9 +1110,306 @@
                                 <p>You can use any of these color values in your projects. It is likely that for most projects you will decide on a color palette and then use those colors — and your chosen method of specifying color — throughout the whole project. You can mix and match color models, however for consistency it is usually best if your entire project uses the same one!</p>
 
                                 <h2>Images</h2>
+
+                                <p>The <code>image</code> data type is used wherever an image is a valid value. This can be an actual image file pointed to via a <code>url ()</code> function, or a gradient.</p>
+
+                                <p>In the example below we have demonstrated an image and a gradient in use as a value for the CSS <code>background-image</code> property.</p>
+
+                                <pre>
+                                        <code>
+                                                .image {
+                                                    background-image: url(star.png);
+                                                }
+                                                      
+                                                .gradient {
+                                                    background-image: linear-gradient(90deg, rgba(119,0,255,1) 39%, rgba(0,212,255,1) 100%);
+                                                }  
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60div class="box image"&#62&#60/div&#62
+                                                &#60div class="box gradient"&#62&#60/div&#62
+                                        </code>
+                                </pre>
+
+                                <h2>Position</h2>
+
+                                <p>The <code>position</code> data type represents a set of 2D coordinates, used to position an item such as a background image (via <code>background-position</code>). <code>top</code>, <code>left</code>, <code>bottom</code>, <code>right</code>, and <code>center</code> to align items with specific bounds of a 2D box, along with lengths, which represent offsets from the top and left-hand edges of the box.</p>
+
+                                <p>A typical position value consists of two values — the first sets the position horizontally, the second vertically. If you only specify values for one axis the other will default to <code>center</code>.</p>
+
+                                <p>In the following example we have positioned a background image 40px from the top and to the right of the container using a keyword.</p>
+
+                                <pre>
+                                        <code>
+                                                .box {
+                                                    height: 300px;
+                                                    width: 400px;
+                                                    background-image: url(star.png);
+                                                    background-repeat: no-repeat;
+                                                    background-position: right 40px;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60div class="box"&#62&#60/div&#62
+                                        </code>
+                                </pre>
+
+                                <h2>Strings and identifiers</h2>
+
+                                <p>Throughout the examples above, we've seen places where keywords are used as a value (for example <code>&#60color&#62</code> keywords like <code>red</code>, <code>black</code>, <code>rebeccapurple</code>, and <code>goldenrod</code>). These keywords are more accurately described as identifiers, a special value that CSS understands. As such they are not quoted — they are not treated as strings.</p>
+
+                                <p>There are places where you use strings in CSS, for example when specifying generated content. In this case the value is quoted to demonstrate that it is a string. In the below example we use unquoted color keywords along with a quoted generated content string.</p>
+
+                                <pre>
+                                        <code>
+                                                .box {
+                                                    width:400px;
+                                                    padding: 1em;
+                                                    border-radius: .5em;
+                                                    border: 5px solid rebeccapurple;
+                                                    background-color: lightblue;
+                                                }
+                                                      
+                                                .box::after {
+                                                    content: "This is a string. I know because it is quoted in the CSS."
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60div class="box"&#62&#60/div&#62
+                                        </code>
+                                </pre>
+
+                                <h2>Functions</h2>
+
+                                <p>The final type of value we will take a look at is the group of values known as functions. In programming, a function is a reusable section of code that can be run multiple times to complete a repetitive task with minimum effort on the part of both the developer and the computer. Functions are usually associated with languages like JavaScript, Python, or C++, but they do exist in CSS too, as property values. We've already seen functions in action in the Colors section — <code>rgb()</code>, <code>hsl()</code>, etc. The value used to return an image from a file — <code>url()</code> — is also a function.</p>
+
+                                <p>A value that behaves more like something you might find in a traditional programming language is the <code>calc()</code> CSS function. This function gives you the ability to do simple calculations inside your CSS. It's particularly useful if you want to work out values that you can't define when writing the CSS for your project, and need the browser to work out for you at runtime.</p>
+
+                                <p>For example, below we are using <code>calc()</code> to make the box <code>20% + 100px</code> wide. The 20% is calculated from the width of the parent container <code>.wrapper</code> and so will change if that width changes. We can't do this calculation beforehand because we don't know what 20% of the parent will be, so we use <code>calc()</code> to tell the browser to do it for us.</p>
+
+                                <pre>
+                                        <code>
+                                                .wrapper {
+                                                    width: 400px;
+                                                }
+                                                      
+                                                .box {
+                                                    width: calc(20% + 100px);
+                                                }  
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60div class="wrapper"&#62
+                                                    &#60div class="box"&#62My width is calculated.&#60/div&#62 
+                                                &#60/div&#62 
+                                        </code>
+                                </pre>
                         </section>
                         <section class="main-section" id="Cascade_and_inheritance">
                                 <header>Cascade and inheritance</header>
+
+                                <h2>Conflicting rules</h2>
+
+                                <p>CSS stands for Cascading Style Sheets, and that first word <i>cascading</i> is incredibly important to understand — the way that the cascade behaves is key to understanding CSS.</p>
+
+                                <p>At some point, you will be working on a project and you will find that the CSS you thought should be applied to an element is not working. Usually the problem is that you have created two rules which could potentially apply to the same element. The <b>cascade</b>, and the closely-related concept of <b>specificity</b>, are mechanisms that control which rule applies when there is such a conflict. Which rule is styling your element may not be the one you expect, so you need to understand how these mechanisms work.</p>
+
+                                <p>Also significant here is the concept of <b>inheritance</b>, which means that some CSS properties by default inherit values set on the current element's parent element, and some don't. This can also cause some behavior that you might not expect.</p>
+
+                                <p>Let's start by taking a quick look at the key things we are dealing with, then we'll look at each in turn and see how they interact with each other and your CSS. This can seem like a set of tricky concepts to understand, however, as you practice writing CSS the way that it works will become more obvious to you.</p>
+
+                                <span><p>The cascade</p></span>
+                                <p>Stylesheets <b>cascade</b> — at a very simple level this means that the order of CSS rules matter; when two rules apply that have equal specificity the one that comes last in the CSS is the one that will be used.</p>
+
+                                <p>In the below example, we have two rules that could apply to the <code>h1</code>. The <code>h1</code> ends up being colored blue — these rules have an identical selector and therefore carry the same specificity, so the last one in the source order wins.</p>
+
+                                <pre>
+                                        <code>
+                                                h1 { 
+                                                    color: red; 
+                                                }
+                                                h1 { 
+                                                    color: blue; 
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60h1&#62This is my heading.&#60/h1&#62 
+                                        </code>
+                                </pre>
+
+                                <span><p>Specificity</p></span>
+                                <p>Specificity is how the browser decides which rule applies if multiple rules have different selectors, but could still apply to the same element. It is basically a measure of how specific a selector's selection will be:</p>
+
+                                <ul>
+                                        <li>An element selector is less specific — it will select all elements of that type that appear on a page — so will get a lower score.</li>
+                                        <li>A class selector is more specific — it will select only the elements on a page that have a specific <code>class</code> attribute value — so will get a higher score.</li>
+                                </ul>
+
+                                <p>Example time! Below we again have two rules that could apply to the <code>h1</code>. The below <code>h1</code> ends up being colored red — the class selector gives its rule a higher specificity, and so it will be applied even though the rule with the element selector appears further down in the source order.</p>
+
+                                <pre>
+                                        <code>
+                                                .main-heading { 
+                                                    color: red; 
+                                                }
+                                                            
+                                                h1 { 
+                                                    color: blue; 
+                                                }
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60h1 class="main-heading"&#62This is my heading.&#60/h1&#62 
+                                        </code>
+                                </pre>
+
+                                <span><p>Inheritance</p></span>
+
+                                <p>Inheritance also needs to be understood in this context — some CSS property values set on parent elements are inherited by their child elements, and some aren't.</p>
+
+                                <p>For example, if you set a <code>color</code> and <code>font-family</code> on an element, every element inside it will also be styled with that color and font, unless you've applied different color and font values directly to them.</p>
+
+                                <pre>
+                                        <code>
+                                                body {
+                                                    color: blue;
+                                                }
+                                                    
+                                                span {
+                                                    color: black;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60p&#62As the body has been set to have a color of blue this is inherited through the descendants.&#60/p&#62
+                                                &#60p&#62We can change the color by targetting the element with a selector, such as this &#60span&#62span&#60/span&#62.&#60/p&#62
+                                        </code>
+                                </pre>
+
+                                <p>Some properties do not inherit — for example if you set a <code>width</code> of 50% on an element, all of its descendants do not get a width of 50% of their parent's width. If this was the case, CSS would be very frustrating to use!</p>
+
+                                <h2>Understanding inheritance</h2>
+                                <p>We'll start with inheritance. In the example below we have a <code>ul</code>, with two levels of unordered lists nested inside it. We have given the outer <code>&#60ul&#62</code> a border, padding, and a font color.</p>
+
+                                <p>The color has applied to the direct children, but also the indirect children — the immediate child <code>&#60li&#62</code>s, and those inside the first nested list. I have then added a class of <code>special</code> to the second nested list and applied a different color to it. This then inherits down through its children.</p>
+
+                                <pre>
+                                        <code>
+                                                .main {
+                                                    color: rebeccapurple;
+                                                    border: 2px solid #ccc;
+                                                    padding: 1em;
+                                                }
+                                                    
+                                                .special {
+                                                    color: black;
+                                                    font-weight: bold;
+                                                }
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60ul class="main"&#62
+                                                    &#60li&#62Item One&#60/li&#62
+                                                    &#60li&#62Item Two
+                                                        &#60ul&#62
+                                                            &#60li&#62&#50.1&#60/li&#62
+                                                            &#60li&#62&#50.2&#60/li&#62
+                                                        &#60/ul&#62
+                                                    &#60/li&#62
+                                                    &#60li&#62Item Three
+                                                        &#60ul class="special"&#62
+                                                            &#60li&#62&#51.1
+                                                                &#60ul&#62
+                                                                    &#60li&#62&#51.1.1&#60/li&#62
+                                                                    &#60li&#62&#51.1.2&#60/li&#62
+                                                                &#60/ul&#62
+                                                            &#60/li&#62
+                                                            &#60li&#62&#51.2&#60/li&#62
+                                                        &#60/ul&#62
+                                                    &#60/li&#62
+                                                &#60/ul&#62 
+                                        </code>
+                                </pre>
+
+                                <p>Things like widths (as mentioned above), margins, padding, and borders do not inherit. If a border were to be inherited by the children of our list, every single list and list item would gain a border — probably not an effect we would ever want!</p>
+
+                                <p>Which properties are inherited by default and which aren't is largely down to common sense.</p>
+
+                                <span><p>Controlling inheritance</p></span>
+                                <p>CSS provides four special universal property values for controlling inheritance. Every CSS property accepts these values.</p>
+
+                                <code>inherit</code>
+
+                                <p>Sets the property value applied to a selected element to be the same as that of its parent element.  Effectively, this "turns on inheritance".</p>
+
+                                <code>initial</code>
+                                <p>Sets the property value applied to a selected element to be the same as the value set for that element in the browser's default style sheet. If no value is set by the browser's default style sheet and the property is naturally inherited, then the property value is set to inherit instead.</p>
+
+                                <code>unset</code>
+                                <p>Resets the property to its natural value, which means that if the property is naturally inherited it acts like <code>inherit</code>, otherwise it acts like <code>initial</code>.</p>
+
+                                <p>We can look at a list of links and explore how the universal values work. The live example below allows you to play with the CSS and see what happens when you make changes. Playing with code really is the best way to get to grips with HTML and CSS.</p>
+
+                                <p>For example:</p>
+
+                                <ol>
+                                        <li>The second list item has the class <code>my-class-1</code> applied. This sets the color of the a element nested inside to inherit. If you remove the rule how does it change the color of the link?</li>
+                                        <li>Do you understand why the third and fourth links are the color that they are? Check the description of the values above if not.</li>
+                                        <li>Which of the links will change color if you define a new color for the <code>&#60a&#62</code> element — for example <code>a { color: red; }</code>?</li>
+                                </ol>
+
+                                <pre>
+                                        <code>
+                                                body {
+                                                    color: green;
+                                                }
+                                                              
+                                                .my-class-1 a {
+                                                    color: inherit;
+                                                }
+                                                              
+                                                .my-class-2 a {
+                                                    color: initial;
+                                                }
+                                                              
+                                                .my-class-3 a {
+                                                    color: unset;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60ul&#62
+                                                    &#60li&#62Default &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62
+                                                    &#60li class="my-class-1"&#62Inherit the &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62
+                                                    &#60li class="my-class-2"&#62Reset the &#60a href="#">link&#60/a&#62 color&#60/li&#62
+                                                    &#60li class="my-class-3"&#62Unset the &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62
+                                                &#60/ul&#62
+                                        </code>
+                                </pre>
+
+                                <span><p>Resetting all property values</p></span>
                         </section>
                         <section class="main-section" id="The_box_model">
                                 <header>The box model</header>
