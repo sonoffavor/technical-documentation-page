@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+
+<body>
+        <div class="container">
+                <header>
+                        <nav>
+                                <header>CSS Documentation</header>
+                                <ul>
+                                        <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+                                        <li><a href="#CSS_syntax" class="nav-link">CSS syntax</a></li>
+                                        <li><a href="#Selectors_introduction" class="nav-link">Selectors
+                                                        introduction</a></li>
+                                        <li><a href="#Simple_selectors" class="nav-link">Simple selector</a></li>
+                                        <li><a href="#Attribute_selectors" class="nav-link">Attribute selectors</a></li>
+                                        <li><a href="#Pseudo-classes_and_pseudo-elements"
+                                                        class="nav-link">Psuedo-classes and pseudo-elements</a></li>
+                                        <li><a href="#Combinators_and_multiple_selectors" class="nav-link">Combinators
+                                                        and multiple selectors</a></li>
+                                        <li><a href="#CSS_values_and_units" class="nav-link">CSS values and units</a>
+                                        </li>
+                                        <li><a href="#Cascade_and_inheritance" class="nav-link">Cascade and
+                                                        inheritance</a></li>
+                                        <li><a href="#The_box_model" class="nav-link">The box model</a></li>
+                                        <li><a href="#Reference" class="nav-link">Reference</a></li>
+                                </ul>
+
+                        </nav>
+                </header>
+                <main id="main-doc">
+                        <section class="main-section" id="Introduction">
+                                <header>Introduction</header>
+                                <article>
+                                        <p>CSS (Cascading Style Sheets) is used to style and layout web pages — for
+                                                example, to alter the font, colour, size and spacing of your content,
+                                                split it into multiple columns, or add animations and other decorative
+                                                features.</p>
+                                        <h2>Prerequisites</h2>
+                                        <ol>
+                                                <li>Basic familiarity with using computers, and using the Web passively
+                                                        (i.e. just looking at it, consuming the content.)</li>
+                                                <li>A basic work environment set up as detailed in Installing basic
+                                                        software, and an understanding of how to create and manage
+                                                        files, as detailed in Dealing with files.</li>
+                                                <li>Basic familiarity with HTML, as discussed in the Introduction to
+                                                        HTML module.</li>
+                                        </ol>
+                                </article>
+                        </section>
+                        <section class="main-section" id="CSS_syntax">
+                                <header>CSS syntax</header>
+                                <article>
+                                        <h2>Vocabulary</h2>
+                                        <p>At its most basic level, CSS consists of two building blocks:</p>
+                                        <ul>
+                                                <li>Properties: Human-readable identifiers that indicate which stylistic
+                                                        features (e.g., font, width, background color) you want to
+                                                        change.</li>
+                                                <li>Values: Each specified property is given a value, which indicates
+                                                        how you want to change those stylistic features (e.g., what you
+                                                        want to change the font, width, or background color to.)</li>
+                                        </ul>
+                                        <p>A property paired with a value is called a CSS declaration. CSS declarations
+                                                are put within CSS Declaration Blocks. And finally, CSS declaration
+                                                blocks are paired with selectors to produce CSS Rulesets (or CSS Rules).
+                                        </p>
+                                        <p>The below image highlights a single property and value. The property name is <code>color</code>, and the value <code>blue</code></p>
+                                                <pre>
+                                                        <code>
+                                                                h1 {
+                                                                    color: blue;
+                                                                    background-color: yellow;
+                                                                }
+                
+                                                                p {
+                                                                    color: red;
+                                                                }
+                                                        </code>
+                                                </pre>
+                                        <p>Finally, CSS declaration blocks are paired with selectors to produce CSS Rulesets (or CSS Rules). Our image contains two rules, one for the <code>h1</code> selector and one for the <code>p</code> selector. The rule for <code>h1</code> is highlighted.</p>
+                                                <pre>
+                                                        <code>
+                                                                h1 {
+                                                                    color: blue;
+                                                                    background-color: yellow;
+                                                                }
+                
+                                                                p {
+                                                                    color: red;
+                                                                }
+                                                        </code>
+                                                </pre>
+                                        <p>Setting CSS properties to specific values is the core function of the CSS language. The CSS engine calculates which declarations apply to every single element of a page in order to appropriately lay it out and style it. What is important to remember is that both properties and values are case-sensitive in CSS. The property and value in each pair is separated by a colon (<code>:</code>).</p>
+
+                                        <h2>Applying CSS to yout HTML</h2>
+                                        <p>There are three methods of applying CSS to a document.</p>
+                                        <ul>
+                                                <li>External stylesheet</li>
+                                                <li>Internal stylesheet</li>
+                                                <li>Inline styles</li>
+                                        </ul>
+
+                                        <span><p>External stylesheet</p></span>
+                                                <P>The most common and useful method of styling HTML is using an external stylesheet page.  This method allows for the CSS to be linked to multiple pages</P>
+                                                <p>An external stylesheet is when you have your CSS written in a separate file with a <code>.css</code> extension, and you reference it from an HTML <code>&#60link&#62</code> element:</p>
+                                                <pre>
+                                                        <code>
+                                                                &#60!DOCTYPE html&#62
+                                                                &#60html&#62
+                                                                  &#60head&#62
+                                                                    &#60meta charset="utf-8"&#62
+                                                                    &#60title&#62My CSS experiment&#60/title&#62
+                                                                    &#60link rel="stylesheet" href="styles.css"&#62
+                                                                  &#60/head&#62
+                                                                  &#60body&#62
+                                                                    &#60h1&#62Hello World!&#60/h1&#62
+                                                                    &#60p&#62This is my first CSS example&#60/p&#62
+                                                                  &#60/body&#62
+                                                                &#60/html&#62
+                                                        </code>
+                                                </pre>
+                                                <p>The CSS file might look something like this:</p>
+                                                <pre>
+                                                        <code>
+                                                                h1 {
+                                                                  color: blue;
+                                                                  background-color: yellow;
+                                                                  border: 1px solid black;
+                                                                }
+                                                                              
+                                                                p {
+                                                                  color: red;
+                                                                }
+                                                        </code>
+                                                </pre>
+                                        <p>The <code>href</code> attribute of the <code>&#60link&#62</code> element needs to reference a file on your filesystem.</p>
+                                        <p>In the example above the CSS file is in the same folder as the HTML document, but you could place it somewhere else and adjust the specified path to suit, for example:</p>
+                                        <pre>
+                                                <code>
+                                                        &#60!-- Inside a subdirectory called styles inside the current directory --&#62
+                                                        &#60link rel="stylesheet" href="styles/style.css"&#62
+
+                                                        &#60!-- Inside a subdirectory called general, which is in a subdirectory called styles, inside the current directory --&#62
+                                                        &#60link rel="stylesheet" href="styles/general/style.css"&#62
+
+                                                        &#60!-- Go up one directory level, then inside a subdirectory called styles --&#62
+                                                        &#60link rel="stylesheet" href="../styles/style.css"&#62
+                                                </code>
+                                        </pre>
+
+                                        <span><p>Internal stylesheet</p></span>
+                                        <p>An internal stylesheet is where you don't have an external CSS file, but instead place your CSS inside a <code>&#60style&#62</code> element contained inside the HTML <code>&#60head&#62</code>.</p>
+                                        <p>So the HTML would look like this:</p>
+                                        <pre>
+                                                <code>
+                                                        &#60!DOCTYPE html&#62
+                                                        &#60html&#62
+                                                          &#60head&#62
+                                                            &#60meta charset="utf-8"&#62
+                                                            &#60title&#62My CSS experiment&#60/title&#62
+                                                              &#60style&#62
+                                                                h1 {
+                                                                  color: blue;
+                                                                  background-color: yellow;
+                                                                  border: 1px solid black;
+                                                                }
+                                                                
+                                                                p {
+                                                                  color: red;
+                                                                }
+                                                              &#60/style&#62
+                                                            &#60/head&#62
+                                                            &#60body&#62
+                                                              &#60h1&#62Hello World!&#60/h1&#62
+                                                              &#60p&#62This is my first CSS example&#60/p&#62
+                                                            &#60/body&#62
+                                                        &#60/html&#62
+                                                </code>
+                                        </pre>
+                                        <p>This can be useful in some circumstances (maybe you're working with a content management system where you can't modify the CSS files directly), but it isn't quite as efficient as external stylesheets — in a website, the CSS would need to be repeated across every page, and updated in multiple places if changes were required.</p>
+
+                                        <span><p>Inline styles</p></span>
+                                        <p>Inline styles are CSS declarations that affect one element only, contained within a <code>style</code> attribute:</p>
+                                        <pre>
+                                                <code>
+                                                        &#60!DOCTYPE html&#62
+                                                          &#60html&#62
+                                                            &#60head>
+                                                              &#60meta charset="utf-8"&#62
+                                                              &#60title&#62My CSS experiment&#60/title&#62
+                                                            &#60/head&#62
+                                                            &#60body&#62
+                                                              &#60h1 style="color: blue;background-color: yellow;border: 1px solid black;"&#62Hello World!&#60/h1&#62
+                                                              &#60p style="color:red;">This is my first CSS example&#60/p&#62
+                                                            &#60/body&#62
+                                                          &#60/html&#62
+                                                </code>
+                                        </pre>
+                                        <p><b>Please don't do this, unless you really have to!</b> It is really bad for maintenance (you might have to update the same information multiple times per document), and it also mixes your presentational CSS information with your HTML structural information, making the code harder to read and understand. Keeping different types of code separated makes for a much easier job for all who work on the code.</p>
+                                        <p>There are a few places where inline styles are more common, or even advisable. You might have to resort to using them if your working environment is really restrictive (perhaps your CMS only allows you to edit the HTML body). You will also see them used a lot in HTML email in order to get compatibility with as many email clients as possible.</p>
+                                </article>
+                        </section>
+                        <section class="main-section" id="Selectors_introduction">
+                                <header>Selector introduction</header>
+                                <article>
+                                        <p>In CSS, selectors are used to target the HTML elements on our web pages that we want to style. There are a wide variety of CSS selectors available, allowing for fine-grained precision when selecting elements to style. In this article and its sub-articles we'll run through the different types in great detail, seeing how they work.</p>
+                                        <h2>What is a selector?</h2>
+                                        <p>A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browser which HTML elements should be selected to have the CSS property values inside the rule applied to them.</p>
+                                        <pre>
+                                                <code>
+                                                        h1 {
+                                                          color: blue;
+                                                          background-color: yellow;
+                                                        }
+
+                                                        p {
+                                                          color: red;
+                                                        }
+                                                </code>
+                                        </pre>
+
+                                        <h2>Selector lists</h2>
+                                        <p>If you have more than one thing which uses the same CSS then the individual selectors can be combined into a selector list so that the rule is applied to all of the individual selectors. For example, if I have the same CSS for an <code>h1</code> and also a class of <code>.special</code>, I could write this as two separate rules.</p>
+                                        <pre>
+                                                <code>
+                                                        h1 {
+                                                          color: blue;
+                                                        }
+
+                                                        .special {
+                                                          color: blue;
+                                                        }
+                                                </code>
+                                        </pre>
+                                        <p>These selectors can be combined into a selector list, by adding a comma between them.</p>
+                                        <pre>
+                                                <code>
+                                                        h1, .special {
+                                                          color: blue;
+                                                        }
+                                                </code>
+                                        </pre>
+                                        <p>White space is valid before or after the comma.  You may also find the selectors more readable if each is on a new line.</p>
+                                        <pre>
+                                                <code>
+                                                        h1,
+                                                        .special {
+                                                          color: blue;
+                                                        }
+                                                </code>
+                                        </pre>
+
+                                        <h2>Types of selectors</h2>
+                                        <p>There are a few different groupings of selectors, and knowing which type of selector you might need will help you to find the right tool for the job.</p>
+
+                                        <span><p>Type, class, and ID selectors</p></span>
+                                        <p>This group includes selectors that target an HTML element such as an <code>&#60h1&#62</code>.</p>
+                                        <code>h1 { }</code>
+                                        <p>It also includes selectors which target a class:</p>
+                                        <code>.box { }</code>
+                                        <p>or, an ID:</p>
+                                        <code>#unique { }</code>
+
+                                        <span><p>Attribute selectors</p></span>
+                                        <p>This group of selectors gives you different ways to select elements based on the presence of a certain attribute on an element:</p>
+                                        <code>a[title] { }</code>
+                                        <p>Or even make a selection based on the presence of an attribute with a particular value:</p>
+                                        <code>a[href="https://example.com"] { }</code>
+
+                                        <span><p>Pseudo-classes and pseudo-elements</p></span>
+                                        <p>This group of selectors includes pseudo-classes, which style certain states of an element. The <code>:hover</code> pseudo-class for example selects an element only when it is being hovered over by the mouse pointer:</p>
+                                        <code>a:hover { }</code>
+                                        <p>It also includes pseudo-elements, which select a certain part of an element rather than the element itself. For example, <code>::first-line</code> always selects the first line of text inside an element (a <code>&#60p&#62</code> in the below case), acting as if a <code>&#60span&#62</code> was wrapped around the first formatted line and then selected.</p>
+                                        <code>p::first-line { }</code>
+
+                                        <span><p>Combinators</p></span>
+                                        <p>The final group of selectors combine other selectors in order to target elements within our documents. The following for example selects paragraphs that are direct children of <code>&#60article&#62</code> elements using the child combinator (<code>></code>):</p>
+                                        <code>article > p { }</code>
+                                </article>
+                        </section>
+                        <section class="main-section" id="Simple_selectors">
+                                <header>Simple selector</header>
+
+                                <h2>Type selectors</h2>
+                                <p>A <b>type selector</b> is sometimes referred to as a tag name selector or element selector, because it selects an HTML tag/element in your document. In the below example we have used span, em and strong selectors. All instances of <code>&#60span&#62</code>, <code>&#60em&#62</code> and <code>&#60strong&#62</code> elements are therefore styled.</p>
+                                <pre>
+                                        <code>
+                                                span {
+                                                  background-color: yellow;
+                                                }
+                                              
+                                                strong {
+                                                  color: rebeccapurple;
+                                                }
+
+                                                em {
+                                                  color: rebeccapurple;
+                                                }
+                                        </code>
+                                </pre>
+                                <pre>
+                                        <code>
+                                                &#60h1&#62Type selectors&#60/h1&#62
+                                                &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+                                                
+                                                &#60p&#62Gumbo beet greens corn soko &#60strong>endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
+                                                
+                                                &#60p&#62Turnip greens yarrow ricebean rutabaga &#60em&#62endive cauliflower&#60/em&#62 sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach
+                                                &#60/p&#62  
+                                        </code>
+                                </pre>
+
+                                <h2>The universal selector</h2>
+                                <p>The universal selector is indicated by an asterisk <code>(*)</code> and selects everything in the document (or inside the parent element if it is being chained together with another element and a descendant combinator, for example). In the following example we have used the universal selector to remove the margins on all elements. This means that instead of the default styling added by the browser, which spaces out headings and paragraphs with margins, everything is close together and we can't see the different paragraphs easily.</p>
+                                <pre>
+                                        <code>
+                                                * {
+                                                  margin: 0;
+                                                }  
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60h1>Universal selector&#60/h1&#62
+                                                &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+                                                
+                                                &#60p&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd.  Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62 
+                                        </code>
+                                </pre>
+                                <p>This kind of behavior can sometimes be seen in "reset stylesheets', which strip out all of the browser styling. These were very popular at one point, however stripping out all styling usually meant that you then had to do the job of putting it all back! We tend to use the universal selector carefully therefore, to deal with very specific situations such as the one outlined below.</p>
+
+                                <span><p>Using the universal selector to make your selectors easier to read</p></span>
+                                <p>One use of the universal selector is to make selectors easier to read and more obvious in terms of what they are doing. For example, if I wanted to select the first child of any &#60article&#62 element, no matter what element it was, and make it bold, I could use the <code>:first-child</code> selector, which we will learn more about in the lesson on <a href="#Pseudo-classes_and_pseudo-elements">pseudo-classes and pseudo-elements</a>, as a descendant selector along with the &#60article&#62 element selector: </p>
+                                <pre>
+                                        <code>
+                                                aritcle :first-child {
+                                                
+                                                }
+                                        </code>
+                                </pre>
+                                <p>This could be confused however with <code>article:first-child</code>, which will select any <code>&#60article&#62</code> element that is the first child of another element.</p>
+                                <p>To avoid this confusion we can add the universal selector to the <code>:first-child</code> selector, so it is obvious what the selector is doing. It is selecting any element which is the first-child of an <code>&#60article&#62</code> element:</p>
+                                <pre>
+                                        <code>
+                                                article *:first-child {
+
+                                                }
+                                        </code>
+                                </pre>
+
+                                <h2>Class selectors</h2>
+                                <p>The class selector starts with a full stop (<code>.</code>) character and will select everything in the document with that class applied to it.</p>
+                                <pre>
+                                        <code>
+                                                .highlight {
+                                                  background-color: yellow;
+                                                }
+                                        </code>
+                                </pre>
+                                <pre>
+                                        <code>
+                                                &#60h1 class="highlight"&#62Class selectors&#60/h1&#62
+                                                &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span class="highlight"&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+
+                                                &#60p class="highlight"&#62Gumbo beet greens corn soko &#60strong>endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
+                                        </code>
+                                </pre>
+
+                                <span><p>Targetting classes on particular elements</p></span>
+                                <p>You can create a selector that will target specific elements with the class applied.  We do this by using the type selector for the element I want to target, with the class appended, with no white space inbetween.</p>
+                                <pre>
+                                        <code>
+                                                span.highlight {
+                                                  background-color: yellow;
+                                                }
+                                                            
+                                                h1.highlight {
+                                                  background-color: pink;
+                                                } 
+                                        </code>
+                                </pre>
+                                <pre>
+                                        <code>
+                                                &#60h1 class="highlight"&#62Class selectors&#60/h1&#62
+                                                &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span class="highlight"&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+                                                        
+                                                &#60p class="highlight"&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
+                                        </code>
+                                </pre>
+                                <p>This approach does make the CSS less reusable as the class will now only apply to that particular element, and you would need to add another selector if you decided that the rules should apply to other elements too.</p>
+
+                                <span><p>Target an element if it has more than one class applied</p></span>
+                                <p>You can apply multiple classes to an element and target them individually, or only select the element when all of the classes in the selector are present. This can be helpful when building up components that can be combined in different ways on your site.</p>
+                                <p>We can tell the browser that we only want to match the element if it has all of these classes by chaining them together with no white space between them.</p>
+                                <pre>
+                                        <code>
+                                                .notebox {
+                                                  border: 4px solid #666;
+                                                  padding: .5em;
+                                                }
+                                                            
+                                                .notebox.warning {
+                                                  border: 4px solid orange;
+                                                  font-weight: bold;
+                                                }
+                                                            
+                                                .notebox.danger {
+                                                  border: 4px solid red;
+                                                  font-weight: bold;
+                                                }
+                                        </code>
+                                </pre>
+                                <pre>
+                                        <code>
+                                                &#60div class="notebox"&#62
+                                                  This is an informational note.
+                                                &#60/div&#62
+                                                                    
+                                                &#60div class="notebox warning"&#62
+                                                  This note shows a warning.
+                                                &#60/div&#62
+                                                                    
+                                                &#60div class="notebox danger"&#62
+                                                  This note shows danger!
+                                                &#60/div&#62
+                                        </code>
+                                </pre>
+
+                                <span><p>ID Selectors</p></span>
+                                <p>An ID selector begins with a <code>#</code> rather than a full stop character, but is basically used in the same way as a class selector. An ID however can be used only once per document. It can select an element that has the <code>id</code> set on it, and you can precede the ID with a type selector to only target the element if both the element and ID match. You can see both of these uses in the following example:</p>
+                                <pre>
+                                        <code>
+                                                #one {
+                                                  background-color: yellow;
+                                                }
+                                                            
+                                                h1#heading {
+                                                  color: rebeccapurple;
+                                                } 
+                                        </code>
+                                </pre>
+                                <pre>
+                                        <code>
+                                                &#60h1 id="heading"&#62ID selector&#60/h1&#62
+                                                &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+                                                        
+                                                &#60p id="one"&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62 
+                                        </code>
+                                </pre>
+
+                        </section>
+                        <section class="main-section" id="Attribute_selectors">
+                                <header>Attribute selectors</header>
+
+                                <h2>Presence and value selectors</h2>
+                                <p>These selectors enable the selection of an element based on the presence of an attribute alone (for example <code>href</code>), or on various different matches against the value of the attribute.</p>
+
+                                <div class="table-one-container">
+                                        <div class="table-heading">Selector</div>
+                                        <div class="table-heading">Example</div>
+                                        <div class="table-heading">Description</div>
+                                        <div class="table-item"><code>[attr]</code></div>
+                                        <div class="table-item"><code>a[title]</code></div>
+                                        <div class="table-item"><span class="table-item-description"><p>Matches elements with an attribute name of attr — the value in square brackets.</p></span></div>
+                                        <div class="table-item"><code>[attr=value]</code></div>
+                                        <div class="table-item"><code>a[href="https://example.com"]</code></div>
+                                        <div class="table-item"><span class="table-item-description"><p>Matches elements with an attribute name of attr whose value is exactly value — the string inside the quotes.</p></span></div>
+                                        <div class="table-item">[attr~=value]</div>
+                                        <div class="table-item">p[class~="special"]</div>
+                                        <div class="table-item"><span class="table-item-description"><p>Matches elements with an attribute name of attr whose value is exactly value, or elements with a class attribute containing one or more class names, at least one of which matches value.</p> <p>Note that in a list of multiple class names the separate classes are whitespace-separated.</p></span></div>
+                                        <div class="table-item"><code>[attr|=value]</code></div>
+                                        <div class="table-item"><code>div[lang|="zh"]</code></div>
+                                        <div class="table-item"><span class="table-item-description"><p>Matches elements with an attribute name of attr whose value can be exactly value or can begin with value immediately followed by a hyphen.</p></span></div>
+                                </div>
+                                <p>In the example below you can see these selectors being used.</p>
+                                <ul>
+                                        <li>By using <code>li[class]</code> we can match any selector with a class attribute. This matches all but the first list item.</li>
+                                        <li><code>li[class="a"]</code> matches a selector with a class of <code>a</code>, but not a selector with a class of a with another space-separated class as part of the value. It selects the second list item.</li>
+                                        <li><code>li[class~="a"]</code> will match a class of <code>a</code> but also a value that contains the class of <code>a</code> as part of a whitespace-separated list. It selects the second and third list items.</li>
+                                </ul>
+                                <pre>
+                                        <code>
+                                                li[class] {
+                                                  font-size: 200%;
+                                                }
+                                                            
+                                                li[class="a"] {
+                                                  background-color: yellow;
+                                                }
+                                                            
+                                                li[class~="a"] {
+                                                  color: red;
+                                                } 
+                                        </code>
+                                </pre>
+                                <pre>
+                                        <code>
+                                                &#60h1&#62Attribute presence and value selectors&#60/h1&#62
+                                                &#60ul&#62
+                                                    &#60li&#62Item 1&#60/li&#62
+                                                    &#60li class="a"&#62Item 2&#60/li&#62
+                                                    &#60li class="a b"&#62Item 3&#60/li&#62
+                                                    &#60li class="ab"&#62Item 4&#60/li&#62
+                                                &#60/ul&#62 
+                                        </code>
+                                </pre>
+
+                                <h2>Substring matching selectors</h2>
+                                <p>These selectors allow for more advanced matching of substrings inside the value of your attribute. For example, if you had classes of <code>box-warning</code> and <code>box-error</code> and wanted to match everything that started with the string "box-", you could use <code>[class^="box-"]</code> to select them both.</p>
+                                <div class="table-two-container">
+                                        <div class="table-heading">Selector</div>
+                                        <div class="table-heading">Example</div>
+                                        <div class="table-heading">Description</div>
+                                        <div class="table-item"><code>[attr^=value]</code></div>
+                                        <div class="table-item"><code>li[class^="box-"]</code></div>
+                                        <div class="table-item"><span class="table-item-description"><p>Matches elements with an attribute name of attr whose value has the substring value at the start of it.</p></span></div>
+                                        <div class="table-item"><code>[attr$=value]</code></div>
+                                        <div class="table-item"><code>li[class$="-box"]</code></div>
+                                        <div class="table-item"><span class="table-item-description"><p>Matches elements with an attribute name of attr whose value has the substring value at the end of it.</p></span></div>
+                                        <div class="table-item"><code>[attr*= ]</code></div>
+                                        <div class="table-item"><code>li[class*="box"]</code></div>
+                                        <div class="table-item"><span class="table-item-description"><p>Matches elements with an attribute name of attr whose value contains at least one occurrence of the substring value anywhere within the string.</p></span></div>
+                                </div>
+
+                                <p>The next example shows usage of these selectors:</p>
+
+                                <ul>
+                                        <li><code>li[class^="a"]</code> matches any attribute value which starts with a, so matches the first two list items.</li>
+                                        <li><code>li[class$="a"]</code> matches any attribute value that ends with a, so matches the first and third list item.</li>
+                                        <li><code>li[class*="a"]</code> matches any attribute value where a appears anywhere in the string, so it matches all of our list items.</li>
+                                </ul>
+
+                                <pre>
+                                        <code>
+                                                li[class^="a"] {
+                                                    font-size: 200%;
+                                                }
+                                                            
+                                                li[class$="a"] {
+                                                    background-color: yellow;
+                                                }
+                                                            
+                                                li[class*="a"] {
+                                                    color: red;
+                                                }
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60h1&#62Attribute substring matching selectors&#60/h1&#62
+                                                &#60ul&#62
+                                                    &#60li class="a"&#62Item 1&#60/li&#62
+                                                    &#60li class="ab"&#62Item 2&#60/li&#62
+                                                    &#60li class="bca"&#62Item 3&#60/li&#62
+                                                    &#60li class="bcabc"&#62Item 4&#60/li&#62
+                                                &#60/ul&#62  
+                                        </code>
+                                </pre>
+
+                                <h2>Case-sensitivity</h2>
+                                <p>If you want to match attribute values case-insensitively you can use the value <code>i</code> before the closing bracket. This flag tells the browser to match ASCII characters case-insensitively. Without the flag the values will be matched according to the case-sensitivity of the document language — in HTML's case it will be case sensitive.</p>
+
+                                <p>In the example below, the first selector will match a value that begins with a — it only matches the first list item because the other two list items start with an uppercase A. The second selector uses the case-insensitive flag and so matches all of the list items.</p>
+
+                                <pre>
+                                        <code>
+                                                li[class^="a"] {
+                                                    background-color: yellow;
+                                                }
+                                                            
+                                                li[class^="a" i] {
+                                                    color: red;
+                                                }
+
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60h1&#62Case-insensitivity&#60/h1&#62
+                                                &#60ul&#62
+                                                    &#60li class="a"&#62Item 1&#60/li&#62
+                                                    &#60li class="A"&#62Item 2&#60/li&#62
+                                                    &#60li class="Ab"&#62Item 3&#60/li&#62
+                                                &#60/ul&#62 
+
+                                        </code>
+                                </pre>
+
+                        </section>
+                        <section class="main-section" id="Pseudo-classes_and_pseudo-elements">
+                                <header>Psuedo-classes and pseudo-elements</header>
+
+                                <h2>What is a pseudo-class?</h2>
+                                <p>A psuedo-class is a selector that selects elements that are in a specific state, e.g. they are the first element of their type, or they are being hovered over by the mouse pointer. They tend to act as if you had applied a class to some part of your document, often helping you cut down on excess classes in your markup, and giving you more flexible, maintainable code.</p>
+
+                                <p>Pseudo-classes are keywords that start with a colon:</p>
+                                <code>:pseudo-class-name</code>
+
+                                <span><p>Simple pseudo-class example</p></span>
+                                <p>Let's look at a simple example. If we wanted to make the first paragraph in an article larger and bold, we could add a class to that paragraph and then add CSS to that class, as shown in the first example below:</p>
+
+                                <pre>
+                                        <code>
+                                                .first {
+                                                    font-size: 120%;
+                                                    font-weight: bold;
+                                                }    
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60article&#62
+                                                    &#60p class="first">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+                                                                    
+                                                    &#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
+                                                &#60/article&#62 
+                                        </code>
+                                </pre>
+
+                                <p>However, this could be annoying to maintain — what if a new paragraph got added to the top of the document? We'd need to move the class over to the new paragraph. Instead of adding the class, we could use the <code>:first-child</code> pseudo-class selector — this will always target the first child element in the article, and we wll no longer need to edit the HTML (this may not always be possible anyway, maybe due to it being generated by a CMS.)</p>
+
+                                <pre>
+                                        <code>
+                                                article p:first-child {
+                                                    font-size: 120%;
+                                                    font-weight: bold;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60article&#62
+                                                    &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+                                                                    
+                                                    &#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
+                                                &#60/article&#62
+                                        </code>
+                                </pre>
+
+                                <p>All pseudo-classes behave in this same kind of way. They target some bit of your document that is in a certain state, behaving as if you had added a class into your HTML. Take a look at some other examples on MDN:</p>
+
+                                <ul>
+                                        <li><code>:last-child</code></li>
+                                        <li><code>:only-child</code></li>
+                                        <li><code>:invalid</code></li>
+                                </ul>
+
+                                <span><p>User-action pseudo classes</p></span>
+
+                                <p>Some pseudo-classes only apply when the user interacts with the document in some way. These <b>user-action</b> pseudo-classes, sometimes referred to as <b>dynamic pseudo-classes</b>, act as if a class had been added to the element when the user interacts with it. Examples include:</p>
+
+                                <ul>
+                                        <li><code>:hover</code> — mentioned above; this only applies if the user moves their pointer over an element, typically a link.</li>
+                                        <li><code>:focus</code> — only applies if the user focuses the element using keyboard controls.</li>
+                                </ul>
+
+                                <pre>
+                                        <code>
+                                                a:link,
+                                                    a:visited {
+                                                        color: rebeccapurple;
+                                                            font-weight: bold;
+                                                    }
+                                                        
+                                                    a:hover {
+                                                        color:hotpink;
+                                                    }  
+                                        </code>
+                                </pre>
+                                
+                                <pre>
+                                        <code>
+                                                &#60p&#62&#60a href=""&#62Hover over me&#60/a&#62&#60/p&#62 
+                                        </code>
+                                </pre>
+
+                                <h2>What is a pseudo-element?</h2>
+                                <p>Pseudo-elements behave in a similar way, however they act as if you had added a whole new HTML element into the markup, rather than applying a class to existing elements. Pseudo-elements start with a double colon <code>::</code>.</p>
+
+                                <code>::pseudo-element-name</code>
+
+                                <p>For example, if you wanted to select the first line of a paragraph you could wrap it in a <code>&#60span&#62</code> element and use an element selector; however, that would fail if the number of words you had wrapped were longer or shorter than the parent element's width. As we tend not to know how many words will fit on a line — as that will change if the screen width or font-size changes — it is impossible to robustly do this by adding HTML.</p>
+                                <p>The <code>::first-line</code> pseudo-element selector will do this for you reliably — if the number of words increases and decreases it will still only select the first line.</p>
+
+                                <pre>
+                                        <code>
+                                                article p::first-line {
+                                                    font-size: 120%;
+                                                    font-weight: bold;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60article&#62
+                                                    &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+                                                                    
+                                                    &#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
+                                                &#60/article&#62  
+                                        </code>
+                                </pre>
+
+                                <p>It acts as if a <code>&#60span&#62</code> was magically wrapped around that first formatted line, and updated each time the line length changed.</p>
+
+                                <p>can see that this selects the first line of both paragraphs.</p>
+
+                                <h2>Combining pseudo-classes and pseudo-elements</h2>
+                                <p>If you wanted to make the first line of the first paragraph bold you could chain the <code>:first-child</code> and <code>::first-line</code> selectors together. Try editing the previous live example so it uses the following CSS. We are saying that we want to select the first line, of the first &#60p&#62 element, which is inside an <code>&#60article&#62</code> element.</p>
+
+                                <pre>
+                                        <code>
+                                                article p:first-child::first-line { 
+                                                    font-size: 120%; 
+                                                    font-weight: bold; 
+                                                }  
+                                        </code>
+                                </pre>
+
+                                <h2>Generatign content with ::before and ::after</h2>
+                                <p>There are a couple of special pseudo-elements, which are used along with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content" target="_blank">content</a> property to insert content into your document using CSS.</p>
+
+                                <p>You could use these to insert a string of text, such as in the live example below. Try changing the text value of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content" target="_blank">content</a> property and see it change in the output. You could also change the <code>::before</code> pseudo-element to <code>::after</code> and see the text inserted at the end of the element instead of the beginning.</p>
+
+                                <pre>
+                                        <code>
+                                                .box::before {
+                                                    content: "This should show before the other content."
+                                                }  
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62  
+                                        </code>
+                                </pre>
+
+                                <p>Inserting strings of text from CSS isn't really something we do very often on the web however, as that text is inaccessible to some screen readers and might be hard for someone to find and edit in the future.</p>
+
+                                <p>A more valid use of these pseudo-elements is to insert an icon, for example the little arrow added in the example below, which is a visual indicator that we wouldn't want read out by a screenreader:</p>
+
+                                <pre>
+                                        <code>
+                                                .box::after {
+                                                    content: " ➥"
+                                                }  
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62 
+                                        </code>
+                                </pre>
+
+                                <p>These pseudo-elements are also frequently used to insert an empty string, which can then be styled just like any element on the page.</p>
+
+                                <p>In this next example, we have added two empty strings using the <code>::before</code> and <code>::after</code> pseudo-elements. We have set these to <code>display: block</code> in order that we can style them with a width and height. We then use CSS to style them just like any element. You can play around with the CSS and change how these look and behave.</p>
+
+                                <pre>
+                                        <code>
+                                                .box::before {
+                                                    content: "";
+                                                    display: block;
+                                                    width: 100px;
+                                                    height: 100px;
+                                                    background-color: rebeccapurple;
+                                                    border: 1px solid black;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62 
+                                        </code>
+                                </pre>
+
+                                <p>The use of the <code>::before</code> and <code>::after</code> pseudo-elements along with the content property is referred to as "Generated Content" in CSS, and you will often see this technique being used for various tasks in CSS. A great example is the site <a href="http://www.cssarrowplease.com" target="_blank">CSS Arrow Please</a>, which helps you to generate an arrow with CSS. Look at the CSS as you create your arrow and you will see the <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before" target="_blank">::before</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after" target="_blank">::after</a></code> pseudo-elements in use. Whenever you see these selectors, look at the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content" target="_blank">content</a> property to see what is being added to the document.</p>
+
+                                <h2>Reference section</h2>
+                                <p>There are a large number of pseudo-classes and pseudo-elements, and it is useful to have a list to refer to. Please refer to the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements" target="_blank">tables</a> in the reference page on the MDN website for things that are available for you to target.</p>
+
+                        </section>
+                        <section class="main-section" id="Combinators_and_multiple_selectors">
+                                <header>Combinators and multiple selectors</header>
+
+                                <h2>Descendant selector</h2>
+                                <p>You have already come across descendant selectors in previous lessons — selectors with spaces in between them:</p>
+
+                                <code>body article p</code>
+
+                                <p>These selectors select elements that are descendants of others selector. They do not need to be direct children to match.</p>
+
+                                <p>In the example below we are matching only the <code>&#60p&#62</code> element which is inside an element with a class of <code>.box</code>.</p>
+
+                                <pre>
+                                        <code>
+                                                .box p {
+                                                    color: red;
+                                                }  
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60div class="box"&#62&#60p>Text in .box&#60/p&#62&#60/div&#62
+                                                &#60p&#62Text not in .box&#60/p&#62 
+                                        </code>
+                                </pre>
+
+                                <h2>Child combinator</h2>
+                                <p>The child combinator is a greater-than symbol (<code>></code>), which matches only when the selectors select elements that are direct children. Descendants further down the hierarchy don't match. For example, to select only <code>&#60p&#62</code> elements that are direct children of <code>&#60article&#62</code> elements:</p>
+
+                                <code>article > p</code>
+
+                                <p>In this next example we have an unordered list, nested inside of which is another unordered list. I am using the child combinator to select only the <code>&#60li&#62</code> elements which are a direct child of a <code>&#60ul&#62</code>, and have given them a top border.</p>
+
+                                <p>If you remove the <code>></code> that designates this as a child combinator, you end up with a descendant selector and all <code>&#60li&#62</code> elements will get a red border.</p>
+
+                                <pre>
+                                        <code>
+                                                ul > li {
+                                                    border-top: 5px solid red;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60ul&#62
+                                                    &#60li&#62Unordered item&#60/li&#62
+                                                    &#60li&#62Unordered item
+                                                        &#60ol&#62
+                                                            &#60li&#62Item 1&#60/li&#62
+                                                            &#60li&#62Item 2&#60/li&#62
+                                                        &#60/ol&#62
+                                                    &#60/li&#62
+                                                &#60/ul&#62  
+                                        </code>
+                                </pre>
+
+                                <h2>Adjacent sibling</h2>
+                                <p>The adjacent sibling selector (<code>+</code>) is used to select something if it is right next to another element at the same level of the hierarchy. For example, to select all <code>&#60img&#62</code> elements that come right after <code>&#60p&#62</code> elements:</p>
+
+                                <code>p + img</code>
+
+                                <p>A common use case is to do something with a paragraph that follows a heading, as in my example below. Here we are looking for a paragraph which is directly adjacent to an <code>&#60h1&#62</code>, and styling it.</p>
+
+                                <p>If you insert some other element such as a <code>&#60h2&#62</code> in between the <code>&#60h1&#62</code> and the <code>&#60p&#62</code>, you will find that the paragraph is no longer matched by the selector and so does not get the background and foreground color applied when the element is adjacent.</p>
+
+                                <pre>
+                                        <code>
+                                                h1 + p {
+                                                    font-weight: bold;
+                                                    background-color: #333;
+                                                    color: #fff;
+                                                    padding: .5em;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60article&#62
+                                                    &#60h1&#62A heading&#60/h1&#62
+                                                    &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+                                                                    
+                                                    &#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
+                                                &#60/article&#62 
+                                        </code>
+                                </pre>
+
+                                <h2>General sibling</h2>
+                                <p>If you want to select siblings of an element even if they are not directly adjacent, then you can use the general sibling combinator (<code>~</code>). To select all <code>&#60img&#62</code> elements that come anywhere after <code>&#60p&#62</code> elements, we'd do this:</p>
+
+                                <code>p ~ img</code>
+
+                                <p>In the example below we are selecting all <code>&#60p&#62</code> elements that come after the <code>&#60h1&#62</code>, and even though there is a <code>&#60div&#62</code> in the document as well, the <code>&#60p&#62</code> that comes after it is selected.</p>
+
+                                <pre>
+                                        <code>
+                                                h1 ~ p {
+                                                    font-weight: bold;
+                                                    background-color: #333;
+                                                    color: #fff;
+                                                    padding: .5em;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60article&#62
+                                                    &#60h1&#62A heading&#60/h1&#62
+                                                    &#60p&#62I am a paragraph.&#60/p&#62
+                                                    &#60div&#62I am a div&#60/div&#62
+                                                    &#60p&#62I am another paragraph.&#60/p&#62
+                                                &#60/article&#62 
+                                        </code>
+                                </pre>
+
+                                <h2>Using combinators</h2>
+                                <p>You can combine any of the selectors that we discovered in previous lessons with combinators in order to pick out part of your document. For example if we want to select list items with a class of "a", which are direct children of a <code>&#60ul&#62</code>, I could use the following.</p>
+
+                                <code>ul > li[class="a"]  {  }</code>
+
+                                <p>Take care however when creating big lists of selectors that select very specific parts of your document. It will be hard to reuse the CSS rules as you have made the selector very specific to the location of that element in the markup.</p>
+
+                                <p>It is often better to create a simple class and apply that to the element in question. That said, your knowledge of combinators will come in very useful if you need to get to something in your document and are unable to access the HTML, perhaps due to it being generated by a CMS.</p>
+                        </section>
+                        <section class="main-section" id="CSS_values_and_units">
+                                <header>CSS values and units</header>
+
+                                <h2>What is a CSS value?</h2>
+                                <p>In CSS specifications and on the property pages here on MDN you will be able to spot values as they will be surrounded by angle brackets, such as <code>&#60color&#62</code> or <code>&#60length&#62</code>. When you see the value <code>&#60color&#62</code> as valid for a particular property, that means you can use any valid color as a value for that property, as listed on the <code>&#60color&#62</code> reference page.</p>
+
+                                <p>In the following example we have set the color of our heading using a keyword, and the background using the <code>rgb()</code> function:</p>
+
+                                <pre>
+                                        <code>
+                                                h1 {
+                                                    color: black;
+                                                    background-color: rgb(197, 93, 161);
+                                                }
+                                        </code>
+                                </pre>
+
+                                <p>A value in CSS is a way to define a collection of allowable sub-values. This means that if you see <code>&#60color&#62</code> as valid you don't need to wonder which of the different types of color value can be used — keywords, hex values, <code>rgb()</code> functions, etc. You can use any available <code>&#60color&#62</code> values assuming they are supported by your browser. The page on MDN for each value will give you information about browser support. For example, if you look at the page for <code>&#60color&#62</code> you will see that the browser compatibility section lists different types of color value and support for them.</p>
+
+                                <p>Let's have a look at some of the types of value and unit you may frequently encounter, with examples so that you can try out different possible values.</p>
+
+                                <h2>Numbers, lengths, and percentages</h2>
+                                <p>There are various numeric data types that you might find yourself using in CSS. Please refer to the table on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units" target="_blank">MDN</a> website.</p>
+
+                                <span><p>Lengths</p></span>
+                                <p>The numeric type you will come across most frequently is <code>&#60length&#62</code>, for example <code>10px</code> (pixels) or <code>30em</code>. There are two types of lengths used in CSS — relative and absolute. It's important to know the difference in order to understand how big things will become.</p>
+
+                                <h3>Absolute lenght units</h3>
+
+                                <p>Please refer to the table on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units" target="_blank">MDN</a> websit.</p>
+
+                                <h3>Relative length units</h3>
+                                <p>Relative length units are relative to something else, perhaps the size of the parent element's font, or the size of the viewport. The benefit of using relative units is that with some careful planning you can make it so the size of text or other elements scale relative to everything else on the page.  Please refer to the table on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units" target="_blank">MDN</a> website to see a list of the different units.</p>
+
+                                <h3>Exploring an example</h3>
+
+                                <p>In the example below you can see how some relative and absolute length units behave. The first box has a <code>width</code> set in pixels. As an absolute unit this width will remain the same no matter what else changes.</p>
+
+                                <p>The second box has a width set in <code>vw</code> (viewport width) units. This value is relative to the viewport width, and so 10vw is 10 percent of the width of the viewport. If you change the width of your browser window, the size of the box should change, however this example is embedded into the page using an <code>&#60iframe&#62</code>, so this won't work. To see this in action you'll have to <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">try the example after opening it in its own browser tab.</a></p>
+
+                                <p>The third box uses em units. These are relative to the font size. I've set a font size of <code>1em</code> on the containing <code>&#60div&#62</code>, which has a class of <code>.wrapper</code>. Change this value to <code>1.5em</code> and you will see that the font size of all the elements increases, but only the last item will get wider, as the width is relative to that font size.</p>
+
+                                <pre>
+                                        <code>
+                                                .wrapper {
+                                                    font-size: 1em;
+                                                }
+                                                              
+                                                .px {
+                                                    width: 200px;
+                                                }
+                                                              
+                                                .vw {
+                                                    width: 10vw;
+                                                }
+                                                              
+                                                .em {
+                                                    width: 10em;
+                                                }
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60div class="wrapper"&#62
+                                                    &#60div class="box px"&#62I am 200px wide&#60/div&#62
+                                                    &#60div class="box vw"&#62I am 10vw wide&#60/div&#62
+                                                    &#60div class="box em"&#62I am 10em wide&#60/div&#62
+                                                &#60/div&#62
+                                        </code>
+                                </pre>
+
+                                <h3>ems and rems</h3>
+                                <p><code>em</code> and <code>rem</code> are the two relative lengths you are likely to encounter most frequently when sizing anything from boxes to text. It's worth understanding how these work, and the differences between them, especially when you start getting on to more complex subjects like styling text or CSS layout. The below example provides a demonstration.</p>
+
+                                <p>The HTML is a set of nested lists — we have three lists in total and both examples have the same HTML. The only difference is that the first has a class of ems and the second a class of rems.</p>
+
+                                <p>To start with, we set 16px as the font size on the <code>&#60html&#62</code> element.</p>
+
+                                <p><b>To recap, the em unit means "my parent element's font-size".</b> The <code>&#60li&#62</code> elements inside the <code>&#60ul&#62</code> with a <code>class</code> of <code>ems</code> take their sizing from their parent. So each successive level of nesting gets progressively larger, as each has its font size set to <code>1.3em</code> — 1.3 times its parent's font size.</p>
+
+                                <p><b>To recap, the rem unit means "The root element's font-size".</b> (rem standards for "root em".) The <code>&#60li&#62</code> elements inside the <code>&#60ul&#62</code> with a <code>class</code> of <code>rems</code> take their sizing from the root element (<code>&#60html&#62</code>). This means that each successive level of nesting does not keep getting larger.</p>
+
+                                <p>However, if you change the <code>&#60html&#62</code> <code>font-size</code> in the CSS you will see that everything else changes relative to it — both <code>rem</code>- and <code>em</code>-sized text.</p>
+
+                                <pre>
+                                        <code>
+                                                html {
+                                                    font-size: 16px;
+                                                }
+                                                              
+                                                .ems li {
+                                                    font-size: 1.3em;
+                                                }
+                                                              
+                                                .rems li {
+                                                    font-size: 1.3rem;
+                                                }  
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60ul class="ems"&#62
+                                                    &#60li&#62One&#60/li&#62
+                                                    &#60li&#62Two&#60/li&#62
+                                                    &#60li&#62Three
+                                                        &#60ul&#62
+                                                            &#60li&#62Three A&#60/li&#62
+                                                            &#60li&#62Three B
+                                                                &#60ul&#62
+                                                                    &#60li&#62Three B 2&#60/li&#62
+                                                                &#60/ul&#62
+                                                            &#60/li&#62
+                                                        &#60/ul&#62
+                                                    &#60/li&#62
+                                                &#60/ul&#62
+                                                                      
+                                                &#60ul class="rems"&#62
+                                                    &#60li&#62One&#60/li&#62
+                                                    &#60li&#62Two&#60/li&#62
+                                                    &#60li&#62Three
+                                                        &#60ul&#62
+                                                            &#60li&#62Three A&#60/li&#62
+                                                            &#60li&#62Three B
+                                                                &#60ul&#62
+                                                                    &#60li&#62Three B 2&#60/li&#62
+                                                                &#60/ul&#62
+                                                            &#60/li&#62
+                                                        &#60/ul&#62
+                                                    &#60/li&#62
+                                                &#60/ul&#62
+                                        </code>
+                                </pre>
+
+                                <span><p>Percentages</p></span>
+                                <p>In a lot of cases a percentage is treated in the same way as a length. The thing with percentages is that they are always set relative to some other value. For example, if you set an element's <code>font-size</code> as a percentage it will be a percentage of the <code>font-size</code> of the element's parent. If you use a percentage for a <code>width</code> value, it will be a percentage of the <code>width</code> of the parent.</p>
+
+                                <p>Refer to the example and code on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website</p>
+
+                                <p>Note that, while many values accept a length or a percentage, there are some that only accept length. You can see which values are accepted on the MDN property reference pages. If the allowed value includes <code>&#60length-percentage&#62</code> then you can use a length or a percentage. If the allowed value only includes <code>&#60length&#62</code>, it is not possible to use a percentage.</p>
+
+                                <span><p>Numbers</p></span>
+                                <p>Some values accept numbers, without any unit added to them. An example of a property which accepts a unitless number is the <code>opacity</code> property, which controls the opacity of an element (how transparent it is). This property accepts a number between <code>0</code> (fully transparent) and <code>1</code> (fully opaque).</p>
+
+                                <p>Refer to the example and code on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website</p>
+
+                                <h2>Colors</h2>
+                                <p>There are many ways to specify color in CSS, some of which are more recently implemented than others. The same color values can be used everywhere in CSS, whether you are specifying text color, background color, or whatever else.</p>
+
+                                <p>The standard color system available in modern computers is 24 bit, which allows the display of about 16.7 million distinct colors via a combination of different red, green and blue channels with 256 different values per channel (256 x 256 x 256 = 16,777,216.) Let's have a look at some of the ways in which we can specify colors in CSS.</p>
+
+                                <span><p>Color Keywords</p></span>
+                                <p>Quite often in examples here in the learn section or elsewhere on MDN you will see the color keywords used, as they are a simple and understandable way of specifying color. There are a number of these keywords, some of which have fairly entertaining names! You can see a full list on the page for the <code>&#60color&#62</code> value.</p>
+
+                                <p><b>Try playing with different color values in the live examples below, to get more of an idea how they work.</b></p>
+
+                                <span><p>Hexadecimal RGB values</p></span>
+                                <p>The next type of color value you are likely to encounter is hexadecimal codes. Each hex value consists of a hash/pound symbol (#) followed by six hexadecimal numbers, each of which can take one of 16 values between 0 and f (which represents 15) — so <code>0123456789abcdef</code>. Each pair of values represents one of the channels — red, green and blue — and allows us to specify any of the 256 available values for each (16 x 16 = 256.)</p>
+
+                                <p>These values are a bit more complex and less easy to understand, but they are a lot more versatile than keywords — you can use hex values to represent any color you want to use in your color scheme.</p>
+
+                                <p>Refer to the example and code on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website</p>
+
+                                <span><p>RGB and RGBA values</p></span>
+                                <p>The third scheme we'll talk about here is RGB. An RGB value is a function — <code>rgb()</code> — which is given three parameters that represent the red, green, and blue channel values of the colors, in much the same way as hex values. The difference with RGB is that each channel is represented not by two hex digits, but by a decimal number between 0 and 255 — somewhat easier to understand.</p>
+
+                                <p>Refer to the example and code on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website</p>
+
+                                <p>You can also use RGBA colors — these work in exactly the same way as RGB colors, and so you can use any RGB values, however there is a fourth value that represents the alpha channel of the color, which controls opacity. If you set this value to 0 it will make the color fully transparent, whereas 1 will make it fully opaque. Values in between give you different levels of transparency.</p>
+
+                                <p>In an example on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website I have added a background image to the containing block of our colored boxes. I have then set the boxes to have different opacity values — notice how the background shows through more when the alpha channel value is smaller</p>
+
+                                <span><p>HSL and HSLA values</p></span>
+                                <p>Slightly less well-supported than RGB is the HSL color model (not supported on old versions of IE), which was implemented after much interest from designers. Instead of red, green, and blue values, the <code>hsl()</code> function accepts hue, saturation, and lightness values, which are used to distinguish between the 16.7 million colors, but in a different way:</p>
+
+                                <ul>
+                                        <li><b>Hue:</b> The base shade of the color. This takes a value between 0 and 360, representing the angles round a color wheel.</li>
+                                        <li><b>Saturation:</b> How saturated is the color? This takes a value from 0–100%, where 0 is no color (it will appear as a shade of grey), and 100% is full color saturation</li>
+                                        <li><b>Lightness:</b> How light or bright is the color? This takes a value from 0–100%, where 0 is no light (it will appear completely black) and 100% is full light (it will appear completely white)</li>
+                                </ul>
+
+                                <p>We have update the RGB example on use HSL colors on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> websit.</p>
+
+                                <p>Just as RGB has RGBA, HSL has an HSLA equivalent, which gives you the same ability to specify the alpha channel.  We have demonstrated this by changing my RGBA example to use HSLA colors which is on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website.</p>
+
+                                <p>You can use any of these color values in your projects. It is likely that for most projects you will decide on a color palette and then use those colors — and your chosen method of specifying color — throughout the whole project. You can mix and match color models, however for consistency it is usually best if your entire project uses the same one!</p>
+
+                                <h2>Images</h2>
+                        </section>
+                        <section class="main-section" id="Cascade_and_inheritance">
+                                <header>Cascade and inheritance</header>
+                        </section>
+                        <section class="main-section" id="The_box_model">
+                                <header>The box model</header>
+                        </section>
+                        <section class="main-section" id="Reference">
+                                <header>Reference</header>
+                        </section>
+                </main>
+        </div>
+        <footer>
+
+        </footer>
+</body>
+
+</html>
