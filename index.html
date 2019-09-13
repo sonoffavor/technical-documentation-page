@@ -1410,9 +1410,385 @@
                                 </pre>
 
                                 <span><p>Resetting all property values</p></span>
+                                <p>The CSS shorthand property <code>all</code> can be used to apply one of these inheritance values to (almost) all properties at once. Its value can be any one of the inheritance values (<code>inherit</code>, <code>initial</code>, <code>unset</code>, or <code>revert</code>). It's a convenient way to undo changes made to styles so that you can get back to a known starting point before beginning new changes.</p>
+
+                                <p>In the below example I have two blockquotes. The first has styling applied to the blockquote element itself, the second has a class applied to the blockquote which sets the value of <code>all</code> to <code>unset</code>.</p>
+
+                                <pre>
+                                        <code>
+                                                blockquote {
+                                                    background-color: red;
+                                                    border: 2px solid green;
+                                                }
+                                                            
+                                                .fix-this {
+                                                    all: unset;
+                                                }        
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60blockquote&#62
+                                                    &#60p&#62This blockquote is styled&#60/p&#62
+                                                &#60/blockquote&#62
+                                            
+                                                &#60blockquote class="fix-this"&#62
+                                                    &#60p&#62This blockquote is not styled&#60/p&#62
+                                                &#60/blockquote&#62
+                                        </code>
+                                </pre>
+
+                                <p>Try setting the value of <code>all</code> to some of the other available values and observe what the difference is.</p>
+
+                                <h2>Understanding the cascade</h2>
+                                <p>We now understand why a paragraph nested deep in the structure of your HTML is the same color as the CSS applied to the body, and from the introductory lessons we have an understanding of how to change the CSS applied to something at any point in the document — whether by assigning CSS to an element or creating a class. We will now take a proper look at how the cascade defines which CSS rules apply when more than one thing could style an element.</p>
+
+                                <p>There are three factors to consider, listed here in decreasing order of importance. Earlier ones overrule later ones:</p>
+
+                                <ol>
+                                        <li>Importance</li>
+                                        <li>Specificity</li>
+                                        <li>Source order</li>
+                                </ol>
+
+                                <p>We will look at these from the bottom up, to see how browsers figure out exactly what CSS should be applied.</p>
+
+                                <span><p>Source order</p></span>
+                                <p>We have already seen how source order matters to the cascade. If you have more than one rule, which has exactly the same weight, then the one that comes last in the CSS will win. You can think of this as rules which are nearer the element itself overwriting early ones until the last one wins and gets to style the element.</p>
+
+                                <span><p>Specificity</p></span>
+                                <p>Once you understand the fact that source order matters, at some point you will run into a situation where you know that a rule comes later in the stylesheet, but an earlier, conflicting, rule is applied. This is because that earlier rule has a <b>higher specificity</b> — it is more specific, and therefore is being chosen by the browser as the one that should style the element.</p>
+
+                                <p>As we saw earlier in this lesson, a class selector has more weight than an element selector, so the properties defined on the class will override those applied directly to the element.</p>
+
+                                <p>Something to note here is that although we are thinking about selectors, and the rules that are applied to the thing they select, it isn't the entire rule which is overwritten, only the properties which are the same.</p>
+
+                                <p>This behavior helps avoid repetition in your CSS. A common practice is to define generic styles for the basic elements, and then create classes for those which are different. For example, in the stylesheet below I have defined generic styles for level 2 headings, and then created some classes which change only some of the properties and values. The values defined initially are applied to all headings, then the more specific values are applied to the headings with the classes.</p>
+
+                                <pre>
+                                        <code>
+                                                h2 {
+                                                    font-size: 2em;
+                                                    color: #000;
+                                                    font-family: Georgia, 'Times New Roman', Times, serif;
+                                                }
+                                                            
+                                                .small {
+                                                    font-size: 1em;
+                                                }
+                                                            
+                                                .bright {
+                                                    color: rebeccapurple;
+                                                }  
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60h2&#62Heading with no class&#60/h2&#62
+                                                &#60h2&#62class="small"&#62Heading with class of small&#60/h2&#62
+                                                &#60h2&#62class="bright"&#62Heading with class of bright&#60/h2&#62
+                                        </code>
+                                </pre>
+
+                                <p>Let's now have a look at how the browser will calculate specificity. We already know that an element selector has low specificity and can be overwritten by a class. Essentially a value in points is awarded to different types of selectors, and adding these up gives you the weight of that particular selector, which can then be assessed against other potential matches.</p>
+
+                                <p>The amount of specificity a selector has is measured using four different values (or components), which can be thought of as thousands, hundreds, tens and ones — four single digits in four columns:</p>
+
+                                <ol>
+                                        <li><b>Thousands:</b> Score one in this column if the declaration is inside a style attribute, aka inline styles. Such declarations don't have selectors, so their specificity is always simply 1000.</li>
+                                        <li><b>Hundreds:</b> Score one in this column for each ID selector contained inside the overall selector.</li>
+                                        <li><b>Tens:</b> Score one in this column for each class selector, attribute selector, or pseudo-class contained inside the overall selector.</li>
+                                        <li><b>Ones:</b> Score one in this column for each element selector or pseudo-element contained inside the overall selector.</li>
+                                </ol>
+
+                                <p>Refer to the table on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance" target="_blank">MDN website</a> to see a few isolated examples.</p>
+
+                                <p>Before we move on, let's look at an example in action.</p>
+
+                                <pre>
+                                        <code>
+
+                                                /* specificity: 0101 */
+                                                #outer a {
+                                                    background-color: red;
+                                                }
+        
+                                                /* specificity: 0201 */
+                                                #outer #inner a {
+                                                    background-color: blue;
+                                                }
+
+                                                /* specificity: 0104 */
+                                                #outer div ul li a {
+                                                    color: yellow;
+                                                }
+
+                                                /* specificity: 0113 */
+                                                #outer div ul .nav a {
+                                                    color: white;
+                                                }
+
+                                                /* specificity: 0024 */
+                                                div div li:nth-child(2) a:hover {
+                                                    border: 10px solid black;
+                                                }
+
+                                                /* specificity: 0023 */
+                                                div li:nth-child(2) a:hover {
+                                                    border: 10px dashed black;
+                                                }
+
+                                                /* specificity: 0033 */
+                                                div div .nav:nth-child(2) a:hover {
+                                                    border: 10px double black;
+                                                }
+
+                                                a {
+                                                    display: inline-block;
+                                                    line-height: 40px;
+                                                    font-size: 20px;
+                                                    text-decoration: none;
+                                                    text-align: center;
+                                                    width: 200px;
+                                                    margin-bottom: 10px;
+                                                }
+
+                                                ul {
+                                                    padding: 0;
+                                                }
+
+                                                li {
+                                                    list-style-type: none;
+                                                }
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60div id="outer" class="container"&#62
+                                                    &#60div id="inner" class="container"&#62
+                                                        &#60ul&#62
+                                                            &#60li class="nav">&#60a href="#"&#62One&#60/a&#62&#60/li&#62
+                                                            &#60li class="nav"&#62&#60a href="#"&#62Two&#60/a&#62&#60/li&#62
+                                                        &#60/ul&#62
+                                                    &#60/div&#62
+                                                &#60/div&#62 
+                                        </code>
+                                </pre>
+
+                                <p>So what's going on here? First of all, we are only interested in the first seven rules of this example, and as you'll notice, we have included their specificity values in a comment before each one.</p>
+
+                                <ul>
+                                        <li>The first two selectors are competing over the styling of the link's background color — the second one wins and makes the background color blue because it has an extra ID selector in the chain: its specificity is 201 vs. 101.</li>
+                                        <li>The third and fourth selectors are competing over the styling of the link's text color — the second one wins and makes the text white because although it has one less element selector, the missing selector is swapped out for a class selector, which is worth ten rather than one. So the winning specificity is 113 vs. 104.</li>
+                                        <li>Selectors 5–7 are competing over the styling of the link's border when hovered. Selector six clearly loses to five with a specificity of 23 vs. 24 — it has one fewer element selectors in the chain. Selector seven, however, beats both five and six — it has the same number of sub-selectors in the chain as five, but an element has been swapped out for a class selector. So the winning specificity is 33 vs. 23 and 24.</li>
+                                </ul>
+
+                                <span><p>!important</p></span>
+                                <p>There is a special piece of CSS that you can use to overrule all of the above calculations, however you should be very careful with using it — <code>!important</code>. This is used to make a particular property and value the most specific thing, thus overriding the normal rules of the cascade.</p>
+
+                                <p>Take a look at this example where we have two paragraphs, one of which has an ID.</p>
+
+                                <pre>
+                                        <code>
+                                                #winning {
+                                                    background-color: red;
+                                                    border: 1px solid black;
+                                                }
+        
+                                                .better {
+                                                    background-color: gray;
+                                                    border: none !important;
+                                                }
+        
+                                                p {
+                                                    background-color: blue;
+                                                    color: white;
+                                                    padding: 5px;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60p class="better"&#62This is a paragraph.&#60/p&#62
+                                                &#60p class="better" id="winning"&#62One selector to rule them all!&#60/p&#62
+                                        </code>
+                                </pre>
+
+                                <p>Let's walk through this to see what's happening — try removing some of the properties to see what happens if you are finding it hard to understand:</p>
+
+                                <ol>
+                                        <li>You'll see that the third rule's <code>color</code> and <code>padding</code> values have been applied, but the <code>background-color</code> hasn't. Why? Really all three should surely apply, because rules later in the source order generally override earlier rules.</li>
+                                        <li>However, The rules above it win, because class selectors have higher specificity than element selectors.</li>
+                                        <li>Both elements have a <code>class</code> of <code>better</code>, but the 2nd one has an <code>id</code> of <code>winning</code> too. Since IDs have an even higher specificity than classes (you can only have one element with each unique ID on a page, but many elements with the same class — ID selectors are very specific in what they target), the red background color and the 1 pixel black border should both be applied to the 2nd element, with the first element getting the gray background color, and no border, as specified by the class.</li>
+                                        <li>The 2nd element does get the red background color, but no border. Why? Because of the <code>!important</code> declaration in the second rule — including this after <code>border: none</code> means that this declaration will win over the border value in the previous rule, even though the ID has higher specificity.</li>
+                                </ol>
+
+                                <p>It is useful to know that <code>!important</code> exists so that you know what it is when you come across it in other people's code. <b>However, we strongly recommend that you never use it unless you absolutely have to.</b> <code>!important</code> changes the way the cascade normally works, so it can make debugging CSS problems really hard to work out, especially in a large stylesheet.</p>
+
+                                <p>One situation in which you may have to use it is when you are working on a CMS where you can't edit the core CSS modules, and you really want to override a style that can't be overridden in any other way. But really, don't use it if you can avoid it.</p>
+
+                                <h2>The effect of CSS location</h2>
+                                <p>Finally, it is also useful to note that the importance of a CSS declaration depends on what stylesheet it is specified in — it is possible for users to set custom stylesheets to override the developer's styles, for example the user might be visually impaired, and want to set the font size on all web pages they visit to be double the normal size to allow for easier reading.</p>
+
+                                <h2>To summarize</h2>
+                                <p>Conflicting declarations will be applied in the following order, with later ones overriding earlier ones:</p>
+
+                                <ol>
+                                        <li>Declarations in user agent style sheets (e.g. the browser's default styles, used when no other styling is set).</li>
+                                        <li>Normal declarations in user style sheets (custom styles set by a user).</li>
+                                        <li>Normal declarations in author style sheets (these are the styles set by us, the web developers).</li>
+                                        <li>Important declarations in author style sheets</li>
+                                        <li>Important declarations in user style sheets</li>
+                                </ol>
+
+                                <p>It makes sense for web developers' stylesheets to override user stylesheets, so the design can be kept as intended, but sometimes users have good reasons to override web developer styles, as mentioned above — this can be achieved by using <code>!important</code> in their rules.</p>
                         </section>
                         <section class="main-section" id="The_box_model">
                                 <header>The box model</header>
+
+                                <h2>Block and inline boxes</h2>
+                                <p>In CSS we broadly have two types of box — <b>block boxes</b> and <b>inline boxes</b>. These characteristics refer to how the box behaves in terms of page flow, and in relation to other boxes on the page:</p>
+
+                                <p>If a box is defined as a block, it will behave in the following ways:</p>
+
+                                <ul>
+                                        <li>The box will extend in the inline direction to fill the space available in its container. In most cases this means that the box will become as wide as its container, filling up 100% of the space available.</li>
+                                        <li>The box will break onto a new line.</li>
+                                        <li>The <code>width</code> and <code>height</code> properties are respected.</li>
+                                        <li>Padding, margin and border will cause other elements to be pushed away from the box</li>
+                                </ul>
+
+                                <p>Unless we decide to change the display type to inline, elements such as headings (e.g. <code>&#60h1&#62</code>) and <code>&#60p&#62</code>s all use <code>block</code> as their outer display type by default.</p>
+
+                                <p>If a box has an outer display type of <code>inline</code>, then:</p>
+
+                                <ul>
+                                        <li>The box will not break onto a new line.</li>
+                                        <li>The <code>width</code> and <code>height</code> properties will not apply.</li>
+                                        <li>Padding, margin and borders will apply but will not cause other inline boxes to move away from the box.</li>
+                                </ul>
+
+                                <p>The <code>&#60a&#62</code> element, used for links, <code>&#60span&#62</code>, <code>&#60em&#62</code> and <code>&#60strong&#62</code> are all examples of elements that will display inline by default.</p>
+
+                                <p>The type of box applied to an element is defined by <code>display</code> property values such as <code>block</code> and <code>inline</code>, and relates to the <b>outer</b> value of <code>display</code>.</p>
+
+                                <h2>Aside: Inner and outer display types</h2>
+                                <p>At this point we'd better also explain <b>inner</b> and <b>outer</b> display types. As mentioned above, boxes in CSS have an outer display type, which details whether the box is block or inline.</p>
+
+                                <p>Boxes also have an <i>inner</i> display type, however, which dictates how elements inside that box are laid out. By default the elements inside a box are laid out in <b>normal flow</b>, which means that they behave just like any other block and inline elements (as explained above).</p>
+
+                                <p>We can however, change the inner display type by using <code>display</code> values like <code>flex</code>. If we set <code>display: flex</code>; on an element, the outer display type is <code>block</code>, but the inner display type is changed to <code>flex</code>. Any direct children of this box will become flex items, and will laid out according to the rules set out in the <span>Flexbox</span> spec, which you'll learn about later on.</p>
+
+                                <p>When you move on to learn about CSS Layout in more detail, you will encounter <code>flex</code>, and various other inner values that your boxes can have, for example <code>grid</code>.</p>
+
+                                <p>Block and inline layout however is the default way that things on the web behave — as we said above, it is sometimes referred to as <i>normal flow</i>, because without any other instruction, our boxes lay out as block or inline boxes.</p>
+
+                                <h2>Examples of different display types</h2>
+                                <p>Let's move on and have a look at some examples. Below we have three different HTML elements, all of which have an outer display type of <code>block</code>. The first is a paragraph, which has a border added in CSS. The browser renders this as a block box, so the paragraph begins on a new line, and expands to the full width available to it.</p>
+
+                                <p>The second is a list, which is laid out using <code>display: flex</code>. This establishes flex layout for the items inside the container, however the list itself is a block box and — like the paragraph — expands to the full container width and breaks onto a new line.</p>
+
+                                <p>Below this we have a block level paragraph, inside which are two <code>&#60span&#62</code> elements. These elements would normally be <code>inline</code>, however one of the elements has a class of block, and we have set it to <code>display: block</code>.</p>
+
+                                <p>Please refer to the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a> for the example image and code.</p>
+
+                                <p>We can see how <code>inline</code> elements behave in this next example. The <code>&#60span&#62</code>s in the first paragraph are inline by default and so do not force line breaks.</p>
+
+                                <p>We also have a <code>&#60ul&#62</code> which is set to <code>display: inline-flex</code>, creating an inline box around some flex items.</p>
+
+                                <p>Finally we have two paragraphs both set to <code>display: inline</code>. The inline flex container and paragraphs all run together on one line rather than breaking onto new lines as they would do if they were displaying as block-level elements.</p>
+
+                                <p><b>In the example you can change <code>display: inline</code> to <code>display: block</code> or <code>display: inline-flex</code> to <code>display: flex</code> to toggle between these display modes.</b></p>
+
+                                <p>Please refer to the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a> for the example image and code.</p>
+
+                                <p>You will encounter things like flex layout later in these lessons; the key thing to remember for now is that changing the value of the <code>display</code> property can change whether the outer display type of a box is block or inline, which changes the way it displays alongside other elements in the layout. </p>
+
+                                <p>In the rest of the lesson we will concentrate on the outer display type.</p>
+
+                                <h2>What is the CSS box model?</h2>
+                                <p>The full CSS box model applies to block boxes, inline boxes only use some of the behavior defined in the box model. The model defines how the different parts of a box — margin, border, padding, and content — work together to create a box that you can see on the page. To add some additional complexity, there is a standard and an alternate box model.</p>
+
+                                <span><p>Parts of a box</p></span>
+                                <p>Making up a block box in CSS we have the:</p>
+                                <ul>
+                                        <li><b>Content box:</b> The area where your content is displayed, which can be sized using properties like <code>width</code> and <code>height</code>.</li>
+                                        <li><b>Padding box:</b> The padding sits around the content as white space; its size can be controlled using <code>padding</code> and related properties.</li>
+                                        <li><b>Border box:</b> The border box wraps the content and any padding. Its size and style can be controlled using <code>border</code> and related properties.</li>
+                                        <li><b>Margin box:</b> The margin is the outermost layer, wrapping the content, padding and border as whitespace between this box and other elements. Its size can be controlled using <code>margin</code> and related properties.</li>
+                                </ul>
+
+                                <p>Please refer to the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a> to see the diagram that shows these layers.</p>
+
+                                <span><p>The standard CSS box model</p></span>
+                                <p>In the standard box model, if you give a box a <code>width</code> and a <code>height</code>, this defines the width and height of the <i>content</i> box. Any padding and border is then added to that width and height to get the total size taken up by the box. This is shown in the image below.</p>
+
+                                <p>If we assume that the box has the following CSS defining <code>width</code>, <code>height</code>, <code>margin</code>, <code>border</code>, and <code>padding:</code></p>
+
+                                <pre>
+                                        <code>
+                                                .box {
+                                                    width: 350px;
+                                                    height: 150px;
+                                                    margin: 25px;
+                                                    padding: 25px;
+                                                    border: 5px solid black;
+                                                }
+                                        </code>
+                                </pre>
+
+                                <p>The space taken up by our box using the standard box model will actually be 410px (350 + 25 + 25 + 5 + 5), and the height 260px (150 + 25 + 25 + 5 + 5), as the padding and border are added to the width used for the content box.</p>
+
+                                <p>Please refer to the diagram on the<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
+
+                                <span><p>The alternative CSS box model</p></span>
+                                <p>You might think it is rather inconvenient to have to add up the border and padding to get the real size of the box, and you would be right! For this reason, CSS had an alternative box model introduced some time after the standard box model. Using this model, any width is the width of the visible box on the page, therefore the content area width is that width minus the width for the padding and border. The same CSS as used above would give the below result (width = 350px, height = 150px).</p>
+
+                                <p>Please refer to the diagram on the<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
+
+                                <p>By default, browsers use the standard box model. If you want to turn on the alternative model for an element you do so by setting <code>box-sizing: border-box</code> on it. By doing this you are telling the browser to take the border box as the area defined by any size you set.</p>
+
+                                <pre>
+                                        <code>
+                                                .box {
+                                                    box-sizing: border-box;
+                                                }
+                                        </code>
+                                </pre>
+
+                                <p>If you want all of your elements to use the alternative box model, and this is a common choice among developers, set the <code>box-sizing</code> property on the <code>&#60html&#62</code> element, then set all other elements to inherit that value, as seen in the snippet below. If you want to understand the thinking behind this, see the <a href="https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/" target="_blank">CSS Tricks article on box-sizing</a>.</p>
+
+                                <pre>
+                                        <code>
+                                                html {
+                                                    box-sizing: border-box;
+                                                }
+
+                                                *, *::before, *::after {
+                                                    box-sizing: inherit;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <h2>Playing with box models</h2>
+                                <p>In the below example, you can see two boxes. Both have a class of <code>.box</code>, which gives them the same <code>width</code>, <code>height</code>, <code>margin</code>, <code>border</code>, and <code>padding</code>. The only difference is that the second box has been set to use the alternative box model.</p>
+
+                                <p><b>Can you change the size of the second box (by adding CSS to the <code>.alternate</code> class) to make it match the first box in width and height?</b></p>
+
+                                <p>Please refer to the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a> for the example diagram and code.</p>
+
+                                <span><p>Use browser DevTools to view the box model</p></span>
+                                <p>Your <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools" target="_blank">browser developer tools</a> can make understanding the box model far easier. If you inspect an element in Firefox's DevTools, you can see the size of the element plus its margin, padding, and border. Inspecting an element in this way is a great way to find out if your box is really the size you think it is!</p>
+
+                                <p>Please refer to the image on the<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
+
+                                <h2>Margins, padding, and borders</h2>
+
+
                         </section>
                         <section class="main-section" id="Reference">
                                 <header>Reference</header>
