@@ -4,6 +4,8 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Document</title>
 </head>
 
@@ -1788,15 +1790,173 @@
 
                                 <h2>Margins, padding, and borders</h2>
 
+                                <p>You've already seen the <code>margin</code>, <code>padding</code>, and <code>border</code> properties at work in the example above. The properties used in that example are <b>shorthands</b> and allow us to set all four sides of the box at once. These shorthands also have equivalent longhand properties, which allow control over the different sides of the box individually.</p>
+
+                                <p>Let's explore these properties in more detail.</p>
+
+                                <span><p>Margin</p></span>
+
+                                <p>We can control all margins of an element at once using the <code>margin</code> property, or each side individually using the equivalent longhand properties:</p>
+
+                                <ul>
+                                        <li><code>margin-top</code></li>
+                                        <li><code>margin-right</code></li>
+                                        <li><code>margin-bottom</code></li>
+                                        <li><code>margin-left</code></li>
+                                </ul>
+
+                                <p>Refer to the example and code on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
+
+                                <p><b>Margin collapsing</b></p>
+
+                                <p>A key thing to understand about margins is the concept of margin collapsing. If you have two elements whose margins touch, those margins will combine to become one margin, which is the size of the largest individual margin.</p>
+
+                                <p>In the example below we have two paragraphs. The top paragraph has a <code>margin-bottom</code> of 50 pixels. The second paragraph has a <code>margin-top</code> of 30 pixels. The margins have collapsed together so the actual margin between the boxes is 50 pixels and not the total of the two margins.</p>
+
+                                <p>Refer to the example and code on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
+
+                                <p>There are a number of rules that dictate when margins do and do not collapse. For further information see the detailed page on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank">mastering margin collapsing</a>. The main thing to remember for now is that margin collapsing is a thing that happens. If you are creating space with margins and don't get the space you expect, this is probably what is happening.</p>
+
+                                <span><p>Borders</p></span>
+
+                                <p>The border is drawn between the margin and the padding of a box. If you are using the standard box model, the size of the border is added to the <code>width</code> and <code>height</code> of the box. If you are using the alternative box model then the size of the border makes the content box smaller as it takes up some of that available <code>width</code> and <code>height</code>.</p>
+
+                                <p>For styling borders, there are a large number of properties — there are four borders, and each border has a style, width and color that we might want to manipulate.</p>
+
+                                <p>You can set the width, color, and style of all four borders at once using the <code>border</code> property.</p>
+
+                                <p>Refer to the specific properties, example, and code on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
+
+                                <span><p>Padding</p></span>
+
+                                <p>The padding sits between the border and the content area. Unlike margins you cannot have negative amounts of padding, so the value must be 0 or a positive value. Any background applied to your element will display behind the padding, and it is typically used to push the content away from the border.</p>
+
+                                <p>We can control the padding on each side of an element individually using the <code>padding</code> property, or each side individually using the equivalent longhand properties:</p>
+
+                                <ul>
+                                        <li>padding-top</li>
+                                        <li>padding-right</li>
+                                        <li>padding-bottom</li>
+                                        <li>padding-left</li>
+                                </ul>
+
+                                <p>Refer to the example and code on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
+
+                                <h2>The box model and inline boxes</h2>
+
+                                <p>All of the above applies fully to block boxes. Some of the properties can apply to inline boxes too, such as those created by a <code>&#60span&#62</code> element.</p>
+
+                                <p>In the example below we have a <code>&#60span&#62</code> inside a paragraph and have applied a <code>width</code>, <code>height</code>, <code>margin</code>, <code>border</code>, and <code>padding</code> to it. You can see that the width and height are ignored. The margin, padding, and border are respected but they do not change the relationship of other content to our inline box and so the padding and border overlaps other words in the paragraph.</p>
+
+                                <p>Refer to the example on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
+
+                                <pre>
+                                        <code>
+                                                span {
+                                                    margin: 20px;
+                                                    padding: 20px;
+                                                    width: 80px;
+                                                    height: 50px;
+                                                    background-color: lightblue;
+                                                    border: 2px solid blue;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60p&#62I am a paragraph and this is a &#60span&#62span&#60/span&#62 inside that paragraph. A span is an inline element and so does not respect width and height.&#60/p&#62
+                                        </code>
+                                </pre>
+
+                                <h2>Using display: inline-block</h2>
+
+                                <p>There is a special value of <code>display</code>, which provides a middle ground between <code>inline</code> and <code>block</code>. This is useful for situations where you do not want an item to break onto a new line, but do want it to respect <code>width</code> and <code>height</code> and avoid the overlapping seen above.</p>
+
+                                <p>An element with <code>display: inline-block</code> does a subset of the block things we already know about:</p>
+
+                                <ul>
+                                        <li>The <code>width</code> and <code>height</code> properties are respected.</li>
+                                        <li><code>padding</code>, <code>margin</code>, and <code>border</code> will cause other elements to be pushed away from the box.</li>
+                                </ul>
+
+                                <p>It does not however break onto a new line, and will only become larger than its content if you explicitly add <code>width</code> and <code>height</code> properties.</p>
+
+                                <p>Refer to the example on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
+
+                                <pre>
+                                        <code>
+                                                span {
+                                                    margin: 20px;
+                                                    padding: 20px;
+                                                    width: 80px;
+                                                    height: 50px;
+                                                    background-color: lightblue;
+                                                    border: 2px solid blue;
+                                                    display: inline-block;
+                                                }
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60p&#62I am a paragraph and this is a &#60span&#62span&#60/span&#62 inside that paragraph. A span is an inline element and so does not respect width and height.&#60/p&#62  
+                                        </code>
+                                </pre>
+
+                                <p>Where this can be useful is when you want to give a link a larger hit area by adding <code>padding</code>. <code>&#60a&#62</code> is an inline element like <code>&#60span&#62&#59</code> you can use <code>display: inline-block</code> to allow padding to be set on it, making it easier for a user to click the link.</p>
+
+                                <p>You see this fairly frequently in navigation bars. The navigation below is displayed in a row using flexbox and we have added padding to the <code>&#60a&#62</code> element as we want to be able to change the <code>background-color</code> when the <code>&#60a&#62</code> is hovered. The padding appears to overlap the border on the <code>&#60ul&#62</code> element. This is because the <code>&#60a&#62</code> is an inline element.</p>
+
+                                <p>Refer to the example on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
+
+                                <pre>
+                                        <code>
+                                                .links-list a {
+                                                    background-color: rgb(179,57,81);
+                                                    color: #fff;
+                                                    text-decoration: none;
+                                                    padding: 1em 2em;
+                                                }
+                                                              
+                                                .links-list a:hover {
+                                                    background-color: rgb(66, 28, 40);
+                                                    color: #fff;
+                                                } 
+                                        </code>
+                                </pre>
+
+                                <pre>
+                                        <code>
+                                                &#60nav&#62
+                                                    &#60ul class="links-list"&#62
+                                                        &#60li&#62&#60a href=""&#62Link one&#60/a&#62&#60/li&#62
+                                                        &#60li&#62&#60a href=""&#62Link two&#60/a&#62&#60/li&#62
+                                                        &#60li&#62&#60a href=""&#62Link three&#60/a&#62&#60/li&#62
+                                                    &#60/ul&#62
+                                                &#60/nav&#62 
+                                        </code>
+                                </pre>
+
 
                         </section>
                         <section class="main-section" id="Reference">
                                 <header>Reference</header>
+
+                                <ul>
+                                        <li>All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a></li>
+                                </ul>
                         </section>
                 </main>
         </div>
         <footer>
-
+                <p>Coded by Ben Rietman</p>
+                <div class="personal-contact-information">
+                        <a href="mailto:rietmanb@yahoo.com?subject=feedback" class="fa fa-envelope"></a>
+                        <a href="https://www.linkedin.com/in/benjamin-rietman-346a07164/" class="fa fa-linkedin"
+                                                    target="_blank"></a>
+                </div>
+                <!--<a href="mailto:sonoffavor@gmail.com?subject=feedback">Contact</a>-->
         </footer>
 </body>
 
