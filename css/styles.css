@@ -1,5 +1,12 @@
 /**** TAG SELECTORS ****/
+p code {
+    font-size: 15px;
+    background-color: rgb(237, 237, 237);
+}
 
+pre {
+    background-color: rgb(238, 238, 238);
+}
 /**** CLASS SELECTORS ****/
 
 /**** ID SELECTORS ****/
