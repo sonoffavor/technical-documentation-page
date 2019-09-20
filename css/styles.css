@@ -7,6 +7,50 @@ p code {
 pre {
     background-color: rgb(238, 238, 238);
 }
+
+p {
+    font-size: 17px;
+    font-family: 'Palanquin', sans-serif;
+    letter-spacing: 0.6px;
+}
+
+h1 {
+   font-family: 'Alegreya', serif; 
+}
+
+h2 {
+    font-family: 'Alegreya', serif;
+}
+
+span p {
+    background-color: black;
+    color: white;
+    display: inline;
+    font-family: 'Alegreya', serif;
+    font-size: 20px;
+    letter-spacing: 0.6px;
+    padding: 2px 4px 2px 4px;
+}
+
+.h3-title {
+    display: block;
+}
+
+header {
+    font-family: 'Alegreya', serif;
+}
+
+ul li {
+    font-family: 'Palanquin', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.6px;
+}
+
+ol li {
+    font-family: 'Palanquin', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.6px;
+}
 /**** CLASS SELECTORS ****/
 
 /**** ID SELECTORS ****/

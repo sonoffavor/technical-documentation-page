@@ -4,6 +4,7 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link href="https://fonts.googleapis.com/css?family=Alegreya|Palanquin:100&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/styles.css">
@@ -109,7 +110,7 @@
                                                 <li>Inline styles</li>
                                         </ul>
 
-                                        <span><p>External stylesheet</p></span>
+                                        <span class="h3-title"><p>External stylesheet</p></span>
                                                 <P>The most common and useful method of styling HTML is using an external stylesheet page.  This method allows for the CSS to be linked to multiple pages</P>
                                                 <p>An external stylesheet is when you have your CSS written in a separate file with a <code>.css</code> extension, and you reference it from an HTML <code>&#60link&#62</code> element:</p>
                                                 <pre>
@@ -157,7 +158,7 @@
                                                 </code>
                                         </pre>
 
-                                        <span><p>Internal stylesheet</p></span>
+                                        <span class="h3-title"><p>Internal stylesheet</p></span>
                                         <p>An internal stylesheet is where you don't have an external CSS file, but instead place your CSS inside a <code>&#60style&#62</code> element contained inside the HTML <code>&#60head&#62</code>.</p>
                                         <p>So the HTML would look like this:</p>
                                         <pre>
@@ -188,7 +189,7 @@
                                         </pre>
                                         <p>This can be useful in some circumstances (maybe you're working with a content management system where you can't modify the CSS files directly), but it isn't quite as efficient as external stylesheets — in a website, the CSS would need to be repeated across every page, and updated in multiple places if changes were required.</p>
 
-                                        <span><p>Inline styles</p></span>
+                                        <span class="h3-title"><p>Inline styles</p></span>
                                         <p>Inline styles are CSS declarations that affect one element only, contained within a <code>style</code> attribute:</p>
                                         <pre>
                                                 <code>
@@ -262,7 +263,7 @@
                                         <h2>Types of selectors</h2>
                                         <p>There are a few different groupings of selectors, and knowing which type of selector you might need will help you to find the right tool for the job.</p>
 
-                                        <span><p>Type, class, and ID selectors</p></span>
+                                        <span class="h3-title"><p>Type, class, and ID selectors</p></span>
                                         <p>This group includes selectors that target an HTML element such as an <code>&#60h1&#62</code>.</p>
                                         <code>h1 { }</code>
                                         <p>It also includes selectors which target a class:</p>
@@ -270,19 +271,19 @@
                                         <p>or, an ID:</p>
                                         <code>#unique { }</code>
 
-                                        <span><p>Attribute selectors</p></span>
+                                        <span class="h3-title"><p>Attribute selectors</p></span>
                                         <p>This group of selectors gives you different ways to select elements based on the presence of a certain attribute on an element:</p>
                                         <code>a[title] { }</code>
                                         <p>Or even make a selection based on the presence of an attribute with a particular value:</p>
                                         <code>a[href="https://example.com"] { }</code>
 
-                                        <span><p>Pseudo-classes and pseudo-elements</p></span>
+                                        <span class="h3-title"><p>Pseudo-classes and pseudo-elements</p></span>
                                         <p>This group of selectors includes pseudo-classes, which style certain states of an element. The <code>:hover</code> pseudo-class for example selects an element only when it is being hovered over by the mouse pointer:</p>
                                         <code>a:hover { }</code>
                                         <p>It also includes pseudo-elements, which select a certain part of an element rather than the element itself. For example, <code>::first-line</code> always selects the first line of text inside an element (a <code>&#60p&#62</code> in the below case), acting as if a <code>&#60span&#62</code> was wrapped around the first formatted line and then selected.</p>
                                         <code>p::first-line { }</code>
 
-                                        <span><p>Combinators</p></span>
+                                        <span class="h3-title"><p>Combinators</p></span>
                                         <p>The final group of selectors combine other selectors in order to target elements within our documents. The following for example selects paragraphs that are direct children of <code>&#60article&#62</code> elements using the child combinator (<code>></code>):</p>
                                         <code>article > p { }</code>
                                 </article>
@@ -339,7 +340,7 @@
                                 </pre>
                                 <p>This kind of behavior can sometimes be seen in "reset stylesheets', which strip out all of the browser styling. These were very popular at one point, however stripping out all styling usually meant that you then had to do the job of putting it all back! We tend to use the universal selector carefully therefore, to deal with very specific situations such as the one outlined below.</p>
 
-                                <span><p>Using the universal selector to make your selectors easier to read</p></span>
+                                <span class="h3-title"><p>Using the universal selector to make your selectors easier to read</p></span>
                                 <p>One use of the universal selector is to make selectors easier to read and more obvious in terms of what they are doing. For example, if I wanted to select the first child of any &#60article&#62 element, no matter what element it was, and make it bold, I could use the <code>:first-child</code> selector, which we will learn more about in the lesson on <a href="#Pseudo-classes_and_pseudo-elements">pseudo-classes and pseudo-elements</a>, as a descendant selector along with the &#60article&#62 element selector: </p>
                                 <pre>
                                         <code>
@@ -376,7 +377,7 @@
                                         </code>
                                 </pre>
 
-                                <span><p>Targetting classes on particular elements</p></span>
+                                <span class="h3-title"><p>Targetting classes on particular elements</p></span>
                                 <p>You can create a selector that will target specific elements with the class applied.  We do this by using the type selector for the element I want to target, with the class appended, with no white space inbetween.</p>
                                 <pre>
                                         <code>
@@ -399,7 +400,7 @@
                                 </pre>
                                 <p>This approach does make the CSS less reusable as the class will now only apply to that particular element, and you would need to add another selector if you decided that the rules should apply to other elements too.</p>
 
-                                <span><p>Target an element if it has more than one class applied</p></span>
+                                <span class="h3-title"><p>Target an element if it has more than one class applied</p></span>
                                 <p>You can apply multiple classes to an element and target them individually, or only select the element when all of the classes in the selector are present. This can be helpful when building up components that can be combined in different ways on your site.</p>
                                 <p>We can tell the browser that we only want to match the element if it has all of these classes by chaining them together with no white space between them.</p>
                                 <pre>
@@ -436,7 +437,7 @@
                                         </code>
                                 </pre>
 
-                                <span><p>ID Selectors</p></span>
+                                <span class="h3-title"><p>ID Selectors</p></span>
                                 <p>An ID selector begins with a <code>#</code> rather than a full stop character, but is basically used in the same way as a class selector. An ID however can be used only once per document. It can select an element that has the <code>id</code> set on it, and you can precede the ID with a type selector to only target the element if both the element and ID match. You can see both of these uses in the following example:</p>
                                 <pre>
                                         <code>
@@ -608,7 +609,7 @@
                                 <p>Pseudo-classes are keywords that start with a colon:</p>
                                 <code>:pseudo-class-name</code>
 
-                                <span><p>Simple pseudo-class example</p></span>
+                                <span class="h3-title"><p>Simple pseudo-class example</p></span>
                                 <p>Let's look at a simple example. If we wanted to make the first paragraph in an article larger and bold, we could add a class to that paragraph and then add CSS to that class, as shown in the first example below:</p>
 
                                 <pre>
@@ -659,7 +660,7 @@
                                         <li><code>:invalid</code></li>
                                 </ul>
 
-                                <span><p>User-action pseudo classes</p></span>
+                                <span class="h3-title"><p>User-action pseudo classes</p></span>
 
                                 <p>Some pseudo-classes only apply when the user interacts with the document in some way. These <b>user-action</b> pseudo-classes, sometimes referred to as <b>dynamic pseudo-classes</b>, act as if a class had been added to the element when the user interacts with it. Examples include:</p>
 
@@ -948,7 +949,7 @@
                                 <h2>Numbers, lengths, and percentages</h2>
                                 <p>There are various numeric data types that you might find yourself using in CSS. Please refer to the table on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units" target="_blank">MDN</a> website.</p>
 
-                                <span><p>Lengths</p></span>
+                                <span class="h3-title"><p>Lengths</p></span>
                                 <p>The numeric type you will come across most frequently is <code>&#60length&#62</code>, for example <code>10px</code> (pixels) or <code>30em</code>. There are two types of lengths used in CSS — relative and absolute. It's important to know the difference in order to understand how big things will become.</p>
 
                                 <h3>Absolute lenght units</h3>
@@ -1059,14 +1060,14 @@
                                         </code>
                                 </pre>
 
-                                <span><p>Percentages</p></span>
+                                <span class="h3-title"><p>Percentages</p></span>
                                 <p>In a lot of cases a percentage is treated in the same way as a length. The thing with percentages is that they are always set relative to some other value. For example, if you set an element's <code>font-size</code> as a percentage it will be a percentage of the <code>font-size</code> of the element's parent. If you use a percentage for a <code>width</code> value, it will be a percentage of the <code>width</code> of the parent.</p>
 
                                 <p>Refer to the example and code on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website</p>
 
                                 <p>Note that, while many values accept a length or a percentage, there are some that only accept length. You can see which values are accepted on the MDN property reference pages. If the allowed value includes <code>&#60length-percentage&#62</code> then you can use a length or a percentage. If the allowed value only includes <code>&#60length&#62</code>, it is not possible to use a percentage.</p>
 
-                                <span><p>Numbers</p></span>
+                                <span class="h3-title"><p>Numbers</p></span>
                                 <p>Some values accept numbers, without any unit added to them. An example of a property which accepts a unitless number is the <code>opacity</code> property, which controls the opacity of an element (how transparent it is). This property accepts a number between <code>0</code> (fully transparent) and <code>1</code> (fully opaque).</p>
 
                                 <p>Refer to the example and code on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website</p>
@@ -1076,19 +1077,19 @@
 
                                 <p>The standard color system available in modern computers is 24 bit, which allows the display of about 16.7 million distinct colors via a combination of different red, green and blue channels with 256 different values per channel (256 x 256 x 256 = 16,777,216.) Let's have a look at some of the ways in which we can specify colors in CSS.</p>
 
-                                <span><p>Color Keywords</p></span>
+                                <span class="h3-title"><p>Color Keywords</p></span>
                                 <p>Quite often in examples here in the learn section or elsewhere on MDN you will see the color keywords used, as they are a simple and understandable way of specifying color. There are a number of these keywords, some of which have fairly entertaining names! You can see a full list on the page for the <code>&#60color&#62</code> value.</p>
 
                                 <p><b>Try playing with different color values in the live examples below, to get more of an idea how they work.</b></p>
 
-                                <span><p>Hexadecimal RGB values</p></span>
+                                <span class="h3-title"><p>Hexadecimal RGB values</p></span>
                                 <p>The next type of color value you are likely to encounter is hexadecimal codes. Each hex value consists of a hash/pound symbol (#) followed by six hexadecimal numbers, each of which can take one of 16 values between 0 and f (which represents 15) — so <code>0123456789abcdef</code>. Each pair of values represents one of the channels — red, green and blue — and allows us to specify any of the 256 available values for each (16 x 16 = 256.)</p>
 
                                 <p>These values are a bit more complex and less easy to understand, but they are a lot more versatile than keywords — you can use hex values to represent any color you want to use in your color scheme.</p>
 
                                 <p>Refer to the example and code on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website</p>
 
-                                <span><p>RGB and RGBA values</p></span>
+                                <span class="h3-title"><p>RGB and RGBA values</p></span>
                                 <p>The third scheme we'll talk about here is RGB. An RGB value is a function — <code>rgb()</code> — which is given three parameters that represent the red, green, and blue channel values of the colors, in much the same way as hex values. The difference with RGB is that each channel is represented not by two hex digits, but by a decimal number between 0 and 255 — somewhat easier to understand.</p>
 
                                 <p>Refer to the example and code on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website</p>
@@ -1097,7 +1098,7 @@
 
                                 <p>In an example on the <a href="https://mdn.github.io/css-examples/learn/values-units/length.html" target="_blank">MDN</a> website I have added a background image to the containing block of our colored boxes. I have then set the boxes to have different opacity values — notice how the background shows through more when the alpha channel value is smaller</p>
 
-                                <span><p>HSL and HSLA values</p></span>
+                                <span class="h3-title"><p>HSL and HSLA values</p></span>
                                 <p>Slightly less well-supported than RGB is the HSL color model (not supported on old versions of IE), which was implemented after much interest from designers. Instead of red, green, and blue values, the <code>hsl()</code> function accepts hue, saturation, and lightness values, which are used to distinguish between the 16.7 million colors, but in a different way:</p>
 
                                 <ul>
@@ -1232,7 +1233,7 @@
 
                                 <p>Let's start by taking a quick look at the key things we are dealing with, then we'll look at each in turn and see how they interact with each other and your CSS. This can seem like a set of tricky concepts to understand, however, as you practice writing CSS the way that it works will become more obvious to you.</p>
 
-                                <span><p>The cascade</p></span>
+                                <span class="h3-title"><p>The cascade</p></span>
                                 <p>Stylesheets <b>cascade</b> — at a very simple level this means that the order of CSS rules matter; when two rules apply that have equal specificity the one that comes last in the CSS is the one that will be used.</p>
 
                                 <p>In the below example, we have two rules that could apply to the <code>h1</code>. The <code>h1</code> ends up being colored blue — these rules have an identical selector and therefore carry the same specificity, so the last one in the source order wins.</p>
@@ -1254,7 +1255,7 @@
                                         </code>
                                 </pre>
 
-                                <span><p>Specificity</p></span>
+                                <span class="h3-title"><p>Specificity</p></span>
                                 <p>Specificity is how the browser decides which rule applies if multiple rules have different selectors, but could still apply to the same element. It is basically a measure of how specific a selector's selection will be:</p>
 
                                 <ul>
@@ -1282,7 +1283,7 @@
                                         </code>
                                 </pre>
 
-                                <span><p>Inheritance</p></span>
+                                <span class="h3-title"><p>Inheritance</p></span>
 
                                 <p>Inheritance also needs to be understood in this context — some CSS property values set on parent elements are inherited by their child elements, and some aren't.</p>
 
@@ -1358,7 +1359,7 @@
 
                                 <p>Which properties are inherited by default and which aren't is largely down to common sense.</p>
 
-                                <span><p>Controlling inheritance</p></span>
+                                <span class="h3-title"><p>Controlling inheritance</p></span>
                                 <p>CSS provides four special universal property values for controlling inheritance. Every CSS property accepts these values.</p>
 
                                 <code>inherit</code>
@@ -1412,7 +1413,7 @@
                                         </code>
                                 </pre>
 
-                                <span><p>Resetting all property values</p></span>
+                                <span class="h3-title"><p>Resetting all property values</p></span>
                                 <p>The CSS shorthand property <code>all</code> can be used to apply one of these inheritance values to (almost) all properties at once. Its value can be any one of the inheritance values (<code>inherit</code>, <code>initial</code>, <code>unset</code>, or <code>revert</code>). It's a convenient way to undo changes made to styles so that you can get back to a known starting point before beginning new changes.</p>
 
                                 <p>In the below example I have two blockquotes. The first has styling applied to the blockquote element itself, the second has a class applied to the blockquote which sets the value of <code>all</code> to <code>unset</code>.</p>
@@ -1457,10 +1458,10 @@
 
                                 <p>We will look at these from the bottom up, to see how browsers figure out exactly what CSS should be applied.</p>
 
-                                <span><p>Source order</p></span>
+                                <span class="h3-title"><p>Source order</p></span>
                                 <p>We have already seen how source order matters to the cascade. If you have more than one rule, which has exactly the same weight, then the one that comes last in the CSS will win. You can think of this as rules which are nearer the element itself overwriting early ones until the last one wins and gets to style the element.</p>
 
-                                <span><p>Specificity</p></span>
+                                <span class="h3-title"><p>Specificity</p></span>
                                 <p>Once you understand the fact that source order matters, at some point you will run into a situation where you know that a rule comes later in the stylesheet, but an earlier, conflicting, rule is applied. This is because that earlier rule has a <b>higher specificity</b> — it is more specific, and therefore is being chosen by the browser as the one that should style the element.</p>
 
                                 <p>As we saw earlier in this lesson, a class selector has more weight than an element selector, so the properties defined on the class will override those applied directly to the element.</p>
@@ -1589,7 +1590,7 @@
                                         <li>Selectors 5–7 are competing over the styling of the link's border when hovered. Selector six clearly loses to five with a specificity of 23 vs. 24 — it has one fewer element selectors in the chain. Selector seven, however, beats both five and six — it has the same number of sub-selectors in the chain as five, but an element has been swapped out for a class selector. So the winning specificity is 33 vs. 23 and 24.</li>
                                 </ul>
 
-                                <span><p>!important</p></span>
+                                <span class="h3-title"><p>!important</p></span>
                                 <p>There is a special piece of CSS that you can use to overrule all of the above calculations, however you should be very careful with using it — <code>!important</code>. This is used to make a particular property and value the most specific thing, thus overriding the normal rules of the cascade.</p>
 
                                 <p>Take a look at this example where we have two paragraphs, one of which has an ID.</p>
@@ -1716,7 +1717,7 @@
                                 <h2>What is the CSS box model?</h2>
                                 <p>The full CSS box model applies to block boxes, inline boxes only use some of the behavior defined in the box model. The model defines how the different parts of a box — margin, border, padding, and content — work together to create a box that you can see on the page. To add some additional complexity, there is a standard and an alternate box model.</p>
 
-                                <span><p>Parts of a box</p></span>
+                                <span class="h3-title"><p>Parts of a box</p></span>
                                 <p>Making up a block box in CSS we have the:</p>
                                 <ul>
                                         <li><b>Content box:</b> The area where your content is displayed, which can be sized using properties like <code>width</code> and <code>height</code>.</li>
@@ -1727,7 +1728,7 @@
 
                                 <p>Please refer to the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a> to see the diagram that shows these layers.</p>
 
-                                <span><p>The standard CSS box model</p></span>
+                                <span class="h3-title"><p>The standard CSS box model</p></span>
                                 <p>In the standard box model, if you give a box a <code>width</code> and a <code>height</code>, this defines the width and height of the <i>content</i> box. Any padding and border is then added to that width and height to get the total size taken up by the box. This is shown in the image below.</p>
 
                                 <p>If we assume that the box has the following CSS defining <code>width</code>, <code>height</code>, <code>margin</code>, <code>border</code>, and <code>padding:</code></p>
@@ -1748,7 +1749,7 @@
 
                                 <p>Please refer to the diagram on the<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
 
-                                <span><p>The alternative CSS box model</p></span>
+                                <span class="h3-title"><p>The alternative CSS box model</p></span>
                                 <p>You might think it is rather inconvenient to have to add up the border and padding to get the real size of the box, and you would be right! For this reason, CSS had an alternative box model introduced some time after the standard box model. Using this model, any width is the width of the visible box on the page, therefore the content area width is that width minus the width for the padding and border. The same CSS as used above would give the below result (width = 350px, height = 150px).</p>
 
                                 <p>Please refer to the diagram on the<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
@@ -1784,7 +1785,7 @@
 
                                 <p>Please refer to the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a> for the example diagram and code.</p>
 
-                                <span><p>Use browser DevTools to view the box model</p></span>
+                                <span class="h3-title"><p>Use browser DevTools to view the box model</p></span>
                                 <p>Your <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools" target="_blank">browser developer tools</a> can make understanding the box model far easier. If you inspect an element in Firefox's DevTools, you can see the size of the element plus its margin, padding, and border. Inspecting an element in this way is a great way to find out if your box is really the size you think it is!</p>
 
                                 <p>Please refer to the image on the<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
@@ -1795,7 +1796,7 @@
 
                                 <p>Let's explore these properties in more detail.</p>
 
-                                <span><p>Margin</p></span>
+                                <span class="h3-title"><p>Margin</p></span>
 
                                 <p>We can control all margins of an element at once using the <code>margin</code> property, or each side individually using the equivalent longhand properties:</p>
 
@@ -1818,7 +1819,7 @@
 
                                 <p>There are a number of rules that dictate when margins do and do not collapse. For further information see the detailed page on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank">mastering margin collapsing</a>. The main thing to remember for now is that margin collapsing is a thing that happens. If you are creating space with margins and don't get the space you expect, this is probably what is happening.</p>
 
-                                <span><p>Borders</p></span>
+                                <span class="h3-title"><p>Borders</p></span>
 
                                 <p>The border is drawn between the margin and the padding of a box. If you are using the standard box model, the size of the border is added to the <code>width</code> and <code>height</code> of the box. If you are using the alternative box model then the size of the border makes the content box smaller as it takes up some of that available <code>width</code> and <code>height</code>.</p>
 
@@ -1828,7 +1829,7 @@
 
                                 <p>Refer to the specific properties, example, and code on the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">MDN website</a>.</p>
 
-                                <span><p>Padding</p></span>
+                                <span class="h3-title"><p>Padding</p></span>
 
                                 <p>The padding sits between the border and the content area. Unlike margins you cannot have negative amounts of padding, so the value must be 0 or a positive value. Any background applied to your element will display behind the padding, and it is typically used to push the content away from the border.</p>
 
