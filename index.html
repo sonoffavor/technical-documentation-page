@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link href="https://fonts.googleapis.com/css?family=Alegreya|Palanquin:100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya:700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/styles.css">
@@ -113,22 +114,25 @@
                                         <span class="h3-title"><p>External stylesheet</p></span>
                                                 <P>The most common and useful method of styling HTML is using an external stylesheet page.  This method allows for the CSS to be linked to multiple pages</P>
                                                 <p>An external stylesheet is when you have your CSS written in a separate file with a <code>.css</code> extension, and you reference it from an HTML <code>&#60link&#62</code> element:</p>
-                                                <pre>
+
+                                                <div class="code-block-container">
                                                         <code>
-                                                                &#60!DOCTYPE html&#62
-                                                                &#60html&#62
-                                                                  &#60head&#62
-                                                                    &#60meta charset="utf-8"&#62
-                                                                    &#60title&#62My CSS experiment&#60/title&#62
-                                                                    &#60link rel="stylesheet" href="styles.css"&#62
-                                                                  &#60/head&#62
-                                                                  &#60body&#62
-                                                                    &#60h1&#62Hello World!&#60/h1&#62
-                                                                    &#60p&#62This is my first CSS example&#60/p&#62
-                                                                  &#60/body&#62
-                                                                &#60/html&#62
+                                                                &#60!DOCTYPE html&#62<br>
+                                                                &#60html&#62<br>
+                                                                &nbsp;&#60head&#62<br>
+                                                                &nbsp;&nbsp;&#60meta charset="utf-8"&#62<br>
+                                                                &nbsp;&nbsp;&#60title&#62My CSS experiment&#60/title&#62<br>
+                                                                &nbsp;&nbsp;&#60link rel="stylesheet" href="styles.css"&#62<br>
+                                                                &nbsp;&#60/head&#62<br>
+                                                                &nbsp;&#60body&#62<br>
+                                                                &nbsp;&nbsp;&#60h1&#62Hello World!&#60/h1&#62<br>
+                                                                &nbsp;&nbsp;&#60p&#62This is my first CSS example&#60/p&#62<br>
+                                                                &nbsp;&#60/body&#62<br>
+                                                                &#60/html&#62<br>
+
                                                         </code>
-                                                </pre>
+                                                </div>
+                                                
                                                 <p>The CSS file might look something like this:</p>
                                                 <pre>
                                                         <code>
@@ -145,19 +149,20 @@
                                                 </pre>
                                         <p>The <code>href</code> attribute of the <code>&#60link&#62</code> element needs to reference a file on your filesystem.</p>
                                         <p>In the example above the CSS file is in the same folder as the HTML document, but you could place it somewhere else and adjust the specified path to suit, for example:</p>
-                                        <pre>
+
+                                        <div class="code-block-container">
                                                 <code>
-                                                        &#60!-- Inside a subdirectory called styles inside the current directory --&#62
-                                                        &#60link rel="stylesheet" href="styles/style.css"&#62
-
-                                                        &#60!-- Inside a subdirectory called general, which is in a subdirectory called styles, inside the current directory --&#62
-                                                        &#60link rel="stylesheet" href="styles/general/style.css"&#62
-
-                                                        &#60!-- Go up one directory level, then inside a subdirectory called styles --&#62
-                                                        &#60link rel="stylesheet" href="../styles/style.css"&#62
+                                                        &#60&#33-- Inside a subdirectory called styles inside the current directory --&#62<br>
+                                                        &#60link rel="stylesheet" href="styles/style.css"&#62<br><br>
+                                                                                
+                                                        &#60&#33-- Inside a subdirectory called general, which is in a subdirectory called styles, inside the current directory --&#62<br>
+                                                        &#60link rel="stylesheet" href="styles/general/style.css"&#62<br><br>
+                                                                                
+                                                        &#60&#33-- Go up one directory level, then inside a subdirectory called styles --&#62<br>
+                                                        &#60link rel="stylesheet" href="../styles/style.css"&#62<br>
                                                 </code>
-                                        </pre>
-
+                                        </div>
+                                        
                                         <span class="h3-title"><p>Internal stylesheet</p></span>
                                         <p>An internal stylesheet is where you don't have an external CSS file, but instead place your CSS inside a <code>&#60style&#62</code> element contained inside the HTML <code>&#60head&#62</code>.</p>
                                         <p>So the HTML would look like this:</p>
@@ -265,27 +270,27 @@
 
                                         <span class="h3-title"><p>Type, class, and ID selectors</p></span>
                                         <p>This group includes selectors that target an HTML element such as an <code>&#60h1&#62</code>.</p>
-                                        <code>h1 { }</code>
+                                        <pre><code>h1 { }</code></pre>
                                         <p>It also includes selectors which target a class:</p>
-                                        <code>.box { }</code>
+                                        <pre><code>.box { }</code></pre>
                                         <p>or, an ID:</p>
-                                        <code>#unique { }</code>
+                                        <pre><code>#unique { }</code></pre>
 
                                         <span class="h3-title"><p>Attribute selectors</p></span>
                                         <p>This group of selectors gives you different ways to select elements based on the presence of a certain attribute on an element:</p>
-                                        <code>a[title] { }</code>
+                                        <pre><code>a[title] { }</code></pre>
                                         <p>Or even make a selection based on the presence of an attribute with a particular value:</p>
-                                        <code>a[href="https://example.com"] { }</code>
-
+                                        <pre><code>a[href="https://example.com"] { }</code>
+                                        </pre>
                                         <span class="h3-title"><p>Pseudo-classes and pseudo-elements</p></span>
                                         <p>This group of selectors includes pseudo-classes, which style certain states of an element. The <code>:hover</code> pseudo-class for example selects an element only when it is being hovered over by the mouse pointer:</p>
-                                        <code>a:hover { }</code>
+                                        <pre><code>a:hover { }</code></pre>
                                         <p>It also includes pseudo-elements, which select a certain part of an element rather than the element itself. For example, <code>::first-line</code> always selects the first line of text inside an element (a <code>&#60p&#62</code> in the below case), acting as if a <code>&#60span&#62</code> was wrapped around the first formatted line and then selected.</p>
-                                        <code>p::first-line { }</code>
+                                        <pre><code>p::first-line { }</code></pre>
 
                                         <span class="h3-title"><p>Combinators</p></span>
                                         <p>The final group of selectors combine other selectors in order to target elements within our documents. The following for example selects paragraphs that are direct children of <code>&#60article&#62</code> elements using the child combinator (<code>></code>):</p>
-                                        <code>article > p { }</code>
+                                        <pre><code>article > p { }</code></pre>
                                 </article>
                         </section>
                         <section class="main-section" id="Simple_selectors">
