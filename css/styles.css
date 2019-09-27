@@ -5,10 +5,10 @@ p code {
 }
 
 pre {
-    overflow: auto;
     background-color: rgb(238, 238, 238);
     margin: 1em 1em;
-    padding-left: 2em;
+    padding: 2em 2em 2em 2em;
+    white-space: pre-wrap;
 }
 
 p {
@@ -23,6 +23,31 @@ h1 {
 
 h2 {
     font-family: 'Alegreya', serif;
+}
+
+.code-block-tab-1 {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.code-block-tab-2 {
+    display: inline-block;
+    margin-left: 2em;
+}
+
+.code-block-tab-3 {
+    display: inline-block;
+    margin-left: 3em;
+}
+
+.code-block-tab-4 {
+    display: inline-block;
+    margin-left: 4em;
+}
+
+.code-block-tab-5 {
+    display: inline-block;
+    margin-left: 5em;
 }
 
 .h3-title p {
