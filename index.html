@@ -167,32 +167,28 @@ p {
                                                 instead place your CSS inside a <code>&#60style&#62</code> element
                                                 contained inside the HTML <code>&#60head&#62</code>.</p>
                                         <p>So the HTML would look like this:</p>
-                                        <pre>
-                                                <code>
-                                                        &#60!DOCTYPE html&#62
-                                                        &#60html&#62
-                                                          &#60head&#62
-                                                            &#60meta charset="utf-8"&#62
-                                                            &#60title&#62My CSS experiment&#60/title&#62
-                                                              &#60style&#62
-                                                                h1 {
-                                                                  color: blue;
-                                                                  background-color: yellow;
-                                                                  border: 1px solid black;
-                                                                }
-                                                                
-                                                                p {
-                                                                  color: red;
-                                                                }
-                                                              &#60/style&#62
-                                                            &#60/head&#62
-                                                            &#60body&#62
-                                                              &#60h1&#62Hello World!&#60/h1&#62
-                                                              &#60p&#62This is my first CSS example&#60/p&#62
-                                                            &#60/body&#62
-                                                        &#60/html&#62
-                                                </code>
-                                        </pre>
+                                        <pre><code>&#60!DOCTYPE html&#62
+&#60html&#62
+<span class="code-block-tab-1">&#60head&#62</span>
+<span class="code-block-tab-2">&#60meta charset="utf-8"&#62</span>
+<span class="code-block-tab-2">&#60title&#62My CSS experiment&#60/title&#62</span>
+<span class="code-block-tab-3">&#60style&#62</span>
+<span class="code-block-tab-4">h1 {</span>
+<span class="code-block-tab-5">color: blue;</span>
+<span class="code-block-tab-5">background-color: yellow;</span>
+<span class="code-block-tab-5">border: 1px solid black;</span>
+<span class="code-block-tab-4">}</span>
+
+<span class="code-block-tab-4">p {</span>
+<span class="code-block-tab-5">color: red;</span>
+<span class="code-block-tab-4">}</span>
+<span class="code-block-tab-3">&#60/style&#62</span>
+<span class="code-block-tab-1">&#60/head&#62</span>
+<span class="code-block-tab-1">&#60body&#62</span>
+<span class="code-block-tab-2">&#60h1&#62Hello World!&#60/h1&#62</span>
+<span class="code-block-tab-2">&#60p&#62This is my first CSS example&#60/p&#62</span>
+<span class="code-block-tab-1">&#60/body&#62</span>
+&#60/html&#62</code></pre>
                                         <p>This can be useful in some circumstances (maybe you're working with a content
                                                 management system where you can't modify the CSS files directly), but it
                                                 isn't quite as efficient as external stylesheets — in a website, the CSS
@@ -204,21 +200,17 @@ p {
                                         </span>
                                         <p>Inline styles are CSS declarations that affect one element only, contained
                                                 within a <code>style</code> attribute:</p>
-                                        <pre>
-                                                <code>
-                                                        &#60!DOCTYPE html&#62
-                                                          &#60html&#62
-                                                            &#60head>
-                                                              &#60meta charset="utf-8"&#62
-                                                              &#60title&#62My CSS experiment&#60/title&#62
-                                                            &#60/head&#62
-                                                            &#60body&#62
-                                                              &#60h1 style="color: blue;background-color: yellow;border: 1px solid black;"&#62Hello World!&#60/h1&#62
-                                                              &#60p style="color:red;">This is my first CSS example&#60/p&#62
-                                                            &#60/body&#62
-                                                          &#60/html&#62
-                                                </code>
-                                        </pre>
+                                        <pre><code>&#60!DOCTYPE html&#62
+<span class="code-block-tab-1">&#60html&#62</span>
+<span class="code-block-tab-2">&#60head&#62</span>
+<span class="code-block-tab-3">&#60meta charset="utf-8"&#62</span>
+<span class="code-block-tab-3">&#60title&#62My CSS experiment&#60/title&#62</span>
+<span class="code-block-tab-2">&#60/head&#62</span>
+<span class="code-block-tab-2">&#60body&#62</span>
+<span class="code-block-tab-3">&#60h1 style="color: blue; background-color: yellow; border: 1px solid black;"&#62Hello World!&#60/h1&#62</span>
+<span class="code-block-tab-3">&#60p style="color:red;">This is my first CSS example&#60/p&#62</span>
+<span class="code-block-tab-2">&#60/body&#62</span>
+<span class="code-block-tab-1">&#60/html&#62</span></code></pre>
                                         <p><b>Please don't do this, unless you really have to!</b> It is really bad for
                                                 maintenance (you might have to update the same information multiple
                                                 times per document), and it also mixes your presentational CSS
@@ -245,18 +237,14 @@ p {
                                                 and other terms that tell the browser which HTML elements should be
                                                 selected to have the CSS property values inside the rule applied to
                                                 them.</p>
-                                        <pre>
-                                                <code>
-                                                        h1 {
-                                                          color: blue;
-                                                          background-color: yellow;
-                                                        }
+                                        <pre><code>h1 {
+<span class="code-block-tab-1">color: blue;</span>
+<span class="code-block-tab-1">background-color: yellow;</span>
+}
 
-                                                        p {
-                                                          color: red;
-                                                        }
-                                                </code>
-                                        </pre>
+p {
+<span class="code-block-tab-1">color: red;</span>
+}</code></pre>
 
                                         <h2>Selector lists</h2>
                                         <p>If you have more than one thing which uses the same CSS then the individual
@@ -264,36 +252,24 @@ p {
                                                 applied to all of the individual selectors. For example, if I have the
                                                 same CSS for an <code>h1</code> and also a class of
                                                 <code>.special</code>, I could write this as two separate rules.</p>
-                                        <pre>
-                                                <code>
-                                                        h1 {
-                                                          color: blue;
-                                                        }
+                                        <pre><code>h1 {
+<span class="code-block-tab-1">color: blue;</span>
+}
 
-                                                        .special {
-                                                          color: blue;
-                                                        }
-                                                </code>
-                                        </pre>
+.special {
+<span class="code-block-tab-1">color: blue;</span>
+}</code></pre>
                                         <p>These selectors can be combined into a selector list, by adding a comma
                                                 between them.</p>
-                                        <pre>
-                                                <code>
-                                                        h1, .special {
-                                                          color: blue;
-                                                        }
-                                                </code>
-                                        </pre>
+                                        <pre><code>h1, .special {
+<span class="code-block-tab-1">color: blue;</span>
+}</code></pre>
                                         <p>White space is valid before or after the comma. You may also find the
                                                 selectors more readable if each is on a new line.</p>
-                                        <pre>
-                                                <code>
-                                                        h1,
-                                                        .special {
-                                                          color: blue;
-                                                        }
-                                                </code>
-                                        </pre>
+                                        <pre><code>h1,
+.special {
+<span class="code-block-tab-1">color: blue;</span>
+}</code></pre>
 
                                         <h2>Types of selectors</h2>
                                         <p>There are a few different groupings of selectors, and knowing which type of
@@ -355,32 +331,23 @@ p {
                                         example we have used span, em and strong selectors. All instances of
                                         <code>&#60span&#62</code>, <code>&#60em&#62</code> and
                                         <code>&#60strong&#62</code> elements are therefore styled.</p>
-                                <pre>
-                                        <code>
-                                                span {
-                                                  background-color: yellow;
-                                                }
-                                              
-                                                strong {
-                                                  color: rebeccapurple;
-                                                }
+                                <pre><code>span {
+<span class="code-block-tab-1">background-color: yellow;</span>
+}
 
-                                                em {
-                                                  color: rebeccapurple;
-                                                }
-                                        </code>
-                                </pre>
-                                <pre>
-                                        <code>
-                                                &#60h1&#62Type selectors&#60/h1&#62
-                                                &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
-                                                
-                                                &#60p&#62Gumbo beet greens corn soko &#60strong>endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
-                                                
-                                                &#60p&#62Turnip greens yarrow ricebean rutabaga &#60em&#62endive cauliflower&#60/em&#62 sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach
-                                                &#60/p&#62  
-                                        </code>
-                                </pre>
+strong {
+<span class="code-block-tab-1">color: rebeccapurple;</span>
+}
+
+em {
+<span class="code-block-tab-1">color: rebeccapurple;</span>
+}</code></pre>
+<pre><code>&#60h1&#62Type selectors&#60/h1&#62
+&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+
+&#60p&#62Gumbo beet greens corn soko &#60strong>endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
+
+&#60p&#62Turnip greens yarrow ricebean rutabaga &#60em&#62endive cauliflower&#60/em&#62 sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach&#60/p&#62</code></pre>
 
                                 <h2>The universal selector</h2>
                                 <p>The universal selector is indicated by an asterisk <code>(*)</code> and selects
@@ -390,22 +357,14 @@ p {
                                         all elements. This means that instead of the default styling added by the
                                         browser, which spaces out headings and paragraphs with margins, everything is
                                         close together and we can't see the different paragraphs easily.</p>
-                                <pre>
-                                        <code>
-                                                * {
-                                                  margin: 0;
-                                                }  
-                                        </code>
-                                </pre>
+                                <pre><code>* {
+<span class="code-block-tab-1">margin: 0;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60h1>Universal selector&#60/h1&#62
-                                                &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
-                                                
-                                                &#60p&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd.  Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62 
-                                        </code>
-                                </pre>
+                                <pre><code>&#60h1&#62Universal selector&#60/h1&#62
+&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+
+&#60p&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd.  Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</code></pre>
                                 <p>This kind of behavior can sometimes be seen in "reset stylesheets', which strip out
                                         all of the browser styling. These were very popular at one point, however
                                         stripping out all styling usually meant that you then had to do the job of
@@ -423,13 +382,9 @@ p {
                                                 href="#Pseudo-classes_and_pseudo-elements">pseudo-classes and
                                                 pseudo-elements</a>, as a descendant selector along with the
                                         &#60article&#62 element selector: </p>
-                                <pre>
-                                        <code>
-                                                aritcle :first-child {
-                                                
-                                                }
-                                        </code>
-                                </pre>
+                                <pre><code>aritcle :first-child {
+
+}</code></pre>
                                 <p>This could be confused however with <code>article:first-child</code>, which will
                                         select any <code>&#60article&#62</code> element that is the first child of
                                         another element.</p>
@@ -437,32 +392,20 @@ p {
                                         <code>:first-child</code> selector, so it is obvious what the selector is doing.
                                         It is selecting any element which is the first-child of an
                                         <code>&#60article&#62</code> element:</p>
-                                <pre>
-                                        <code>
-                                                article *:first-child {
+                                <pre><code>article *:first-child {
 
-                                                }
-                                        </code>
-                                </pre>
+}</code></pre>
 
                                 <h2>Class selectors</h2>
                                 <p>The class selector starts with a full stop (<code>.</code>) character and will select
                                         everything in the document with that class applied to it.</p>
-                                <pre>
-                                        <code>
-                                                .highlight {
-                                                  background-color: yellow;
-                                                }
-                                        </code>
-                                </pre>
-                                <pre>
-                                        <code>
-                                                &#60h1 class="highlight"&#62Class selectors&#60/h1&#62
-                                                &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span class="highlight"&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+                                <pre><code>.highlight {
+<span class="code-block-tab-1">background-color: yellow;</span>
+}</code></pre>
+                                <pre><code>&#60h1 class="highlight"&#62Class selectors&#60/h1&#62
+&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span class="highlight"&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
 
-                                                &#60p class="highlight"&#62Gumbo beet greens corn soko &#60strong>endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
-                                        </code>
-                                </pre>
+&#60p class="highlight"&#62Gumbo beet greens corn soko &#60strong>endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</code></pre>
 
                                 <span class="h3-title">
                                         <p>Targetting classes on particular elements</p>
@@ -470,25 +413,17 @@ p {
                                 <p>You can create a selector that will target specific elements with the class applied.
                                         We do this by using the type selector for the element I want to target, with the
                                         class appended, with no white space inbetween.</p>
-                                <pre>
-                                        <code>
-                                                span.highlight {
-                                                  background-color: yellow;
-                                                }
-                                                            
-                                                h1.highlight {
-                                                  background-color: pink;
-                                                } 
-                                        </code>
-                                </pre>
-                                <pre>
-                                        <code>
-                                                &#60h1 class="highlight"&#62Class selectors&#60/h1&#62
-                                                &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span class="highlight"&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
-                                                        
-                                                &#60p class="highlight"&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
-                                        </code>
-                                </pre>
+                                <pre><code>span.highlight {
+<span class="code-block-tab-1">background-color: yellow;</span>
+}
+
+h1.highlight {
+<span class="code-block-tab-1">background-color: pink;</span>
+}</code></pre>
+<pre><code>&#60h1 class="highlight"&#62Class selectors&#60/h1&#62
+&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span class="highlight"&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+
+&#60p class="highlight"&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</code></pre>
                                 <p>This approach does make the CSS less reusable as the class will now only apply to
                                         that particular element, and you would need to add another selector if you
                                         decided that the rules should apply to other elements too.</p>
@@ -502,39 +437,31 @@ p {
                                         your site.</p>
                                 <p>We can tell the browser that we only want to match the element if it has all of these
                                         classes by chaining them together with no white space between them.</p>
-                                <pre>
-                                        <code>
-                                                .notebox {
-                                                  border: 4px solid #666;
-                                                  padding: .5em;
-                                                }
-                                                            
-                                                .notebox.warning {
-                                                  border: 4px solid orange;
-                                                  font-weight: bold;
-                                                }
-                                                            
-                                                .notebox.danger {
-                                                  border: 4px solid red;
-                                                  font-weight: bold;
-                                                }
-                                        </code>
-                                </pre>
-                                <pre>
-                                        <code>
-                                                &#60div class="notebox"&#62
-                                                  This is an informational note.
-                                                &#60/div&#62
+                                <pre><code>.notebox {
+<span class="code-block-tab-1">border: 4px solid #666;</span>
+<span class="code-block-tab-1">padding: .5em;</span>
+}
+
+.notebox.warning {
+<span class="code-block-tab-1">border: 4px solid orange;</span>
+<span class="code-block-tab-1">font-weight: bold;</span>
+}
+
+.notebox.danger {
+<span class="code-block-tab-1">border: 4px solid red;</span>
+<span class="code-block-tab-1">font-weight: bold;</span>
+}</code></pre>
+                                <pre><code>&#60div class="notebox"&#62
+<span class="code-block-tab-1">This is an informational note.</span>
+&#60/div&#62
                                                                     
-                                                &#60div class="notebox warning"&#62
-                                                  This note shows a warning.
-                                                &#60/div&#62
+&#60div class="notebox warning"&#62
+<span class="code-block-tab-1">This note shows a warning.</span>
+&#60/div&#62
                                                                     
-                                                &#60div class="notebox danger"&#62
-                                                  This note shows danger!
-                                                &#60/div&#62
-                                        </code>
-                                </pre>
+&#60div class="notebox danger"&#62
+<span class="code-block-tab-1">This note shows danger!</span>
+&#60/div&#62</code></pre>
 
                                 <span class="h3-title">
                                         <p>ID Selectors</p>
@@ -545,25 +472,17 @@ p {
                                         set on it, and you can precede the ID with a type selector to only target the
                                         element if both the element and ID match. You can see both of these uses in the
                                         following example:</p>
-                                <pre>
-                                        <code>
-                                                #one {
-                                                  background-color: yellow;
-                                                }
+                                <pre><code>#one {
+<span class="code-block-tab-1">background-color: yellow;</span>
+}
                                                             
-                                                h1#heading {
-                                                  color: rebeccapurple;
-                                                } 
-                                        </code>
-                                </pre>
-                                <pre>
-                                        <code>
-                                                &#60h1 id="heading"&#62ID selector&#60/h1&#62
-                                                &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
-                                                        
-                                                &#60p id="one"&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62 
-                                        </code>
-                                </pre>
+h1#heading {
+<span class="code-block-tab-1">color: rebeccapurple;</span>
+}</code></pre>
+                                <pre><code>&#60h1 id="heading"&#62ID selector&#60/h1&#62
+&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
+
+&#60p id="one"&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</code></pre>
 
                         </section>
                         <section class="main-section" id="Attribute_selectors">
@@ -621,32 +540,24 @@ p {
                                                 whitespace-separated list. It selects the second and third list items.
                                         </li>
                                 </ul>
-                                <pre>
-                                        <code>
-                                                li[class] {
-                                                  font-size: 200%;
-                                                }
-                                                            
-                                                li[class="a"] {
-                                                  background-color: yellow;
-                                                }
-                                                            
-                                                li[class~="a"] {
-                                                  color: red;
-                                                } 
-                                        </code>
-                                </pre>
-                                <pre>
-                                        <code>
-                                                &#60h1&#62Attribute presence and value selectors&#60/h1&#62
-                                                &#60ul&#62
-                                                    &#60li&#62Item 1&#60/li&#62
-                                                    &#60li class="a"&#62Item 2&#60/li&#62
-                                                    &#60li class="a b"&#62Item 3&#60/li&#62
-                                                    &#60li class="ab"&#62Item 4&#60/li&#62
-                                                &#60/ul&#62 
-                                        </code>
-                                </pre>
+                                <pre><code>li[class] {
+<span class="code-block-tab-1">font-size: 200%;</span>
+}
+
+li[class="a"] {
+<span class="code-block-tab-1">background-color: yellow;</span>
+}
+
+li[class~="a"] {
+<span class="code-block-tab-1">color: red;</span>
+}</code></pre>
+                                <pre><code>&#60h1&#62Attribute presence and value selectors&#60/h1&#62
+&#60ul&#62
+<span class="code-block-tab-1">&#60li&#62Item 1&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="a"&#62Item 2&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="a b"&#62Item 3&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="ab"&#62Item 4&#60/li&#62</span>
+&#60/ul&#62</code></pre>
 
                                 <h2>Substring matching selectors</h2>
                                 <p>These selectors allow for more advanced matching of substrings inside the value of
@@ -690,33 +601,25 @@ p {
                                                 anywhere in the string, so it matches all of our list items.</li>
                                 </ul>
 
-                                <pre>
-                                        <code>
-                                                li[class^="a"] {
-                                                    font-size: 200%;
-                                                }
-                                                            
-                                                li[class$="a"] {
-                                                    background-color: yellow;
-                                                }
-                                                            
-                                                li[class*="a"] {
-                                                    color: red;
-                                                }
-                                        </code>
-                                </pre>
+                                <pre><code>li[class^="a"] {
+<span class="code-block-tab-1">font-size: 200%;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60h1&#62Attribute substring matching selectors&#60/h1&#62
-                                                &#60ul&#62
-                                                    &#60li class="a"&#62Item 1&#60/li&#62
-                                                    &#60li class="ab"&#62Item 2&#60/li&#62
-                                                    &#60li class="bca"&#62Item 3&#60/li&#62
-                                                    &#60li class="bcabc"&#62Item 4&#60/li&#62
-                                                &#60/ul&#62  
-                                        </code>
-                                </pre>
+li[class$="a"] {
+<span class="code-block-tab-1">background-color: yellow;</span>
+}
+
+li[class*="a"] {
+<span class="code-block-tab-1">color: red;</span>
+}</code></pre>
+
+                                <pre><code>&#60h1&#62Attribute substring matching selectors&#60/h1&#62
+&#60ul&#62
+<span class="code-block-tab-1">&#60li class="a"&#62Item 1&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="ab"&#62Item 2&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="bca"&#62Item 3&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="bcabc"&#62Item 4&#60/li&#62</span>
+&#60/ul&#62</code></pre>
 
                                 <h2>Case-sensitivity</h2>
                                 <p>If you want to match attribute values case-insensitively you can use the value
@@ -730,30 +633,20 @@ p {
                                         uppercase A. The second selector uses the case-insensitive flag and so matches
                                         all of the list items.</p>
 
-                                <pre>
-                                        <code>
-                                                li[class^="a"] {
-                                                    background-color: yellow;
-                                                }
-                                                            
-                                                li[class^="a" i] {
-                                                    color: red;
-                                                }
+                                <pre><code>li[class^="a"] {
+<span class="code-block-tab-1">background-color: yellow;</span>
+}
 
-                                        </code>
-                                </pre>
+li[class^="a" i] {
+<span class="code-block-tab-1">color: red;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60h1&#62Case-insensitivity&#60/h1&#62
-                                                &#60ul&#62
-                                                    &#60li class="a"&#62Item 1&#60/li&#62
-                                                    &#60li class="A"&#62Item 2&#60/li&#62
-                                                    &#60li class="Ab"&#62Item 3&#60/li&#62
-                                                &#60/ul&#62 
-
-                                        </code>
-                                </pre>
+                                <pre><code>&#60h1&#62Case-insensitivity&#60/h1&#62
+&#60ul&#62
+<span class="code-block-tab-1">&#60li class="a"&#62Item 1&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="A"&#62Item 2&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="Ab"&#62Item 3&#60/li&#62</span>
+&#60/ul&#62</code></pre>
 
                         </section>
                         <section class="main-section" id="Pseudo-classes_and_pseudo-elements">
@@ -767,7 +660,7 @@ p {
                                         giving you more flexible, maintainable code.</p>
 
                                 <p>Pseudo-classes are keywords that start with a colon:</p>
-                                <code>:pseudo-class-name</code>
+                                <Pre><code>:pseudo-class-name</code></Pre>
 
                                 <span class="h3-title">
                                         <p>Simple pseudo-class example</p>
@@ -776,24 +669,16 @@ p {
                                         article larger and bold, we could add a class to that paragraph and then add CSS
                                         to that class, as shown in the first example below:</p>
 
-                                <pre>
-                                        <code>
-                                                .first {
-                                                    font-size: 120%;
-                                                    font-weight: bold;
-                                                }    
-                                        </code>
-                                </pre>
+                                <pre><code>.first {
+<span class="code-block-tab-1">font-size: 120%;</span>
+<span class="code-block-tab-1">font-weight: bold;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60article&#62
-                                                    &#60p class="first">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
-                                                                    
-                                                    &#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
-                                                &#60/article&#62 
-                                        </code>
-                                </pre>
+                                <pre><code>&#60article&#62
+<span class="code-block-tab-1">&#60p class="first">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62</span>
+
+<span class="code-block-tab-1">&#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</span>
+&#60/article&#62</code></pre>
 
                                 <p>However, this could be annoying to maintain — what if a new paragraph got added to
                                         the top of the document? We'd need to move the class over to the new paragraph.
@@ -802,24 +687,16 @@ p {
                                         article, and we wll no longer need to edit the HTML (this may not always be
                                         possible anyway, maybe due to it being generated by a CMS.)</p>
 
-                                <pre>
-                                        <code>
-                                                article p:first-child {
-                                                    font-size: 120%;
-                                                    font-weight: bold;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>article p:first-child {
+<span class="code-block-tab-1">font-size: 120%;</span>
+<span class="code-block-tab-1">font-weight: bold;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60article&#62
-                                                    &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
-                                                                    
-                                                    &#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
-                                                &#60/article&#62
-                                        </code>
-                                </pre>
+                                <pre><code>&#60article&#62
+<span class="code-block-tab-1">&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62</span>
+
+<span class="code-block-tab-1">&#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</span>
+&#60/article&#62</code></pre>
 
                                 <p>All pseudo-classes behave in this same kind of way. They target some bit of your
                                         document that is in a certain state, behaving as if you had added a class into
@@ -847,32 +724,24 @@ p {
                                                 keyboard controls.</li>
                                 </ul>
 
-                                <pre>
-                                        <code>
-                                                a:link,
-                                                    a:visited {
-                                                        color: rebeccapurple;
-                                                            font-weight: bold;
-                                                    }
-                                                        
-                                                    a:hover {
-                                                        color:hotpink;
-                                                    }  
-                                        </code>
-                                </pre>
+                                <pre><code>a:link,
+<span class="code-block-tab-1">a:visited {</span>
+<span class="code-block-tab-2">color: rebeccapurple;</span>
+<span class="code-block-tab-2">font-weight: bold;</span>
+<span class="code-block-tab-1">}</span>
 
-                                <pre>
-                                        <code>
-                                                &#60p&#62&#60a href=""&#62Hover over me&#60/a&#62&#60/p&#62 
-                                        </code>
-                                </pre>
+<span class="code-block-tab-1">a:hover {</span>
+<span class="code-block-tab-2">color:hotpink;</span>
+<span class="code-block-tab-1">}</span></code></pre>
+
+                                <pre><code>&#60p&#62&#60a href=""&#62Hover over me&#60/a&#62&#60/p&#62</code></pre>
 
                                 <h2>What is a pseudo-element?</h2>
                                 <p>Pseudo-elements behave in a similar way, however they act as if you had added a whole
                                         new HTML element into the markup, rather than applying a class to existing
                                         elements. Pseudo-elements start with a double colon <code>::</code>.</p>
 
-                                <code>::pseudo-element-name</code>
+                                <pre><code>::pseudo-element-name</code></pre>
 
                                 <p>For example, if you wanted to select the first line of a paragraph you could wrap it
                                         in a <code>&#60span&#62</code> element and use an element selector; however,
@@ -884,24 +753,16 @@ p {
                                         if the number of words increases and decreases it will still only select the
                                         first line.</p>
 
-                                <pre>
-                                        <code>
-                                                article p::first-line {
-                                                    font-size: 120%;
-                                                    font-weight: bold;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>article p::first-line {
+<span class="code-block-tab-1">font-size: 120%;</span>
+<span class="code-block-tab-1">font-weight: bold;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60article&#62
-                                                    &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
-                                                                    
-                                                    &#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
-                                                &#60/article&#62  
-                                        </code>
-                                </pre>
+                                <pre><code>&#60article&#62
+<span class="code-block-tab-1">&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62</span>
+
+<span class="code-block-tab-1">&#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</span>
+&#60/article&#62</code></pre>
 
                                 <p>It acts as if a <code>&#60span&#62</code> was magically wrapped around that first
                                         formatted line, and updated each time the line length changed.</p>
@@ -915,14 +776,10 @@ p {
                                         that we want to select the first line, of the first &#60p&#62 element, which is
                                         inside an <code>&#60article&#62</code> element.</p>
 
-                                <pre>
-                                        <code>
-                                                article p:first-child::first-line { 
-                                                    font-size: 120%; 
-                                                    font-weight: bold; 
-                                                }  
-                                        </code>
-                                </pre>
+                                <pre><code>article p:first-child::first-line {
+<span class="code-block-tab-1">font-size: 120%;</span>
+<span class="code-block-tab-1">font-weight: bold;</span>
+}</code></pre>
 
                                 <h2>Generatign content with ::before and ::after</h2>
                                 <p>There are a couple of special pseudo-elements, which are used along with the <a
