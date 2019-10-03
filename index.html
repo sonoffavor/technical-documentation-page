@@ -795,19 +795,11 @@ li[class^="a" i] {
                                         <code>::after</code> and see the text inserted at the end of the element instead
                                         of the beginning.</p>
 
-                                <pre>
-                                        <code>
-                                                .box::before {
-                                                    content: "This should show before the other content."
-                                                }  
-                                        </code>
-                                </pre>
+                                <pre><code>.box::before {
+<span class="code-block-tab-1">content: "This should show before the other content."</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62  
-                                        </code>
-                                </pre>
+                                <pre><code>&#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62</code></pre>
 
                                 <p>Inserting strings of text from CSS isn't really something we do very often on the web
                                         however, as that text is inaccessible to some screen readers and might be hard
@@ -817,19 +809,11 @@ li[class^="a" i] {
                                         little arrow added in the example below, which is a visual indicator that we
                                         wouldn't want read out by a screenreader:</p>
 
-                                <pre>
-                                        <code>
-                                                .box::after {
-                                                    content: " ➥"
-                                                }  
-                                        </code>
-                                </pre>
+                                <pre><code>.box::after {
+<span class="code-block-tab-1">content: " ➥"</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62 
-                                        </code>
-                                </pre>
+                                <pre><code>&#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62</code></pre>
 
                                 <p>These pseudo-elements are also frequently used to insert an empty string, which can
                                         then be styled just like any element on the page.</p>
@@ -840,24 +824,16 @@ li[class^="a" i] {
                                         then use CSS to style them just like any element. You can play around with the
                                         CSS and change how these look and behave.</p>
 
-                                <pre>
-                                        <code>
-                                                .box::before {
-                                                    content: "";
-                                                    display: block;
-                                                    width: 100px;
-                                                    height: 100px;
-                                                    background-color: rebeccapurple;
-                                                    border: 1px solid black;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>.box::before {
+<span class="code-block-tab-1">content: "";</span>
+<span class="code-block-tab-1">display: block;</span>
+<span class="code-block-tab-1">width: 100px;</span>
+<span class="code-block-tab-1">height: 100px;</span>
+<span class="code-block-tab-1">background-color: rebeccapurple;</span>
+<span class="code-block-tab-1">border: 1px solid black;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62 
-                                        </code>
-                                </pre>
+                                <pre><code>&#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62</code></pre>
 
                                 <p>The use of the <code>::before</code> and <code>::after</code> pseudo-elements along
                                         with the content property is referred to as "Generated Content" in CSS, and you
@@ -897,20 +873,12 @@ li[class^="a" i] {
                                 <p>In the example below we are matching only the <code>&#60p&#62</code> element which is
                                         inside an element with a class of <code>.box</code>.</p>
 
-                                <pre>
-                                        <code>
-                                                .box p {
-                                                    color: red;
-                                                }  
-                                        </code>
-                                </pre>
+                                <pre><code>.box p {
+<span class="code-block-tab-1">color: red;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60div class="box"&#62&#60p>Text in .box&#60/p&#62&#60/div&#62
-                                                &#60p&#62Text not in .box&#60/p&#62 
-                                        </code>
-                                </pre>
+                                <pre><code>&#60div class="box"&#62&#60p>Text in .box&#60/p&#62&#60/div&#62
+&#60p&#62Text not in .box&#60/p&#62</code></pre>
 
                                 <h2>Child combinator</h2>
                                 <p>The child combinator is a greater-than symbol (<code>></code>), which matches only
@@ -930,27 +898,19 @@ li[class^="a" i] {
                                         up with a descendant selector and all <code>&#60li&#62</code> elements will get
                                         a red border.</p>
 
-                                <pre>
-                                        <code>
-                                                ul > li {
-                                                    border-top: 5px solid red;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>ul > li {
+<span class="code-block-tab-1">border-top: 5px solid red;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60ul&#62
-                                                    &#60li&#62Unordered item&#60/li&#62
-                                                    &#60li&#62Unordered item
-                                                        &#60ol&#62
-                                                            &#60li&#62Item 1&#60/li&#62
-                                                            &#60li&#62Item 2&#60/li&#62
-                                                        &#60/ol&#62
-                                                    &#60/li&#62
-                                                &#60/ul&#62  
-                                        </code>
-                                </pre>
+                                <pre><code>&#60ul&#62
+<span class="code-block-tab-1">&#60li&#62Unordered item&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li&#62Unordered item</span>
+<span class="code-block-tab-2">&#60ol&#62</span>
+<span class="code-block-tab-3">&#60li&#62Item 1&#60/li&#62</span>
+<span class="code-block-tab-3">&#60li&#62Item 2&#60/li&#62</span>
+<span class="code-block-tab-2">&#60/ol&#62</span>
+<span class="code-block-tab-1">&#60/li&#62</span>
+&#60/ul&#62</code></pre>
 
                                 <h2>Adjacent sibling</h2>
                                 <p>The adjacent sibling selector (<code>+</code>) is used to select something if it is
@@ -969,27 +929,18 @@ li[class^="a" i] {
                                         paragraph is no longer matched by the selector and so does not get the
                                         background and foreground color applied when the element is adjacent.</p>
 
-                                <pre>
-                                        <code>
-                                                h1 + p {
-                                                    font-weight: bold;
-                                                    background-color: #333;
-                                                    color: #fff;
-                                                    padding: .5em;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>h1 + p {
+<span class="code-block-tab-1">font-weight: bold;</span>
+<span class="code-block-tab-1">background-color: #333;</span>
+<span class="code-block-tab-1">color: #fff;</span>
+<span class="code-block-tab-1">padding: .5em;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60article&#62
-                                                    &#60h1&#62A heading&#60/h1&#62
-                                                    &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
-                                                                    
-                                                    &#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62
-                                                &#60/article&#62 
-                                        </code>
-                                </pre>
+                                <pre><code>&#60article&#62
+<span class="code-block-tab-1">&#60h1&#62A heading&#60/h1&#62</span>
+<span class="code-block-tab-1">&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62</span>
+<span class="code-block-tab-1">&#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</span>
+&#60/article&#62</code></pre>
 
                                 <h2>General sibling</h2>
                                 <p>If you want to select siblings of an element even if they are not directly adjacent,
@@ -997,34 +948,26 @@ li[class^="a" i] {
                                         <code>&#60img&#62</code> elements that come anywhere after
                                         <code>&#60p&#62</code> elements, we'd do this:</p>
 
-                                <code>p ~ img</code>
+                                <pre><code>p ~ img</code></pre>
 
                                 <p>In the example below we are selecting all <code>&#60p&#62</code> elements that come
                                         after the <code>&#60h1&#62</code>, and even though there is a
                                         <code>&#60div&#62</code> in the document as well, the <code>&#60p&#62</code>
                                         that comes after it is selected.</p>
 
-                                <pre>
-                                        <code>
-                                                h1 ~ p {
-                                                    font-weight: bold;
-                                                    background-color: #333;
-                                                    color: #fff;
-                                                    padding: .5em;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>h1 ~ p {
+<span class="code-block-tab-1">font-weight: bold;</span>
+<span class="code-block-tab-1">background-color: #333;</span>
+<span class="code-block-tab-1">color: #fff;</span>
+<span class="code-block-tab-1">padding: .5em;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60article&#62
-                                                    &#60h1&#62A heading&#60/h1&#62
-                                                    &#60p&#62I am a paragraph.&#60/p&#62
-                                                    &#60div&#62I am a div&#60/div&#62
-                                                    &#60p&#62I am another paragraph.&#60/p&#62
-                                                &#60/article&#62 
-                                        </code>
-                                </pre>
+                                <pre><code>&#60article&#62
+<span class="code-block-tab-1">&#60h1&#62A heading&#60/h1&#62</span>
+<span class="code-block-tab-1">&#60p&#62I am a paragraph.&#60/p&#62</span>
+<span class="code-block-tab-1">&#60div&#62I am a div&#60/div&#62</span>
+<span class="code-block-tab-1">&#60p&#62I am another paragraph.&#60/p&#62</span>
+&#60/article&#62</code></pre>
 
                                 <h2>Using combinators</h2>
                                 <p>You can combine any of the selectors that we discovered in previous lessons with
@@ -1032,7 +975,7 @@ li[class^="a" i] {
                                         to select list items with a class of "a", which are direct children of a
                                         <code>&#60ul&#62</code>, I could use the following.</p>
 
-                                <code>ul > li[class="a"] { }</code>
+                                <pre><code>ul > li[class="a"] { }</code></pre>
 
                                 <p>Take care however when creating big lists of selectors that select very specific
                                         parts of your document. It will be hard to reuse the CSS rules as you have made
@@ -1057,14 +1000,10 @@ li[class^="a" i] {
                                 <p>In the following example we have set the color of our heading using a keyword, and
                                         the background using the <code>rgb()</code> function:</p>
 
-                                <pre>
-                                        <code>
-                                                h1 {
-                                                    color: black;
-                                                    background-color: rgb(197, 93, 161);
-                                                }
-                                        </code>
-                                </pre>
+                                <pre><code>h1 {
+<span class="code-block-tab-1">color: black;</span>
+<span class="code-block-tab-1">background-color: rgb(197, 93, 161);</span>
+}</code></pre>
 
                                 <p>A value in CSS is a way to define a collection of allowable sub-values. This means
                                         that if you see <code>&#60color&#62</code> as valid you don't need to wonder
@@ -1131,35 +1070,26 @@ li[class^="a" i] {
                                         will see that the font size of all the elements increases, but only the last
                                         item will get wider, as the width is relative to that font size.</p>
 
-                                <pre>
-                                        <code>
-                                                .wrapper {
-                                                    font-size: 1em;
-                                                }
-                                                              
-                                                .px {
-                                                    width: 200px;
-                                                }
-                                                              
-                                                .vw {
-                                                    width: 10vw;
-                                                }
-                                                              
-                                                .em {
-                                                    width: 10em;
-                                                }
-                                        </code>
-                                </pre>
+                                <pre><code>.wrapper {
+<span class="code-block-tab-1">font-size: 1em;</span>                                                 }
 
-                                <pre>
-                                        <code>
-                                                &#60div class="wrapper"&#62
-                                                    &#60div class="box px"&#62I am 200px wide&#60/div&#62
-                                                    &#60div class="box vw"&#62I am 10vw wide&#60/div&#62
-                                                    &#60div class="box em"&#62I am 10em wide&#60/div&#62
-                                                &#60/div&#62
-                                        </code>
-                                </pre>
+.px {
+<span class="code-block-tab-1">width: 200px;</span>
+}
+
+.vw {
+<span class="code-block-tab-1">width: 10vw;</span>
+}
+
+.em {
+<span class="code-block-tab-1">width: 10em;</span>
+}</code></pre>
+
+                                <pre><code>&#60div class="wrapper"&#62
+<span class="code-block-tab-1">&#60div class="box px"&#62I am 200px wide&#60/div&#62</span>
+<span class="code-block-tab-1">&#60div class="box vw"&#62I am 10vw wide&#60/div&#62</span>
+<span class="code-block-tab-1">&#60div class="box em"&#62I am 10em wide&#60/div&#62</span>
+&#60/div&#62</code></pre>
 
                                 <h3>ems and rems</h3>
                                 <p><code>em</code> and <code>rem</code> are the two relative lengths you are likely to
@@ -1191,55 +1121,47 @@ li[class^="a" i] {
                                         CSS you will see that everything else changes relative to it — both
                                         <code>rem</code>- and <code>em</code>-sized text.</p>
 
-                                <pre>
-                                        <code>
-                                                html {
-                                                    font-size: 16px;
-                                                }
-                                                              
-                                                .ems li {
-                                                    font-size: 1.3em;
-                                                }
-                                                              
-                                                .rems li {
-                                                    font-size: 1.3rem;
-                                                }  
-                                        </code>
-                                </pre>
+                                <pre><code>html {
+<span class="code-block-tab-1">font-size: 16px;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60ul class="ems"&#62
-                                                    &#60li&#62One&#60/li&#62
-                                                    &#60li&#62Two&#60/li&#62
-                                                    &#60li&#62Three
-                                                        &#60ul&#62
-                                                            &#60li&#62Three A&#60/li&#62
-                                                            &#60li&#62Three B
-                                                                &#60ul&#62
-                                                                    &#60li&#62Three B 2&#60/li&#62
-                                                                &#60/ul&#62
-                                                            &#60/li&#62
-                                                        &#60/ul&#62
-                                                    &#60/li&#62
-                                                &#60/ul&#62
-                                                                      
-                                                &#60ul class="rems"&#62
-                                                    &#60li&#62One&#60/li&#62
-                                                    &#60li&#62Two&#60/li&#62
-                                                    &#60li&#62Three
-                                                        &#60ul&#62
-                                                            &#60li&#62Three A&#60/li&#62
-                                                            &#60li&#62Three B
-                                                                &#60ul&#62
-                                                                    &#60li&#62Three B 2&#60/li&#62
-                                                                &#60/ul&#62
-                                                            &#60/li&#62
-                                                        &#60/ul&#62
-                                                    &#60/li&#62
-                                                &#60/ul&#62
-                                        </code>
-                                </pre>
+.ems li {
+<span class="code-block-tab-1">font-size: 1.3em;</span>
+}
+
+.rems li {
+<span class="code-block-tab-1">font-size: 1.3rem;</span>
+}</code></pre>
+
+                                <pre><code>&#60ul class="ems"&#62
+<span class="code-block-tab-1">&#60li&#62One&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li&#62Two&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li&#62Three</span>
+<span class="code-block-tab-2">&#60ul&#62</span>
+<span class="code-block-tab-3">&#60li&#62Three A&#60/li&#62</span>
+<span class="code-block-tab-3">&#60li&#62Three B</span>
+<span class="code-block-tab-4">&#60ul&#62</span>
+<span class="code-block-tab-5">&#60li&#62Three B 2&#60/li&#62</span>
+<span class="code-block-tab-4">&#60/ul&#62</span>
+<span class="code-block-tab-3">&#60/li&#62</span>
+<span class="code-block-tab-2">&#60/ul&#62</span>
+<span class="code-block-tab-1">&#60/li&#62</span>
+&#60/ul&#62
+
+&#60ul class="rems"&#62
+<span class="code-block-tab-1">&#60li&#62One&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li&#62Two&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li&#62Three</span>
+<span class="code-block-tab-2">&#60ul&#62</span>
+<span class="code-block-tab-3">&#60li&#62Three A&#60/li&#62</span>
+<span class="code-block-tab-3">&#60li&#62Three B</span>
+<span class="code-block-tab-4">&#60ul&#62</span>
+<span class="code-block-tab-5">&#60li&#62Three B 2&#60/li&#62</span>
+<span class="code-block-tab-4">&#60/ul&#62</span>
+<span class="code-block-tab-3">&#60/li&#62</span>
+<span class="code-block-tab-2">&#60/ul&#62</span>
+<span class="code-block-tab-1">&#60/li&#62</span>
+&#60/ul&#62</code></pre>
 
                                 <span class="h3-title">
                                         <p>Percentages</p>
@@ -1388,24 +1310,16 @@ li[class^="a" i] {
                                 <p>In the example below we have demonstrated an image and a gradient in use as a value
                                         for the CSS <code>background-image</code> property.</p>
 
-                                <pre>
-                                        <code>
-                                                .image {
-                                                    background-image: url(star.png);
-                                                }
-                                                      
-                                                .gradient {
-                                                    background-image: linear-gradient(90deg, rgba(119,0,255,1) 39%, rgba(0,212,255,1) 100%);
-                                                }  
-                                        </code>
-                                </pre>
+                                <pre><code>.image {
+<span class="code-block-tab-1">background-image: url(star.png);</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60div class="box image"&#62&#60/div&#62
-                                                &#60div class="box gradient"&#62&#60/div&#62
-                                        </code>
-                                </pre>
+.gradient {
+<span class="code-block-tab-1">background-image: linear-gradient(90deg, rgba(119,0,255,1) 39%, rgba(0,212,255,1) 100%);</span>
+}</code></pre>
+
+                                <pre><code>&#60div class="box image"&#62&#60/div&#62
+&#60div class="box gradient"&#62&#60/div&#62</code></pre>
 
                                 <h2>Position</h2>
 
@@ -1423,23 +1337,15 @@ li[class^="a" i] {
                                 <p>In the following example we have positioned a background image 40px from the top and
                                         to the right of the container using a keyword.</p>
 
-                                <pre>
-                                        <code>
-                                                .box {
-                                                    height: 300px;
-                                                    width: 400px;
-                                                    background-image: url(star.png);
-                                                    background-repeat: no-repeat;
-                                                    background-position: right 40px;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>.box {
+<span class="code-block-tab-1">height: 300px;</span>
+<span class="code-block-tab-1">width: 400px;</span>
+<span class="code-block-tab-1">background-image: url(star.png);</span>
+<span class="code-block-tab-1">background-repeat: no-repeat;</span>
+<span class="code-block-tab-1">background-position: right 40px;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60div class="box"&#62&#60/div&#62
-                                        </code>
-                                </pre>
+                                <pre><code>&#60div class="box"&#62&#60/div&#62</code></pre>
 
                                 <h2>Strings and identifiers</h2>
 
@@ -1455,27 +1361,19 @@ li[class^="a" i] {
                                         the below example we use unquoted color keywords along with a quoted generated
                                         content string.</p>
 
-                                <pre>
-                                        <code>
-                                                .box {
-                                                    width:400px;
-                                                    padding: 1em;
-                                                    border-radius: .5em;
-                                                    border: 5px solid rebeccapurple;
-                                                    background-color: lightblue;
-                                                }
-                                                      
-                                                .box::after {
-                                                    content: "This is a string. I know because it is quoted in the CSS."
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>.box {
+<span class="code-block-tab-1">width:400px;</span>
+<span class="code-block-tab-1">padding: 1em;</span>
+<span class="code-block-tab-1">border-radius: .5em;</span>
+<span class="code-block-tab-1">border: 5px solid rebeccapurple;</span>
+<span class="code-block-tab-1">background-color: lightblue;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60div class="box"&#62&#60/div&#62
-                                        </code>
-                                </pre>
+.box::after {
+<span class="code-block-tab-1">content: "This is a string. I know because it is quoted in the CSS."</span>
+}</code></pre>
+
+                                <pre><code>&#60div class="box"&#62&#60/div&#62</code></pre>
 
                                 <h2>Functions</h2>
 
@@ -1501,25 +1399,18 @@ li[class^="a" i] {
                                         parent will be, so we use <code>calc()</code> to tell the browser to do it for
                                         us.</p>
 
-                                <pre>
-                                        <code>
-                                                .wrapper {
-                                                    width: 400px;
-                                                }
-                                                      
-                                                .box {
-                                                    width: calc(20% + 100px);
-                                                }  
-                                        </code>
-                                </pre>
+                                <pre><code>.wrapper {
+<span class="code-block-tab-1">width: 400px;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60div class="wrapper"&#62
-                                                    &#60div class="box"&#62My width is calculated.&#60/div&#62 
-                                                &#60/div&#62 
-                                        </code>
-                                </pre>
+.box {
+<span class="code-block-tab-1">width: calc(20% + 100px);</span>
+}</code></pre>
+
+                                <pre><code>&#60div class="wrapper"&#62
+<span class="code-block-tab-1">&#60div class="box"&#62My width is calculated.&#60/div&#62</span>
+&#60/div&#62</code></pre>
+
                         </section>
                         <section class="main-section" id="Cascade_and_inheritance">
                                 <header>Cascade and inheritance</header>
@@ -1560,22 +1451,15 @@ li[class^="a" i] {
                                         selector and therefore carry the same specificity, so the last one in the source
                                         order wins.</p>
 
-                                <pre>
-                                        <code>
-                                                h1 { 
-                                                    color: red; 
-                                                }
-                                                h1 { 
-                                                    color: blue; 
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>h1 {
+<span class="code-block-tab-1">color: red;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60h1&#62This is my heading.&#60/h1&#62 
-                                        </code>
-                                </pre>
+h1 {
+<span class="code-block-tab-1">color: blue;</span>
+}</code></pre>
+
+                                <pre><code>&#60h1&#62This is my heading.&#60/h1&#62</code></pre>
 
                                 <span class="h3-title">
                                         <p>Specificity</p>
@@ -1597,23 +1481,15 @@ li[class^="a" i] {
                                         its rule a higher specificity, and so it will be applied even though the rule
                                         with the element selector appears further down in the source order.</p>
 
-                                <pre>
-                                        <code>
-                                                .main-heading { 
-                                                    color: red; 
-                                                }
-                                                            
-                                                h1 { 
-                                                    color: blue; 
-                                                }
-                                        </code>
-                                </pre>
+                                <pre><code>.main-heading {
+<span class="code-block-tab-1">color: red;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60h1 class="main-heading"&#62This is my heading.&#60/h1&#62 
-                                        </code>
-                                </pre>
+h1 {
+<span class="code-block-tab-1">color: blue;</span>
+}</code></pre>
+
+                                <pre><code>&#60h1 class="main-heading"&#62This is my heading.&#60/h1&#62</code></pre>
 
                                 <span class="h3-title">
                                         <p>Inheritance</p>
@@ -1627,24 +1503,16 @@ li[class^="a" i] {
                                         element, every element inside it will also be styled with that color and font,
                                         unless you've applied different color and font values directly to them.</p>
 
-                                <pre>
-                                        <code>
-                                                body {
-                                                    color: blue;
-                                                }
-                                                    
-                                                span {
-                                                    color: black;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>body {
+<span class="code-block-tab-1">color: blue;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60p&#62As the body has been set to have a color of blue this is inherited through the descendants.&#60/p&#62
-                                                &#60p&#62We can change the color by targetting the element with a selector, such as this &#60span&#62span&#60/span&#62.&#60/p&#62
-                                        </code>
-                                </pre>
+span {
+<span class="code-block-tab-1">color: black;</span>
+}</code></pre>
+
+                                <pre><code>&#60p&#62As the body has been set to have a color of blue this is inherited through the descendants.&#60/p&#62
+&#60p&#62We can change the color by targetting the element with a selector, such as this &#60span&#62span&#60/span&#62.&#60/p&#62</code></pre>
 
                                 <p>Some properties do not inherit — for example if you set a <code>width</code> of 50%
                                         on an element, all of its descendants do not get a width of 50% of their
@@ -1661,45 +1529,37 @@ li[class^="a" i] {
                                         list and applied a different color to it. This then inherits down through its
                                         children.</p>
 
-                                <pre>
-                                        <code>
-                                                .main {
-                                                    color: rebeccapurple;
-                                                    border: 2px solid #ccc;
-                                                    padding: 1em;
-                                                }
-                                                    
-                                                .special {
-                                                    color: black;
-                                                    font-weight: bold;
-                                                }
-                                        </code>
-                                </pre>
+                                <pre><code>.main {
+<span class="code-block-tab-1">color: rebeccapurple;</span>
+<span class="code-block-tab-1">border: 2px solid #ccc;</span>
+<span class="code-block-tab-1">padding: 1em;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60ul class="main"&#62
-                                                    &#60li&#62Item One&#60/li&#62
-                                                    &#60li&#62Item Two
-                                                        &#60ul&#62
-                                                            &#60li&#62&#50.1&#60/li&#62
-                                                            &#60li&#62&#50.2&#60/li&#62
-                                                        &#60/ul&#62
-                                                    &#60/li&#62
-                                                    &#60li&#62Item Three
-                                                        &#60ul class="special"&#62
-                                                            &#60li&#62&#51.1
-                                                                &#60ul&#62
-                                                                    &#60li&#62&#51.1.1&#60/li&#62
-                                                                    &#60li&#62&#51.1.2&#60/li&#62
-                                                                &#60/ul&#62
-                                                            &#60/li&#62
-                                                            &#60li&#62&#51.2&#60/li&#62
-                                                        &#60/ul&#62
-                                                    &#60/li&#62
-                                                &#60/ul&#62 
-                                        </code>
-                                </pre>
+.special {
+<span class="code-block-tab-1">color: black;</span>
+<span class="code-block-tab-1">font-weight: bold;</span>
+}</code></pre>
+
+                                <pre><code>&#60ul class="main"&#62
+<span class="code-block-tab-1">&#60li&#62Item One&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li&#62Item Two</span>
+<span class="code-block-tab-2">&#60ul&#62</span>
+<span class="code-block-tab-3">&#60li&#62&#50.1&#60/li&#62</span>
+<span class="code-block-tab-3">&#60li&#62&#50.2&#60/li&#62</span>
+<span class="code-block-tab-2">&#60/ul&#62</span>
+<span class="code-block-tab-1">&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li&#62Item Three</span>
+<span class="code-block-tab-2">&#60ul class="special"&#62</span>
+<span class="code-block-tab-3">&#60li&#62&#51.1</span>
+<span class="code-block-tab-4">&#60ul&#62</span>
+<span class="code-block-tab-5">&#60li&#62&#51.1.1&#60/li&#62</span>
+<span class="code-block-tab-5">&#60li&#62&#51.1.2&#60/li&#62</span>
+<span class="code-block-tab-4">&#60/ul&#62</span>
+<span class="code-block-tab-3">&#60/li&#62</span>
+<span class="code-block-tab-3">&#60li&#62&#51.2&#60/li&#62</span>
+<span class="code-block-tab-2">&#60/ul&#62</span>
+<span class="code-block-tab-1">&#60/li&#62</span>
+&#60/ul&#62</code></pre>
 
                                 <p>Things like widths (as mentioned above), margins, padding, and borders do not
                                         inherit. If a border were to be inherited by the children of our list, every
@@ -1715,18 +1575,18 @@ li[class^="a" i] {
                                 <p>CSS provides four special universal property values for controlling inheritance.
                                         Every CSS property accepts these values.</p>
 
-                                <code>inherit</code>
+                                <code class="h4-code-title">inherit</code>
 
                                 <p>Sets the property value applied to a selected element to be the same as that of its
                                         parent element. Effectively, this "turns on inheritance".</p>
 
-                                <code>initial</code>
+                                <code class="h4-code-title">initial</code>
                                 <p>Sets the property value applied to a selected element to be the same as the value set
                                         for that element in the browser's default style sheet. If no value is set by the
                                         browser's default style sheet and the property is naturally inherited, then the
                                         property value is set to inherit instead.</p>
 
-                                <code>unset</code>
+                                <code class="h4-code-title">unset</code>
                                 <p>Resets the property to its natural value, which means that if the property is
                                         naturally inherited it acts like <code>inherit</code>, otherwise it acts like
                                         <code>initial</code>.</p>
@@ -1749,36 +1609,28 @@ li[class^="a" i] {
                                                         }</code>?</li>
                                 </ol>
 
-                                <pre>
-                                        <code>
-                                                body {
-                                                    color: green;
-                                                }
-                                                              
-                                                .my-class-1 a {
-                                                    color: inherit;
-                                                }
-                                                              
-                                                .my-class-2 a {
-                                                    color: initial;
-                                                }
-                                                              
-                                                .my-class-3 a {
-                                                    color: unset;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>body {
+<span class="code-block-tab-1">color: green;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60ul&#62
-                                                    &#60li&#62Default &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62
-                                                    &#60li class="my-class-1"&#62Inherit the &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62
-                                                    &#60li class="my-class-2"&#62Reset the &#60a href="#">link&#60/a&#62 color&#60/li&#62
-                                                    &#60li class="my-class-3"&#62Unset the &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62
-                                                &#60/ul&#62
-                                        </code>
-                                </pre>
+.my-class-1 a {
+<span class="code-block-tab-1">color: inherit;</span>
+}
+
+.my-class-2 a {
+<span class="code-block-tab-1">color: initial;</span>
+}
+
+.my-class-3 a {
+<span class="code-block-tab-1">color: unset;</span>
+}</code></pre>
+
+                                <pre><code>&#60ul&#62
+<span class="code-block-tab-1">&#60li&#62Default &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="my-class-1"&#62Inherit the &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="my-class-2"&#62Reset the &#60a href="#">link&#60/a&#62 color&#60/li&#62</span>
+<span class="code-block-tab-1">&#60li class="my-class-3"&#62Unset the &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62</span>
+&#60/ul&#62</code></pre>
 
                                 <span class="h3-title">
                                         <p>Resetting all property values</p>
@@ -1794,30 +1646,22 @@ li[class^="a" i] {
                                         blockquote element itself, the second has a class applied to the blockquote
                                         which sets the value of <code>all</code> to <code>unset</code>.</p>
 
-                                <pre>
-                                        <code>
-                                                blockquote {
-                                                    background-color: red;
-                                                    border: 2px solid green;
-                                                }
-                                                            
-                                                .fix-this {
-                                                    all: unset;
-                                                }        
-                                        </code>
-                                </pre>
+                                <pre><code>blockquote {
+<span class="code-block-tab-1">background-color: red;</span>
+<span class="code-block-tab-1">border: 2px solid green;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60blockquote&#62
-                                                    &#60p&#62This blockquote is styled&#60/p&#62
-                                                &#60/blockquote&#62
-                                            
-                                                &#60blockquote class="fix-this"&#62
-                                                    &#60p&#62This blockquote is not styled&#60/p&#62
-                                                &#60/blockquote&#62
-                                        </code>
-                                </pre>
+.fix-this {
+<span class="code-block-tab-1">all: unset;</span>
+}</code></pre>
+
+                                <pre><code>&#60blockquote&#62
+<span class="code-block-tab-1">&#60p&#62This blockquote is styled&#60/p&#62</span>
+&#60/blockquote&#62
+
+&#60blockquote class="fix-this"&#62
+<span class="code-block-tab-1">&#60p&#62This blockquote is not styled&#60/p&#62</span>
+&#60/blockquote&#62</code></pre>
 
                                 <p>Try setting the value of <code>all</code> to some of the other available values and
                                         observe what the difference is.</p>

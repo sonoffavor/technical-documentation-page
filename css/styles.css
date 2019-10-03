@@ -64,6 +64,11 @@ h2 {
     display: block;
 }
 
+.h4-code-title {
+    font-size: 20px;
+    background-color: rgb(238, 238, 238);
+
+}
 header {
     font-family: 'Alegreya', serif;
     font-size: 35px;
