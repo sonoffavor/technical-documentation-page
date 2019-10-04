@@ -69,6 +69,13 @@ h2 {
     background-color: rgb(238, 238, 238);
 
 }
+
+.table-one-container {
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+}
+
 header {
     font-family: 'Alegreya', serif;
     font-size: 35px;

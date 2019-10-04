@@ -1071,7 +1071,8 @@ li[class^="a" i] {
                                         item will get wider, as the width is relative to that font size.</p>
 
                                 <pre><code>.wrapper {
-<span class="code-block-tab-1">font-size: 1em;</span>                                                 }
+<span class="code-block-tab-1">font-size: 1em;</span>
+}
 
 .px {
 <span class="code-block-tab-1">width: 200px;</span>
@@ -1720,31 +1721,23 @@ span {
                                         all headings, then the more specific values are applied to the headings with the
                                         classes.</p>
 
-                                <pre>
-                                        <code>
-                                                h2 {
-                                                    font-size: 2em;
-                                                    color: #000;
-                                                    font-family: Georgia, 'Times New Roman', Times, serif;
-                                                }
-                                                            
-                                                .small {
-                                                    font-size: 1em;
-                                                }
-                                                            
-                                                .bright {
-                                                    color: rebeccapurple;
-                                                }  
-                                        </code>
-                                </pre>
+                                <pre><code>h2 {
+<span class="code-block-tab-1">font-size: 2em;</span>
+<span class="code-block-tab-1">color: #000;</span>
+<span class="code-block-tab-1">font-family: Georgia, 'Times New Roman', Times, serif;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60h2&#62Heading with no class&#60/h2&#62
-                                                &#60h2&#62class="small"&#62Heading with class of small&#60/h2&#62
-                                                &#60h2&#62class="bright"&#62Heading with class of bright&#60/h2&#62
-                                        </code>
-                                </pre>
+.small {
+<span class="code-block-tab-1">font-size: 1em;</span>
+}
+
+.bright {
+<span class="code-block-tab-1">color: rebeccapurple;</span>
+}</code></pre>
+
+                                <pre><code>&#60h2&#62Heading with no class&#60/h2&#62
+&#60h2&#62class="small"&#62Heading with class of small&#60/h2&#62
+&#60h2&#62class="bright"&#62Heading with class of bright&#60/h2&#62</code></pre>
 
                                 <p>Let's now have a look at how the browser will calculate specificity. We already know
                                         that an element selector has low specificity and can be overwritten by a class.
@@ -1774,76 +1767,67 @@ span {
 
                                 <p>Before we move on, let's look at an example in action.</p>
 
-                                <pre>
-                                        <code>
+                                <pre><code>/* specificity: 0101 */
+#outer a {
+<span class="code-block-tab-1">background-color: red;</span>
+}
 
-                                                /* specificity: 0101 */
-                                                #outer a {
-                                                    background-color: red;
-                                                }
-        
-                                                /* specificity: 0201 */
-                                                #outer #inner a {
-                                                    background-color: blue;
-                                                }
+/* specificity: 0201 */
+#outer #inner a {
+<span class="code-block-tab-1">background-color: blue;</span>
+}
 
-                                                /* specificity: 0104 */
-                                                #outer div ul li a {
-                                                    color: yellow;
-                                                }
+/* specificity: 0104 */
+#outer div ul li a {
+<span class="code-block-tab-1">color: yellow;</span>
+}
 
-                                                /* specificity: 0113 */
-                                                #outer div ul .nav a {
-                                                    color: white;
-                                                }
+/* specificity: 0113 */
+#outer div ul .nav a {
+<span class="code-block-tab-1">color: white;</span>
+}
 
-                                                /* specificity: 0024 */
-                                                div div li:nth-child(2) a:hover {
-                                                    border: 10px solid black;
-                                                }
+/* specificity: 0024 */
+div div li:nth-child(2) a:hover {
+<span class="code-block-tab-1">border: 10px solid black;</span>
+}
 
-                                                /* specificity: 0023 */
-                                                div li:nth-child(2) a:hover {
-                                                    border: 10px dashed black;
-                                                }
+/* specificity: 0023 */
+div li:nth-child(2) a:hover {
+<span class="code-block-tab-1">border: 10px dashed black;</span>
+}
 
-                                                /* specificity: 0033 */
-                                                div div .nav:nth-child(2) a:hover {
-                                                    border: 10px double black;
-                                                }
+/* specificity: 0033 */
+div div .nav:nth-child(2) a:hover {
+<span class="code-block-tab-1">border: 10px double black;</span>
+}
 
-                                                a {
-                                                    display: inline-block;
-                                                    line-height: 40px;
-                                                    font-size: 20px;
-                                                    text-decoration: none;
-                                                    text-align: center;
-                                                    width: 200px;
-                                                    margin-bottom: 10px;
-                                                }
+a {
+<span class="code-block-tab-1">display: inline-block;</span>
+<span class="code-block-tab-1">line-height: 40px;</span>
+<span class="code-block-tab-1">font-size: 20px;</span>
+<span class="code-block-tab-1">text-decoration: none;</span>
+<span class="code-block-tab-1">text-align: center;</span>
+<span class="code-block-tab-1">width: 200px;</span>
+<span class="code-block-tab-1">margin-bottom: 10px;</span>
+}
 
-                                                ul {
-                                                    padding: 0;
-                                                }
+ul {
+<span class="code-block-tab-1">padding: 0;</span>
+}
 
-                                                li {
-                                                    list-style-type: none;
-                                                }
-                                        </code>
-                                </pre>
+li {
+<span class="code-block-tab-1">list-style-type: none;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60div id="outer" class="container"&#62
-                                                    &#60div id="inner" class="container"&#62
-                                                        &#60ul&#62
-                                                            &#60li class="nav">&#60a href="#"&#62One&#60/a&#62&#60/li&#62
-                                                            &#60li class="nav"&#62&#60a href="#"&#62Two&#60/a&#62&#60/li&#62
-                                                        &#60/ul&#62
-                                                    &#60/div&#62
-                                                &#60/div&#62 
-                                        </code>
-                                </pre>
+                                <pre><code>&#60div id="outer" class="container"&#62
+<span class="code-block-tab-1">&#60div id="inner" class="container"&#62</span>
+<span class="code-block-tab-2">&#60ul&#62</span>
+<span class="code-block-tab-3">&#60li class="nav">&#60a href="#"&#62One&#60/a&#62&#60/li&#62</span>
+<span class="code-block-tab-3">&#60li class="nav"&#62&#60a href="#"&#62Two&#60/a&#62&#60/li&#62</span>
+<span class="code-block-tab-2">&#60/ul&#62</span>
+<span class="code-block-tab-1">&#60/div&#62</span>
+&#60/div&#62</code></pre>
 
                                 <p>So what's going on here? First of all, we are only interested in the first seven
                                         rules of this example, and as you'll notice, we have included their specificity
@@ -1878,32 +1862,24 @@ span {
 
                                 <p>Take a look at this example where we have two paragraphs, one of which has an ID.</p>
 
-                                <pre>
-                                        <code>
-                                                #winning {
-                                                    background-color: red;
-                                                    border: 1px solid black;
-                                                }
-        
-                                                .better {
-                                                    background-color: gray;
-                                                    border: none !important;
-                                                }
-        
-                                                p {
-                                                    background-color: blue;
-                                                    color: white;
-                                                    padding: 5px;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>#winning {
+<span class="code-block-tab-1">background-color: red;</span>
+<span class="code-block-tab-1">border: 1px solid black;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60p class="better"&#62This is a paragraph.&#60/p&#62
-                                                &#60p class="better" id="winning"&#62One selector to rule them all!&#60/p&#62
-                                        </code>
-                                </pre>
+.better {
+<span class="code-block-tab-1">background-color: gray;</span>
+<span class="code-block-tab-1">border: none !important;</span>
+}
+
+p {
+<span class="code-block-tab-1">background-color: blue;</span>
+<span class="code-block-tab-1">color: white;</span>
+<span class="code-block-tab-1">padding: 5px;</span>
+}</code></pre>
+
+                                <pre><code>&#60p class="better"&#62This is a paragraph.&#60/p&#62
+&#60p class="better" id="winning"&#62One selector to rule them all!&#60/p&#62</code></pre>
 
                                 <p>Let's walk through this to see what's happening — try removing some of the properties
                                         to see what happens if you are finding it hard to understand:</p>
@@ -2129,17 +2105,13 @@ span {
                                         <code>height</code>, <code>margin</code>, <code>border</code>, and
                                         <code>padding:</code></p>
 
-                                <pre>
-                                        <code>
-                                                .box {
-                                                    width: 350px;
-                                                    height: 150px;
-                                                    margin: 25px;
-                                                    padding: 25px;
-                                                    border: 5px solid black;
-                                                }
-                                        </code>
-                                </pre>
+                                <pre><code>.box {
+<span class="code-block-tab-1">width: 350px;</span>
+<span class="code-block-tab-1">height: 150px;</span>
+<span class="code-block-tab-1">margin: 25px;</span>
+<span class="code-block-tab-1">padding: 25px;</span>
+<span class="code-block-tab-1">border: 5px solid black;</span>
+}</code></pre>
 
                                 <p>The space taken up by our box using the standard box model will actually be 410px
                                         (350 + 25 + 25 + 5 + 5), and the height 260px (150 + 25 + 25 + 5 + 5), as the
@@ -2169,13 +2141,9 @@ span {
                                                 border-box</code> on it. By doing this you are telling the browser to
                                         take the border box as the area defined by any size you set.</p>
 
-                                <pre>
-                                        <code>
-                                                .box {
-                                                    box-sizing: border-box;
-                                                }
-                                        </code>
-                                </pre>
+                                <pre><code>.box {
+<span class="code-block-tab-1">box-sizing: border-box;</span>
+}</code></pre>
 
                                 <p>If you want all of your elements to use the alternative box model, and this is a
                                         common choice among developers, set the <code>box-sizing</code> property on the
@@ -2185,17 +2153,13 @@ span {
                                                 href="https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/"
                                                 target="_blank">CSS Tricks article on box-sizing</a>.</p>
 
-                                <pre>
-                                        <code>
-                                                html {
-                                                    box-sizing: border-box;
-                                                }
+                                <pre><code>html {
+<span class="code-block-tab-1">box-sizing: border-box;</span>
+}
 
-                                                *, *::before, *::after {
-                                                    box-sizing: inherit;
-                                                } 
-                                        </code>
-                                </pre>
+*, *::before, *::after {
+<span class="code-block-tab-1">box-sizing: inherit;</span>
+}</code></pre>
 
                                 <h2>Playing with box models</h2>
                                 <p>In the below example, you can see two boxes. Both have a class of <code>.box</code>,
@@ -2341,24 +2305,16 @@ span {
                                                 href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                                 target="_blank">MDN website</a>.</p>
 
-                                <pre>
-                                        <code>
-                                                span {
-                                                    margin: 20px;
-                                                    padding: 20px;
-                                                    width: 80px;
-                                                    height: 50px;
-                                                    background-color: lightblue;
-                                                    border: 2px solid blue;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>span {
+<span class="code-block-tab-1">margin: 20px;</span>
+<span class="code-block-tab-1">padding: 20px;</span>
+<span class="code-block-tab-1">width: 80px;</span>
+<span class="code-block-tab-1">height: 50px;</span>
+<span class="code-block-tab-1">background-color: lightblue;</span>
+<span class="code-block-tab-1">border: 2px solid blue;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60p&#62I am a paragraph and this is a &#60span&#62span&#60/span&#62 inside that paragraph. A span is an inline element and so does not respect width and height.&#60/p&#62
-                                        </code>
-                                </pre>
+                                <pre><code>&#60p&#62I am a paragraph and this is a &#60span&#62span&#60/span&#62 inside that paragraph. A span is an inline element and so does not respect width and height.&#60/p&#62</code></pre>
 
                                 <h2>Using display: inline-block</h2>
 
@@ -2386,25 +2342,17 @@ span {
                                                 href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                                 target="_blank">MDN website</a>.</p>
 
-                                <pre>
-                                        <code>
-                                                span {
-                                                    margin: 20px;
-                                                    padding: 20px;
-                                                    width: 80px;
-                                                    height: 50px;
-                                                    background-color: lightblue;
-                                                    border: 2px solid blue;
-                                                    display: inline-block;
-                                                }
-                                        </code>
-                                </pre>
+                                <pre><code>span {
+<span class="code-block-tab-1">margin: 20px;</span>
+<span class="code-block-tab-1">padding: 20px;</span>
+<span class="code-block-tab-1">width: 80px;</span>
+<span class="code-block-tab-1">height: 50px;</span>
+<span class="code-block-tab-1">background-color: lightblue;</span>
+<span class="code-block-tab-1">border: 2px solid blue;</span>
+<span class="code-block-tab-1">display: inline-block;</span>
+}</code></pre>
 
-                                <pre>
-                                        <code>
-                                                &#60p&#62I am a paragraph and this is a &#60span&#62span&#60/span&#62 inside that paragraph. A span is an inline element and so does not respect width and height.&#60/p&#62  
-                                        </code>
-                                </pre>
+                                <pre><code>&#60p&#62I am a paragraph and this is a &#60span&#62span&#60/span&#62 inside that paragraph. A span is an inline element and so does not respect width and height.&#60/p&#62</code></pre>
 
                                 <p>Where this can be useful is when you want to give a link a larger hit area by adding
                                         <code>padding</code>. <code>&#60a&#62</code> is an inline element like
@@ -2423,34 +2371,25 @@ span {
                                                 href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                                 target="_blank">MDN website</a>.</p>
 
-                                <pre>
-                                        <code>
-                                                .links-list a {
-                                                    background-color: rgb(179,57,81);
-                                                    color: #fff;
-                                                    text-decoration: none;
-                                                    padding: 1em 2em;
-                                                }
-                                                              
-                                                .links-list a:hover {
-                                                    background-color: rgb(66, 28, 40);
-                                                    color: #fff;
-                                                } 
-                                        </code>
-                                </pre>
+                                <pre><code>.links-list a {
+<span class="code-block-tab-1">background-color: rgb(179,57,81);</span>
+<span class="code-block-tab-1">color: #fff;</span>
+<span class="code-block-tab-1">text-decoration: none;</span>
+<span class="code-block-tab-1">padding: 1em 2em;</span>
+}
 
-                                <pre>
-                                        <code>
-                                                &#60nav&#62
-                                                    &#60ul class="links-list"&#62
-                                                        &#60li&#62&#60a href=""&#62Link one&#60/a&#62&#60/li&#62
-                                                        &#60li&#62&#60a href=""&#62Link two&#60/a&#62&#60/li&#62
-                                                        &#60li&#62&#60a href=""&#62Link three&#60/a&#62&#60/li&#62
-                                                    &#60/ul&#62
-                                                &#60/nav&#62 
-                                        </code>
-                                </pre>
+.links-list a:hover {
+<span class="code-block-tab-1">background-color: rgb(66, 28, 40);</span>
+<span class="code-block-tab-1">color: #fff;</span>
+}</code></pre>
 
+                                <pre><code>&#60nav&#62
+<span class="code-block-tab-1">&#60ul class="links-list"&#62</span>
+<span class="code-block-tab-2">&#60li&#62&#60a href=""&#62Link one&#60/a&#62&#60/li&#62</span>
+<span class="code-block-tab-2">&#60li&#62&#60a href=""&#62Link two&#60/a&#62&#60/li&#62</span>
+<span class="code-block-tab-2">&#60li&#62&#60a href=""&#62Link three&#60/a&#62&#60/li&#62</span>
+<span class="code-block-tab-1">&#60/ul&#62</span>
+&#60/nav&#62</code></pre>
 
                         </section>
                         <section class="main-section" id="Reference">
