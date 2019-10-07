@@ -76,6 +76,10 @@ h2 {
     grid-template-columns: 1fr 2fr 3fr;
 }
 
+table {
+    width: 100%;
+}
+
 header {
     font-family: 'Alegreya', serif;
     font-size: 35px;

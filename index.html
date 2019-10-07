@@ -493,7 +493,43 @@ h1#heading {
                                         attribute alone (for example <code>href</code>), or on various different matches
                                         against the value of the attribute.</p>
 
-                                <div class="table-one-container">
+                                        <table>
+                                                <tr>
+                                                        <th>Selector</th>
+                                                        <th>Example</th>
+                                                        <th>Description</th>
+                                                </tr>
+                                                <tr>
+                                                        <td><code>[attr]</code></td>
+                                                        <td><code>a[title]</code></td>
+                                                        <td><p>Matches elements with an attribute name of attr — the value in square brackets.</p>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td><code>[attr=value]</code></td>
+                                                        <td><code>a[href="https://example.com"]</code></td>
+                                                        <td><p>Matches elements with an attribute name of attr whose value is exactly value — the string inside the quotes.</p></td>
+                                                </tr>
+                                                <tr>
+                                                        <td><code>[attr~=value]</code></td>
+                                                        <td><code>p[class~="special"]</code></td>
+                                                        <td>
+                                                                <p>Matches elements with an attribute name of attr whose value
+                                                                        is exactly value, or elements with a class attribute
+                                                                        containing one or more class names, at least one of
+                                                                        which matches value.</p>
+                                                                <p>Note that in a list of multiple class names the separate
+                                                                                        classes are whitespace-separated.</p>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td><code>[attr|=value]</code></td>
+                                                        <td><code>div[lang|="zh"]</code></td>
+                                                        <td><p>Matches elements with an attribute name of attr whose value can be exactly value or can begin with value immediately followed by a hyphen.</p></td>
+                                                </tr>
+                                        </table>
+
+                                <!--<div class="table-one-container">
                                         <div class="table-heading">Selector</div>
                                         <div class="table-heading">Example</div>
                                         <div class="table-heading">Description</div>
@@ -526,7 +562,7 @@ h1#heading {
                                                                 can be exactly value or can begin with value immediately
                                                                 followed by a hyphen.</p>
                                                 </span></div>
-                                </div>
+                                </div>-->
                                 <p>In the example below you can see these selectors being used.</p>
                                 <ul>
                                         <li>By using <code>li[class]</code> we can match any selector with a class
