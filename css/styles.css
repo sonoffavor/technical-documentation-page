@@ -1,4 +1,15 @@
-/**** TAG SELECTORS ****/
+h1, h2 {
+    font-family: 'Alegreya', serif; 
+}
+
+p {
+    font-size: 17px;
+    font-family: 'Palanquin', sans-serif;
+    letter-spacing: 0.6px;
+}
+
+
+/* Navigation Bar */
 #navbar {
     height: 100%;
     width: 280px;
@@ -10,6 +21,12 @@
     padding-top: 20px;
     padding-left: 10px;   
 
+}
+
+nav header {
+    font-family: 'Alegreya', serif;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 #main-doc {
@@ -26,20 +43,6 @@ pre {
     margin: 1em 1em;
     padding: 2em 2em 2em 2em;
     white-space: pre-wrap;
-}
-
-p {
-    font-size: 17px;
-    font-family: 'Palanquin', sans-serif;
-    letter-spacing: 0.6px;
-}
-
-h1 {
-   font-family: 'Alegreya', serif; 
-}
-
-h2 {
-    font-family: 'Alegreya', serif;
 }
 
 code {
@@ -137,12 +140,6 @@ table {
 
 .table-col-three {
     width: 50%;
-}
-
-nav header {
-    font-family: 'Alegreya', serif;
-    font-size: 30px;
-    font-weight: 700;
 }
 
 main header {
