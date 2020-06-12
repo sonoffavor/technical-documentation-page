@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Alegreya|Palanquin:100&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Alegreya:700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet"
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet"
@@ -16,25 +17,47 @@
 
 <body>
         <nav id="navbar">
-                <header>CSS Documentation</header>
-                <ul>
+                
+                <!-- <ul>
                         <li><a href="#Introduction" class="nav-link">Introduction</a></li>
-                        <li><a href="#CSS_syntax" class="nav-link">CSS syntax</a></li>
+                        <li><a href="#CSS_syntax" class="nav-link">CSS Syntax</a></li>
                         <li><a href="#Selectors_introduction" class="nav-link">Selectors
-                                        introduction</a></li>
-                        <li><a href="#Simple_selectors" class="nav-link">Simple selector</a></li>
-                        <li><a href="#Attribute_selectors" class="nav-link">Attribute selectors</a></li>
+                                        Introduction</a></li>
+                        <li><a href="#Simple_selectors" class="nav-link">Simple Selector</a></li>
+                        <li><a href="#Attribute_selectors" class="nav-link">Attribute Selectors</a></li>
                         <li><a href="#Pseudo-classes_and_pseudo-elements" class="nav-link">Psuedo-classes and
-                                        pseudo-elements</a></li>
+                                        Pseudo-elements</a></li>
                         <li><a href="#Combinators_and_multiple_selectors" class="nav-link">Combinators
-                                        and multiple selectors</a></li>
-                        <li><a href="#CSS_values_and_units" class="nav-link">CSS values and units</a>
+                                        and Multiple Selectors</a></li>
+                        <li><a href="#CSS_values_and_units" class="nav-link">CSS Values and Units</a>
                         </li>
                         <li><a href="#Cascade_and_inheritance" class="nav-link">Cascade and
-                                        inheritance</a></li>
-                        <li><a href="#The_box_model" class="nav-link">The box model</a></li>
+                                        Inheritance</a></li>
+                        <li><a href="#The_box_model" class="nav-link">The Box Model</a></li>
                         <li><a href="#Reference" class="nav-link">Reference</a></li>
-                </ul>
+                </ul> -->
+                <header>CSS Documentation</header>
+                <div class="table-of-contents">
+                        
+                        <button class="table-of-contents-btn">Contents</button>
+                        <div class="table-of-contents-content">
+                                <a href="#Introduction" class="nav-link">Introduction</a>
+                                <a href="#CSS_syntax" class="nav-link">CSS Syntax</a>
+                                <a href="#Selectors_introduction" class="nav-link">Selectors
+                                        Introduction</a>
+                                <a href="#Simple_selectors" class="nav-link">Simple Selector</a>
+                                <a href="#Attribute_selectors" class="nav-link">Attribute Selectors</a>
+                                <a href="#Pseudo-classes_and_pseudo-elements" class="nav-link">Psuedo-classes and
+                                        Pseudo-elements</a>
+                                <a href="#Combinators_and_multiple_selectors" class="nav-link">Combinators
+                                        and Multiple Selectors</a>
+                                <a href="#CSS_values_and_units" class="nav-link">CSS Values and Units</a>
+                                <a href="#Cascade_and_inheritance" class="nav-link">Cascade and
+                                        Inheritance</a>
+                                <a href="#The_box_model" class="nav-link">The Box Model</a>
+                                <a href="#Reference" class="nav-link">Reference</a>     
+                        </div>
+                </div>
         </nav>
         <main id="main-doc">
                 <section class="main-section" id="Introduction">
@@ -57,7 +80,7 @@
                         </article>
                 </section>
                 <section class="main-section" id="CSS_syntax">
-                        <header>CSS syntax</header>
+                        <header>CSS Syntax</header>
                         <article>
                                 <h2>Vocabulary</h2>
                                 <p>At its most basic level, CSS consists of two building blocks:</p>
@@ -79,7 +102,7 @@
 <span class="code-block-tab-1">color: blue;</span>
 <span class="code-block-tab-1">background-color: yellow;</span>
 }
-                                                      
+
 p {
 <span class="code-block-tab-1">color: red;</span>
 }</code></pre>
@@ -137,7 +160,7 @@ p {
 <span class="code-block-tab-1">background-color: yellow;</span>
 <span class="code-block-tab-1">border: 1px solid black;</span>
 }
-                                                                              
+
 p {
 <span class="code-block-tab-1">color: red;</span>
 }</code></pre>
@@ -221,7 +244,7 @@ p {
                         </article>
                 </section>
                 <section class="main-section" id="Selectors_introduction">
-                        <header>Selector introduction</header>
+                        <header>Selector Introduction</header>
                         <article>
                                 <p>In CSS, selectors are used to target the HTML elements on our web pages that
                                         we want to style. There are a wide variety of CSS selectors available,
@@ -318,7 +341,7 @@ p {
                         </article>
                 </section>
                 <section class="main-section" id="Simple_selectors">
-                        <header>Simple selector</header>
+                        <header>Simple Selector</header>
 
                         <h2>Type selectors</h2>
                         <p>A <b>type selector</b> is sometimes referred to as a tag name selector or element
@@ -449,11 +472,11 @@ h1.highlight {
                         <pre><code>&#60div class="notebox"&#62
 <span class="code-block-tab-1">This is an informational note.</span>
 &#60/div&#62
-                                                                    
+
 &#60div class="notebox warning"&#62
 <span class="code-block-tab-1">This note shows a warning.</span>
 &#60/div&#62
-                                                                    
+
 &#60div class="notebox danger"&#62
 <span class="code-block-tab-1">This note shows danger!</span>
 &#60/div&#62</code></pre>
@@ -470,7 +493,7 @@ h1.highlight {
                         <pre><code>#one {
 <span class="code-block-tab-1">background-color: yellow;</span>
 }
-                                                            
+
 h1#heading {
 <span class="code-block-tab-1">color: rebeccapurple;</span>
 }</code></pre>
@@ -481,57 +504,59 @@ h1#heading {
 
                 </section>
                 <section class="main-section" id="Attribute_selectors">
-                        <header>Attribute selectors</header>
+                        <header>Attribute Selectors</header>
 
                         <h2>Presence and value selectors</h2>
                         <p>These selectors enable the selection of an element based on the presence of an
                                 attribute alone (for example <code>href</code>), or on various different matches
                                 against the value of the attribute.</p>
-
-                        <table>
-                                <tr>
-                                        <th class="table-col-one">Selector</th>
-                                        <th class="table-col-two">Example</th>
-                                        <th class="table-col-three">Description</th>
-                                </tr>
-                                <tr>
-                                        <td class="table-col-one"><code>[attr]</code></td>
-                                        <td class="table-col-two"><code>a[title]</code></td>
-                                        <td class="table-col-three">
-                                                <p>Matches elements with an attribute name of attr — the value in square
-                                                        brackets.</p>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td class="table-col-one"><code>[attr=value]</code></td>
-                                        <td class="table-col-two"><code>a[href="https://example.com"]</code></td>
-                                        <td class="table-col-three">
-                                                <p>Matches elements with an attribute name of attr whose value is
-                                                        exactly value — the string inside the quotes.</p>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td class="table-col-one"><code>[attr~=value]</code></td>
-                                        <td class="table-col-two"><code>p[class~="special"]</code></td>
-                                        <td class="table-col-three">
-                                                <p>Matches elements with an attribute name of attr whose value
-                                                        is exactly value, or elements with a class attribute
-                                                        containing one or more class names, at least one of
-                                                        which matches value.</p>
-                                                <p>Note that in a list of multiple class names the separate
-                                                        classes are whitespace-separated.</p>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td class="table-col-one"><code>[attr|=value]</code></td>
-                                        <td class="table-col-two"><code>div[lang|="zh"]</code></td>
-                                        <td class="table-col-three">
-                                                <p>Matches elements with an attribute name of attr whose value can be
-                                                        exactly value or can begin with value immediately followed by a
-                                                        hyphen.</p>
-                                        </td>
-                                </tr>
-                        </table>
+                        
+                        <div class="table-wrapper">
+                                <table>
+                                        <tr>
+                                                <th class="table-col-one">Selector</th>
+                                                <th class="table-col-two">Example</th>
+                                                <th class="table-col-three">Description</th>
+                                        </tr>
+                                        <tr>
+                                                <td class="table-col-one"><code>[attr]</code></td>
+                                                <td class="table-col-two"><code>a[title]</code></td>
+                                                <td class="table-col-three">
+                                                        <p>Matches elements with an attribute name of attr — the value in square
+                                                                brackets.</p>
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="table-col-one"><code>[attr=value]</code></td>
+                                                <td class="table-col-two"><code>a[href="https://example.com"]</code></td>
+                                                <td class="table-col-three">
+                                                        <p>Matches elements with an attribute name of attr whose value is
+                                                                exactly value — the string inside the quotes.</p>
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="table-col-one"><code>[attr~=value]</code></td>
+                                                <td class="table-col-two"><code>p[class~="special"]</code></td>
+                                                <td class="table-col-three">
+                                                        <p>Matches elements with an attribute name of attr whose value
+                                                                is exactly value, or elements with a class attribute
+                                                                containing one or more class names, at least one of
+                                                                which matches value.</p>
+                                                        <p>Note that in a list of multiple class names the separate
+                                                                classes are whitespace-separated.</p>
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="table-col-one"><code>[attr|=value]</code></td>
+                                                <td class="table-col-two"><code>div[lang|="zh"]</code></td>
+                                                <td class="table-col-three">
+                                                        <p>Matches elements with an attribute name of attr whose value can be
+                                                                exactly value or can begin with value immediately followed by a
+                                                                hyphen.</p>
+                                                </td>
+                                        </tr>
+                                </table>
+                        </div>
 
                         <p>In the example below you can see these selectors being used.</p>
                         <ul>
@@ -572,38 +597,40 @@ li[class~="a"] {
                                 string "box-", you could use <code>[class^="box-"]</code> to select them both.
                         </p>
 
-                        <table>
-                                <tr>
-                                        <th class="table-col-one">Selector</th>
-                                        <th class="table-col-two">Example</th>
-                                        <th class="table-col-three">Description</th>
-                                </tr>
-                                <tr>
-                                        <td class="table-col-one"><code>[attr^=value]</code></td>
-                                        <td class="table-col-two"><code>li[class^="box-"]</code></td>
-                                        <td class="table-col-three">
-                                                <p>Matches elements with an attribute name of attr whose value has the
-                                                        substring value at the start of it.</p>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td class="table-col-one"><code>[attr$=value]</code></td>
-                                        <td class="table-col-two"><code>li[class$="-box"]</code></td>
-                                        <td class="table-col-three">
-                                                <p>Matches elements with an attribute name of attr whose value has the
-                                                        substring value at the end of it.</p>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td class="table-col-one"><code>[attr*= ]</code></td>
-                                        <td class="table-col-two"><code>li[class*="box"]</code></td>
-                                        <td class="table-col-three">
-                                                <p>Matches elements with an attribute name of attr whose value contains
-                                                        at least one occurrence of the substring value anywhere within
-                                                        the string.</p>
-                                        </td>
-                                </tr>
-                        </table>
+                        <div class="table-wrapper">
+                                <table>
+                                        <tr>
+                                                <th class="table-col-one">Selector</th>
+                                                <th class="table-col-two">Example</th>
+                                                <th class="table-col-three">Description</th>
+                                        </tr>
+                                        <tr>
+                                                <td class="table-col-one"><code>[attr^=value]</code></td>
+                                                <td class="table-col-two"><code>li[class^="box-"]</code></td>
+                                                <td class="table-col-three">
+                                                        <p>Matches elements with an attribute name of attr whose value has the
+                                                                substring value at the start of it.</p>
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="table-col-one"><code>[attr$=value]</code></td>
+                                                <td class="table-col-two"><code>li[class$="-box"]</code></td>
+                                                <td class="table-col-three">
+                                                        <p>Matches elements with an attribute name of attr whose value has the
+                                                                substring value at the end of it.</p>
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <td class="table-col-one"><code>[attr*= ]</code></td>
+                                                <td class="table-col-two"><code>li[class*="box"]</code></td>
+                                                <td class="table-col-three">
+                                                        <p>Matches elements with an attribute name of attr whose value contains
+                                                                at least one occurrence of the substring value anywhere within
+                                                                the string.</p>
+                                                </td>
+                                        </tr>
+                                </table>
+                        </div>
 
                         <p>The next example shows usage of these selectors:</p>
 
@@ -665,7 +692,7 @@ li[class^="a" i] {
 
                 </section>
                 <section class="main-section" id="Pseudo-classes_and_pseudo-elements">
-                        <header>Psuedo-classes and pseudo-elements</header>
+                        <header>Psuedo-classes and Pseudo-elements</header>
 
                         <h2>What is a pseudo-class?</h2>
                         <p>A psuedo-class is a selector that selects elements that are in a specific state, e.g.
@@ -874,7 +901,7 @@ li[class^="a" i] {
 
                 </section>
                 <section class="main-section" id="Combinators_and_multiple_selectors">
-                        <header>Combinators and multiple selectors</header>
+                        <header>Combinators and Multiple Selectors</header>
 
                         <h2>Descendant selector</h2>
                         <p>You have already come across descendant selectors in previous lessons — selectors
@@ -1002,7 +1029,7 @@ li[class^="a" i] {
                                 perhaps due to it being generated by a CMS.</p>
                 </section>
                 <section class="main-section" id="CSS_values_and_units">
-                        <header>CSS values and units</header>
+                        <header>CSS Values and Units</header>
 
                         <h2>What is a CSS value?</h2>
                         <p>In CSS specifications and on the property pages here on MDN you will be able to spot
@@ -1428,7 +1455,7 @@ li[class^="a" i] {
 
                 </section>
                 <section class="main-section" id="Cascade_and_inheritance">
-                        <header>Cascade and inheritance</header>
+                        <header>Cascade and Inheritance</header>
 
                         <h2>Conflicting rules</h2>
 
@@ -1959,7 +1986,7 @@ p {
                                 using <code>!important</code> in their rules.</p>
                 </section>
                 <section class="main-section" id="The_box_model">
-                        <header>The box model</header>
+                        <header>The Box Model</header>
 
                         <h2>Block and inline boxes</h2>
                         <p>In CSS we broadly have two types of box — <b>block boxes</b> and <b>inline boxes</b>.
@@ -2131,7 +2158,7 @@ p {
                                 (350 + 25 + 25 + 5 + 5), and the height 260px (150 + 25 + 25 + 5 + 5), as the
                                 padding and border are added to the width used for the content box.</p>
 
-                        <p>Please refer to the diagram on the<a
+                        <p>Please refer to the diagram on the <a
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                         target="_blank">MDN website</a>.</p>
 
@@ -2410,20 +2437,19 @@ p {
                         <header>Reference</header>
 
                         <ul>
-                                <li>All the documentation in this page is taken from <a
+                                <li>All the documentation in this page is taken from the <a
                                                 href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                                 target="_blank">MDN website</a></li>
                         </ul>
                 </section>
         </main>
-        <footer>
-                <p>Coded by Ben Rietman</p>
+        <footer id="contact">
                 <div class="personal-contact-information">
-                        <a href="mailto:rietmanb@yahoo.com?subject=feedback" class="fa fa-envelope"></a>
+                        <a href="mailto:sonoffavor@gmail.com?subject=feedback" class="fa fa-envelope"></a>
                         <a href="https://www.linkedin.com/in/benjamin-rietman-346a07164/" class="fa fa-linkedin"
                                 target="_blank"></a>
                 </div>
-                <!--<a href="mailto:sonoffavor@gmail.com?subject=feedback">Contact</a>-->
+                <p>Coded by Ben Rietman</p>
         </footer>
 </body>
 
