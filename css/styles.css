@@ -1,3 +1,13 @@
+body {
+    margin: 0 auto;
+    max-width: 87.4375rem;
+    
+}
+
+section {
+    padding: 18px 0;
+}
+
 h1 {
     font-family: 'Alegreya', serif; 
 }
@@ -15,10 +25,6 @@ p {
     letter-spacing: 0.6px;
 }
 
-section {
-    margin-top: 50px;
-}
-
 
 /* Navigation Bar Styling*/
 #navbar {
@@ -27,12 +33,10 @@ section {
     width: 280px;
     position: fixed;
     top: 0;
-    left: 0;
+    /* left: 0; */
     overflow-x: hidden;
     padding-top: 15px;
     padding-left: 20px;
-    
-
 }
 
 #navbar ul {
@@ -46,7 +50,7 @@ section {
     /* display: inline-block; */
     font-family: 'Palanquin', sans-serif;
     font-weight: 100;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: black;
     line-height: 1;
     padding: 10px 0 10px 0;
@@ -72,13 +76,16 @@ nav header {
     font-weight: 700;
 }
 
-/* Table of Contents */
-.table-of-contents-btn {
+
+/* Dropdown Button Styling*/
+.dropbtn {
     display: none;
 }
 
+
 /* Main Document Styling*/
 #main-doc {
+    margin-right: 10px;
     margin-left: 300px;
     padding-left: 20px;
 }
@@ -225,7 +232,7 @@ table code {
 
 
 
-/* Footer */
+/* Footer and Contact Information */
 #contact {
     border-top: solid;
     border-width: 1px;
@@ -237,11 +244,8 @@ table code {
 
 #contact p {
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 0.70rem;
 }
-
-
-/* Contact Information */
 
 .personal-contact-information a {
     text-decoration: none;
@@ -249,6 +253,8 @@ table code {
     padding: 10px 5px;
 }
 
+
+/* Order and Unorder lists Styling */
 ul li {
     font-family: 'Palanquin', sans-serif;
     font-size: 1.06rem;
@@ -267,30 +273,47 @@ ol li {
 }
 
 
+/* Media Queries */
 @media (max-width: 850px) {
-
-    .table-of-contents-content {
-        background-color: #fff;
-        display: none;
-        position: absolute;
-        right: 10px;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        
-        
+    
+    section {
+        padding: 50px 0;
     }
 
-    .table-of-contents {
+    /* Dropdown Menu */
+    .dropdown {
         position: relative;
         /* display: inline-block; */
         float: right;
     }
 
-    .table-of-contents-btn {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropbtn {
+        cursor: pointer;
         display: inline;
-        margin: 13px 10px 13px 0;
+        margin: 13px 13px 13px 0;
+    }
+
+    .dropdown-content {
+        background-color: #fff;
+        display: none;
+        position: absolute;
+        right: 10px;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        
+        
+    }
+
+    .dropdown-content a {
+        text-align: right;
     }
     
+
+    /* Navigation Menu */
     #navbar {
         height: auto;
         width: 100%;
@@ -310,10 +333,11 @@ ol li {
 
     #navbar a {
         padding-right: 10px;
+        padding-left: 10px;
     }
 
     #main-doc {
-        margin: 0 5px 0 5px;
+        margin: 0 10px 0 10px;
         padding: 0;
     }
 
@@ -322,19 +346,6 @@ ol li {
         width: 100%;
 
     }
-
-    .table-of-contents-btn {
-        cursor: pointer;
-    }
-
-    .table-of-contents-content a {
-        text-align: right;
-    }
-    
-    .table-of-contents:hover .table-of-contents-content {
-        display: block;
-    }
-
 }
 
 @media (max-width: 320px) {

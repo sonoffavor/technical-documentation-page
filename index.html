@@ -4,62 +4,59 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Alegreya|Palanquin:100&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Alegreya:700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500&display=swap" rel="stylesheet">
+        
+        <!-- Font Awesome Icons -->
         <link rel="stylesheet"
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!-- External CSS Style Sheet -->
         <link rel="stylesheet" href="css/styles.css">
+
         <title>CSS Documention Page</title>
 </head>
 
 <body>
+        <!-- freecodecamp Test Code -->
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+        <!-- Navigation Bar -->
         <nav id="navbar">
-                
-                <!-- <ul>
-                        <li><a href="#Introduction" class="nav-link">Introduction</a></li>
-                        <li><a href="#CSS_syntax" class="nav-link">CSS Syntax</a></li>
-                        <li><a href="#Selectors_introduction" class="nav-link">Selectors
-                                        Introduction</a></li>
-                        <li><a href="#Simple_selectors" class="nav-link">Simple Selector</a></li>
-                        <li><a href="#Attribute_selectors" class="nav-link">Attribute Selectors</a></li>
-                        <li><a href="#Pseudo-classes_and_pseudo-elements" class="nav-link">Psuedo-classes and
-                                        Pseudo-elements</a></li>
-                        <li><a href="#Combinators_and_multiple_selectors" class="nav-link">Combinators
-                                        and Multiple Selectors</a></li>
-                        <li><a href="#CSS_values_and_units" class="nav-link">CSS Values and Units</a>
-                        </li>
-                        <li><a href="#Cascade_and_inheritance" class="nav-link">Cascade and
-                                        Inheritance</a></li>
-                        <li><a href="#The_box_model" class="nav-link">The Box Model</a></li>
-                        <li><a href="#Reference" class="nav-link">Reference</a></li>
-                </ul> -->
+
+                <!-- Document Name/Logo -->
                 <header>CSS Documentation</header>
-                <div class="table-of-contents">
-                        
-                        <button class="table-of-contents-btn">Contents</button>
-                        <div class="table-of-contents-content">
+                
+                <!-- Navigation Links -->
+                <div class="dropdown">
+                        <button class="dropbtn">Contents</button>
+                        <div class="dropdown-content">
                                 <a href="#Introduction" class="nav-link">Introduction</a>
-                                <a href="#CSS_syntax" class="nav-link">CSS Syntax</a>
-                                <a href="#Selectors_introduction" class="nav-link">Selectors
+                                <a href="#CSS_Syntax" class="nav-link">CSS Syntax</a>
+                                <a href="#Selector_Introduction" class="nav-link">Selector
                                         Introduction</a>
-                                <a href="#Simple_selectors" class="nav-link">Simple Selector</a>
-                                <a href="#Attribute_selectors" class="nav-link">Attribute Selectors</a>
-                                <a href="#Pseudo-classes_and_pseudo-elements" class="nav-link">Psuedo-classes and
+                                <a href="#Simple_Selectors" class="nav-link">Simple Selectors</a>
+                                <a href="#Attribute_Selectors" class="nav-link">Attribute Selectors</a>
+                                <a href="#Pseudo-classes_and_Pseudo-elements" class="nav-link">Pseudo-classes and
                                         Pseudo-elements</a>
-                                <a href="#Combinators_and_multiple_selectors" class="nav-link">Combinators
+                                <a href="#Combinators_and_Multiple_Selectors" class="nav-link">Combinators
                                         and Multiple Selectors</a>
-                                <a href="#CSS_values_and_units" class="nav-link">CSS Values and Units</a>
-                                <a href="#Cascade_and_inheritance" class="nav-link">Cascade and
+                                <a href="#CSS_Values_and_Units" class="nav-link">CSS Values and Units</a>
+                                <a href="#Cascade_and_Inheritance" class="nav-link">Cascade and
                                         Inheritance</a>
-                                <a href="#The_box_model" class="nav-link">The Box Model</a>
+                                <a href="#The_Box_Model" class="nav-link">The Box Model</a>
                                 <a href="#Reference" class="nav-link">Reference</a>     
                         </div>
                 </div>
         </nav>
+
+        <!-- Main Document -->
         <main id="main-doc">
+
+                <!-- Introduction Section -->
                 <section class="main-section" id="Introduction">
                         <header>Introduction</header>
                         <article>
@@ -79,7 +76,9 @@
                                 </ol>
                         </article>
                 </section>
-                <section class="main-section" id="CSS_syntax">
+
+                <!-- CSS Syntax Section -->
+                <section class="main-section" id="CSS_Syntax">
                         <header>CSS Syntax</header>
                         <article>
                                 <h2>Vocabulary</h2>
@@ -98,6 +97,8 @@
                                 </p>
                                 <p>The below image highlights a single property and value. The property name is
                                         <code>color</code>, and the value <code>blue</code></p>
+
+                                <!-- Code Block -->
                                 <pre><code>h1 {
 <span class="code-block-tab-1">color: blue;</span>
 <span class="code-block-tab-1">background-color: yellow;</span>
@@ -106,10 +107,13 @@
 p {
 <span class="code-block-tab-1">color: red;</span>
 }</code></pre>
+
                                 <p>Finally, CSS declaration blocks are paired with selectors to produce CSS
                                         Rulesets (or CSS Rules). Our image contains two rules, one for the
                                         <code>h1</code> selector and one for the <code>p</code> selector. The
                                         rule for <code>h1</code> is highlighted.</p>
+
+                                <!-- Code Block -->
                                 <pre><code>h1 {
 <span class="code-block-tab-1">color: blue;</span>
 <span class="code-block-tab-1">background-color: yellow;</span>
@@ -118,6 +122,7 @@ p {
 p {
 <span class="code-block-tab-1">color: red;</span>
 }</code></pre>
+
                                 <p>Setting CSS properties to specific values is the core function of the CSS
                                         language. The CSS engine calculates which declarations apply to every
                                         single element of a page in order to appropriately lay it out and style
@@ -125,7 +130,8 @@ p {
                                         case-sensitive in CSS. The property and value in each pair is separated
                                         by a colon (<code>:</code>).</p>
 
-                                <h2>Applying CSS to yout HTML</h2>
+                                <!-- Applying CSS to your HTML -->
+                                <h2>Applying CSS to your HTML</h2>
                                 <p>There are three methods of applying CSS to a document.</p>
                                 <ul>
                                         <li>External stylesheet</li>
@@ -133,6 +139,7 @@ p {
                                         <li>Inline styles</li>
                                 </ul>
 
+                                <!-- External Stylesheet -->
                                 <span class="h3-title">
                                         <p>External stylesheet</p>
                                 </span>
@@ -142,6 +149,8 @@ p {
                                 <p>An external stylesheet is when you have your CSS written in a separate file
                                         with a <code>.css</code> extension, and you reference it from an HTML
                                         <code>&#60link&#62</code> element:</p>
+
+                                <!-- Code Block -->
                                 <pre><code>&#60!DOCTYPE html&#62
 &#60html&#62
 <span class="code-block-tab-1">&#60head&#62</span>
@@ -154,7 +163,10 @@ p {
 <span class="code-block-tab-2">&#60p&#62This is my first CSS example&#60/p&#62</span>
 <span class="code-block-tab-1">&#60/body&#62</span>
 &#60/html&#62</code></pre>
+
                                 <p>The CSS file might look something like this:</p>
+                                
+                                <!-- Code Block -->
                                 <pre><code>h1 {
 <span class="code-block-tab-1">color: blue;</span>
 <span class="code-block-tab-1">background-color: yellow;</span>
@@ -164,12 +176,14 @@ p {
 p {
 <span class="code-block-tab-1">color: red;</span>
 }</code></pre>
+
                                 <p>The <code>href</code> attribute of the <code>&#60link&#62</code> element
                                         needs to reference a file on your filesystem.</p>
                                 <p>In the example above the CSS file is in the same folder as the HTML document,
                                         but you could place it somewhere else and adjust the specified path to
                                         suit, for example:</p>
-
+                                
+                                <!-- Code Block -->
                                 <pre><code>&#60&#33-- Inside a subdirectory called styles inside the current directory --&#62
 &#60link rel="stylesheet" href="styles/style.css"&#62
         
@@ -179,6 +193,7 @@ p {
 &#60&#33-- Go up one directory level, then inside a subdirectory called styles --&#62
 &#60link rel="stylesheet" href="../styles/style.css"&#62</code></pre>
 
+                                <!-- Internal Stylesheet -->
                                 <span class="h3-title">
                                         <p>Internal stylesheet</p>
                                 </span>
@@ -186,6 +201,8 @@ p {
                                         instead place your CSS inside a <code>&#60style&#62</code> element
                                         contained inside the HTML <code>&#60head&#62</code>.</p>
                                 <p>So the HTML would look like this:</p>
+
+                                <!-- Code Block -->
                                 <pre><code>&#60!DOCTYPE html&#62
 &#60html&#62
 <span class="code-block-tab-1">&#60head&#62</span>
@@ -208,17 +225,21 @@ p {
 <span class="code-block-tab-2">&#60p&#62This is my first CSS example&#60/p&#62</span>
 <span class="code-block-tab-1">&#60/body&#62</span>
 &#60/html&#62</code></pre>
+
                                 <p>This can be useful in some circumstances (maybe you're working with a content
                                         management system where you can't modify the CSS files directly), but it
                                         isn't quite as efficient as external stylesheets — in a website, the CSS
                                         would need to be repeated across every page, and updated in multiple
                                         places if changes were required.</p>
-
+                                
+                                <!-- Inline Styles -->
                                 <span class="h3-title">
                                         <p>Inline styles</p>
                                 </span>
                                 <p>Inline styles are CSS declarations that affect one element only, contained
                                         within a <code>style</code> attribute:</p>
+
+                                <!-- Code Block -->
                                 <pre><code>&#60!DOCTYPE html&#62
 <span class="code-block-tab-1">&#60html&#62</span>
 <span class="code-block-tab-2">&#60head&#62</span>
@@ -230,6 +251,7 @@ p {
 <span class="code-block-tab-3">&#60p style="color:red;">This is my first CSS example&#60/p&#62</span>
 <span class="code-block-tab-2">&#60/body&#62</span>
 <span class="code-block-tab-1">&#60/html&#62</span></code></pre>
+
                                 <p><b>Please don't do this, unless you really have to!</b> It is really bad for
                                         maintenance (you might have to update the same information multiple
                                         times per document), and it also mixes your presentational CSS
@@ -243,7 +265,9 @@ p {
                                         order to get compatibility with as many email clients as possible.</p>
                         </article>
                 </section>
-                <section class="main-section" id="Selectors_introduction">
+
+                <!-- Selector Introduction Section -->
+                <section class="main-section" id="Selector_Introduction">
                         <header>Selector Introduction</header>
                         <article>
                                 <p>In CSS, selectors are used to target the HTML elements on our web pages that
@@ -251,11 +275,15 @@ p {
                                         allowing for fine-grained precision when selecting elements to style. In
                                         this article and its sub-articles we'll run through the different types
                                         in great detail, seeing how they work.</p>
+                                
+                                <!-- What is a selector? -->
                                 <h2>What is a selector?</h2>
                                 <p>A CSS selector is the first part of a CSS Rule. It is a pattern of elements
                                         and other terms that tell the browser which HTML elements should be
                                         selected to have the CSS property values inside the rule applied to
                                         them.</p>
+                                
+                                <!-- Code Block -->
                                 <pre><code>h1 {
 <span class="code-block-tab-1">color: blue;</span>
 <span class="code-block-tab-1">background-color: yellow;</span>
@@ -265,12 +293,15 @@ p {
 <span class="code-block-tab-1">color: red;</span>
 }</code></pre>
 
+                                <!-- Selector Lists -->
                                 <h2>Selector lists</h2>
                                 <p>If you have more than one thing which uses the same CSS then the individual
                                         selectors can be combined into a selector list so that the rule is
                                         applied to all of the individual selectors. For example, if I have the
                                         same CSS for an <code>h1</code> and also a class of
                                         <code>.special</code>, I could write this as two separate rules.</p>
+
+                                <!-- Code Block -->
                                 <pre><code>h1 {
 <span class="code-block-tab-1">color: blue;</span>
 }
@@ -278,77 +309,117 @@ p {
 .special {
 <span class="code-block-tab-1">color: blue;</span>
 }</code></pre>
+
                                 <p>These selectors can be combined into a selector list, by adding a comma
                                         between them.</p>
+                                
+                                <!-- Code Block  -->
                                 <pre><code>h1, .special {
 <span class="code-block-tab-1">color: blue;</span>
 }</code></pre>
+
                                 <p>White space is valid before or after the comma. You may also find the
                                         selectors more readable if each is on a new line.</p>
+
+                                <!-- Code Block -->
                                 <pre><code>h1,
 .special {
 <span class="code-block-tab-1">color: blue;</span>
 }</code></pre>
 
+                                <!-- Types of Selectors -->
                                 <h2>Types of selectors</h2>
                                 <p>There are a few different groupings of selectors, and knowing which type of
                                         selector you might need will help you to find the right tool for the
                                         job.</p>
-
+                                
+                                <!-- Type, Class, and ID selectors -->
                                 <span class="h3-title">
                                         <p>Type, class, and ID selectors</p>
                                 </span>
+
                                 <p>This group includes selectors that target an HTML element such as an
                                         <code>&#60h1&#62</code>.</p>
+                                
+                                <!-- Code Block -->
                                 <pre><code>h1 { }</code></pre>
                                 <p>It also includes selectors which target a class:</p>
+
+                                <!-- Code Block -->
                                 <pre><code>.box { }</code></pre>
                                 <p>or, an ID:</p>
-                                <pre><code>#unique { }</code></pre>
 
+                                <!-- Code Block -->
+                                <pre><code>#unique { }</code></pre>
+                                
+                                <!-- Attribute Selectors -->
                                 <span class="h3-title">
                                         <p>Attribute selectors</p>
                                 </span>
+
                                 <p>This group of selectors gives you different ways to select elements based on
                                         the presence of a certain attribute on an element:</p>
+                                
+                                <!-- Code Block -->
                                 <pre><code>a[title] { }</code></pre>
+
                                 <p>Or even make a selection based on the presence of an attribute with a
                                         particular value:</p>
+                                
+                                <!-- Code Block -->
                                 <pre><code>a[href="https://example.com"] { }</code></pre>
+
+                                <!-- Pseudo-classes and pseudo-elements -->
                                 <span class="h3-title">
                                         <p>Pseudo-classes and pseudo-elements</p>
                                 </span>
+
                                 <p>This group of selectors includes pseudo-classes, which style certain states
                                         of an element. The <code>:hover</code> pseudo-class for example selects
                                         an element only when it is being hovered over by the mouse pointer:</p>
+
+                                <!-- Code Block -->
                                 <pre><code>a:hover { }</code></pre>
+
                                 <p>It also includes pseudo-elements, which select a certain part of an element
                                         rather than the element itself. For example, <code>::first-line</code>
                                         always selects the first line of text inside an element (a
                                         <code>&#60p&#62</code> in the below case), acting as if a
                                         <code>&#60span&#62</code> was wrapped around the first formatted line
                                         and then selected.</p>
+                                
+                                <!-- Code Block -->
                                 <pre><code>p::first-line { }</code></pre>
 
+                                <!-- Combinators -->
                                 <span class="h3-title">
                                         <p>Combinators</p>
                                 </span>
+
                                 <p>The final group of selectors combine other selectors in order to target
                                         elements within our documents. The following for example selects
                                         paragraphs that are direct children of <code>&#60article&#62</code>
                                         elements using the child combinator (<code>></code>):</p>
+
+                                <!-- Code Block -->
                                 <pre><code>article > p { }</code></pre>
                         </article>
                 </section>
-                <section class="main-section" id="Simple_selectors">
-                        <header>Simple Selector</header>
 
+                <!-- Simple Selector Section -->
+                <section class="main-section" id="Simple_Selectors">
+                        <header>Simple Selectors</header>
+
+                        <!-- Type Selectors -->
                         <h2>Type selectors</h2>
+
                         <p>A <b>type selector</b> is sometimes referred to as a tag name selector or element
                                 selector, because it selects an HTML tag/element in your document. In the below
                                 example we have used span, em and strong selectors. All instances of
                                 <code>&#60span&#62</code>, <code>&#60em&#62</code> and
                                 <code>&#60strong&#62</code> elements are therefore styled.</p>
+
+                        <!-- Code Block -->
                         <pre><code>span {
 <span class="code-block-tab-1">background-color: yellow;</span>
 }
@@ -360,6 +431,8 @@ strong {
 em {
 <span class="code-block-tab-1">color: rebeccapurple;</span>
 }</code></pre>
+
+                        <!-- Code Block -->
                         <pre><code>&#60h1&#62Type selectors&#60/h1&#62
 &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
 
@@ -367,6 +440,7 @@ em {
 
 &#60p&#62Turnip greens yarrow ricebean rutabaga &#60em&#62endive cauliflower&#60/em&#62 sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach&#60/p&#62</code></pre>
 
+                        <!-- The Univeral Selector -->
                         <h2>The universal selector</h2>
                         <p>The universal selector is indicated by an asterisk <code>(*)</code> and selects
                                 everything in the document (or inside the parent element if it is being chained
@@ -375,23 +449,29 @@ em {
                                 all elements. This means that instead of the default styling added by the
                                 browser, which spaces out headings and paragraphs with margins, everything is
                                 close together and we can't see the different paragraphs easily.</p>
+
+                        <!-- Code Block -->
                         <pre><code>* {
 <span class="code-block-tab-1">margin: 0;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60h1&#62Universal selector&#60/h1&#62
 &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
 
 &#60p&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd.  Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</code></pre>
+
                         <p>This kind of behavior can sometimes be seen in "reset stylesheets', which strip out
                                 all of the browser styling. These were very popular at one point, however
                                 stripping out all styling usually meant that you then had to do the job of
                                 putting it all back! We tend to use the universal selector carefully therefore,
                                 to deal with very specific situations such as the one outlined below.</p>
 
+                        <!-- Using the universal selector to make your selectors easire to read -->
                         <span class="h3-title">
                                 <p>Using the universal selector to make your selectors easier to read</p>
                         </span>
+
                         <p>One use of the universal selector is to make selectors easier to read and more
                                 obvious in terms of what they are doing. For example, if I wanted to select the
                                 first child of any &#60article&#62 element, no matter what element it was, and
@@ -400,9 +480,12 @@ em {
                                         href="#Pseudo-classes_and_pseudo-elements">pseudo-classes and
                                         pseudo-elements</a>, as a descendant selector along with the
                                 &#60article&#62 element selector: </p>
+
+                        <!-- Code Block -->
                         <pre><code>aritcle :first-child {
 
 }</code></pre>
+
                         <p>This could be confused however with <code>article:first-child</code>, which will
                                 select any <code>&#60article&#62</code> element that is the first child of
                                 another element.</p>
@@ -410,27 +493,39 @@ em {
                                 <code>:first-child</code> selector, so it is obvious what the selector is doing.
                                 It is selecting any element which is the first-child of an
                                 <code>&#60article&#62</code> element:</p>
+
+                        <!-- Code Block -->
                         <pre><code>article *:first-child {
 
 }</code></pre>
 
+                        <!-- Class Selectors -->
                         <h2>Class selectors</h2>
+
                         <p>The class selector starts with a full stop (<code>.</code>) character and will select
                                 everything in the document with that class applied to it.</p>
+
+                        <!-- Code Block -->
                         <pre><code>.highlight {
 <span class="code-block-tab-1">background-color: yellow;</span>
 }</code></pre>
+
+                        <!-- Code Block -->
                         <pre><code>&#60h1 class="highlight"&#62Class selectors&#60/h1&#62
 &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span class="highlight"&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
 
 &#60p class="highlight"&#62Gumbo beet greens corn soko &#60strong>endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</code></pre>
 
+                        <!-- Targetting classes on particular elements -->
                         <span class="h3-title">
                                 <p>Targetting classes on particular elements</p>
                         </span>
+
                         <p>You can create a selector that will target specific elements with the class applied.
                                 We do this by using the type selector for the element I want to target, with the
                                 class appended, with no white space inbetween.</p>
+
+                        <!-- Code Block -->
                         <pre><code>span.highlight {
 <span class="code-block-tab-1">background-color: yellow;</span>
 }
@@ -438,23 +533,30 @@ em {
 h1.highlight {
 <span class="code-block-tab-1">background-color: pink;</span>
 }</code></pre>
+
+                        <!-- Code Block -->
                         <pre><code>&#60h1 class="highlight"&#62Class selectors&#60/h1&#62
 &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis &#60span class="highlight"&#62kohlrabi welsh onion&#60/span&#62 daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
 
 &#60p class="highlight"&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</code></pre>
+
                         <p>This approach does make the CSS less reusable as the class will now only apply to
                                 that particular element, and you would need to add another selector if you
                                 decided that the rules should apply to other elements too.</p>
 
+                        <!-- Target an element if it has more than one class applied -->
                         <span class="h3-title">
                                 <p>Target an element if it has more than one class applied</p>
                         </span>
+
                         <p>You can apply multiple classes to an element and target them individually, or only
                                 select the element when all of the classes in the selector are present. This can
                                 be helpful when building up components that can be combined in different ways on
                                 your site.</p>
                         <p>We can tell the browser that we only want to match the element if it has all of these
                                 classes by chaining them together with no white space between them.</p>
+
+                        <!-- Code Block -->
                         <pre><code>.notebox {
 <span class="code-block-tab-1">border: 4px solid #666;</span>
 <span class="code-block-tab-1">padding: .5em;</span>
@@ -481,15 +583,19 @@ h1.highlight {
 <span class="code-block-tab-1">This note shows danger!</span>
 &#60/div&#62</code></pre>
 
+                        <!-- ID Selectors -->
                         <span class="h3-title">
                                 <p>ID Selectors</p>
                         </span>
+
                         <p>An ID selector begins with a <code>#</code> rather than a full stop character, but is
                                 basically used in the same way as a class selector. An ID however can be used
                                 only once per document. It can select an element that has the <code>id</code>
                                 set on it, and you can precede the ID with a type selector to only target the
                                 element if both the element and ID match. You can see both of these uses in the
                                 following example:</p>
+
+                        <!-- Code Block -->
                         <pre><code>#one {
 <span class="code-block-tab-1">background-color: yellow;</span>
 }
@@ -497,20 +603,26 @@ h1.highlight {
 h1#heading {
 <span class="code-block-tab-1">color: rebeccapurple;</span>
 }</code></pre>
+
+                        <!-- Code Block -->
                         <pre><code>&#60h1 id="heading"&#62ID selector&#60/h1&#62
 &#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62
 
 &#60p id="one"&#62Gumbo beet greens corn soko &#60strong&#62endive&#60/strong&#62 gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</code></pre>
 
                 </section>
-                <section class="main-section" id="Attribute_selectors">
+
+                <!-- Attribute Selectors Section -->
+                <section class="main-section" id="Attribute_Selectors">
                         <header>Attribute Selectors</header>
 
+                        <!-- Presence and value selectors -->
                         <h2>Presence and value selectors</h2>
                         <p>These selectors enable the selection of an element based on the presence of an
                                 attribute alone (for example <code>href</code>), or on various different matches
                                 against the value of the attribute.</p>
                         
+                        <!-- Table  -->
                         <div class="table-wrapper">
                                 <table>
                                         <tr>
@@ -559,6 +671,7 @@ h1#heading {
                         </div>
 
                         <p>In the example below you can see these selectors being used.</p>
+
                         <ul>
                                 <li>By using <code>li[class]</code> we can match any selector with a class
                                         attribute. This matches all but the first list item.</li>
@@ -571,6 +684,8 @@ h1#heading {
                                         whitespace-separated list. It selects the second and third list items.
                                 </li>
                         </ul>
+
+                        <!-- Code Block -->
                         <pre><code>li[class] {
 <span class="code-block-tab-1">font-size: 200%;</span>
 }
@@ -590,13 +705,16 @@ li[class~="a"] {
 <span class="code-block-tab-1">&#60li class="ab"&#62Item 4&#60/li&#62</span>
 &#60/ul&#62</code></pre>
 
+                        <!-- Substring Matching Selectors -->
                         <h2>Substring matching selectors</h2>
+
                         <p>These selectors allow for more advanced matching of substrings inside the value of
                                 your attribute. For example, if you had classes of <code>box-warning</code> and
                                 <code>box-error</code> and wanted to match everything that started with the
                                 string "box-", you could use <code>[class^="box-"]</code> to select them both.
                         </p>
 
+                        <!-- Table -->
                         <div class="table-wrapper">
                                 <table>
                                         <tr>
@@ -643,6 +761,7 @@ li[class~="a"] {
                                         anywhere in the string, so it matches all of our list items.</li>
                         </ul>
 
+                        <!-- Code Block -->
                         <pre><code>li[class^="a"] {
 <span class="code-block-tab-1">font-size: 200%;</span>
 }
@@ -655,6 +774,7 @@ li[class*="a"] {
 <span class="code-block-tab-1">color: red;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60h1&#62Attribute substring matching selectors&#60/h1&#62
 &#60ul&#62
 <span class="code-block-tab-1">&#60li class="a"&#62Item 1&#60/li&#62</span>
@@ -663,7 +783,9 @@ li[class*="a"] {
 <span class="code-block-tab-1">&#60li class="bcabc"&#62Item 4&#60/li&#62</span>
 &#60/ul&#62</code></pre>
 
+                        <!-- Case-Sensitivity -->
                         <h2>Case-sensitivity</h2>
+
                         <p>If you want to match attribute values case-insensitively you can use the value
                                 <code>i</code> before the closing bracket. This flag tells the browser to match
                                 ASCII characters case-insensitively. Without the flag the values will be matched
@@ -675,6 +797,7 @@ li[class*="a"] {
                                 uppercase A. The second selector uses the case-insensitive flag and so matches
                                 all of the list items.</p>
 
+                        <!-- Code Block -->
                         <pre><code>li[class^="a"] {
 <span class="code-block-tab-1">background-color: yellow;</span>
 }
@@ -683,6 +806,7 @@ li[class^="a" i] {
 <span class="code-block-tab-1">color: red;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60h1&#62Case-insensitivity&#60/h1&#62
 &#60ul&#62
 <span class="code-block-tab-1">&#60li class="a"&#62Item 1&#60/li&#62</span>
@@ -691,9 +815,12 @@ li[class^="a" i] {
 &#60/ul&#62</code></pre>
 
                 </section>
-                <section class="main-section" id="Pseudo-classes_and_pseudo-elements">
-                        <header>Psuedo-classes and Pseudo-elements</header>
 
+                <!-- Psuedo-classes and Pseudo-elements -->
+                <section class="main-section" id="Pseudo-classes_and_Pseudo-elements">
+                        <header>Pseudo-classes and Pseudo-elements</header>
+
+                        <!-- What is a pseudo-class? -->
                         <h2>What is a pseudo-class?</h2>
                         <p>A psuedo-class is a selector that selects elements that are in a specific state, e.g.
                                 they are the first element of their type, or they are being hovered over by the
@@ -702,20 +829,26 @@ li[class^="a" i] {
                                 giving you more flexible, maintainable code.</p>
 
                         <p>Pseudo-classes are keywords that start with a colon:</p>
+
+                        <!-- Code Block -->
                         <Pre><code>:pseudo-class-name</code></Pre>
 
+                        <!-- Simple pseudo-class example -->
                         <span class="h3-title">
                                 <p>Simple pseudo-class example</p>
                         </span>
+
                         <p>Let's look at a simple example. If we wanted to make the first paragraph in an
                                 article larger and bold, we could add a class to that paragraph and then add CSS
                                 to that class, as shown in the first example below:</p>
 
+                        <!-- Code Block -->
                         <pre><code>.first {
 <span class="code-block-tab-1">font-size: 120%;</span>
 <span class="code-block-tab-1">font-weight: bold;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60article&#62
 <span class="code-block-tab-1">&#60p class="first">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62</span>
 
@@ -729,11 +862,13 @@ li[class^="a" i] {
                                 article, and we wll no longer need to edit the HTML (this may not always be
                                 possible anyway, maybe due to it being generated by a CMS.)</p>
 
+                        <!-- Code Block -->
                         <pre><code>article p:first-child {
 <span class="code-block-tab-1">font-size: 120%;</span>
 <span class="code-block-tab-1">font-weight: bold;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60article&#62
 <span class="code-block-tab-1">&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62</span>
 
@@ -750,6 +885,7 @@ li[class^="a" i] {
                                 <li><code>:invalid</code></li>
                         </ul>
 
+                        <!-- User-action pseudo classes -->
                         <span class="h3-title">
                                 <p>User-action pseudo classes</p>
                         </span>
@@ -766,6 +902,7 @@ li[class^="a" i] {
                                         keyboard controls.</li>
                         </ul>
 
+                        <!-- Code Block -->
                         <pre><code>a:link,
 <span class="code-block-tab-1">a:visited {</span>
 <span class="code-block-tab-2">color: rebeccapurple;</span>
@@ -776,13 +913,16 @@ li[class^="a" i] {
 <span class="code-block-tab-2">color:hotpink;</span>
 <span class="code-block-tab-1">}</span></code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60p&#62&#60a href=""&#62Hover over me&#60/a&#62&#60/p&#62</code></pre>
 
+                        <!-- What is a pseudo-element? -->
                         <h2>What is a pseudo-element?</h2>
                         <p>Pseudo-elements behave in a similar way, however they act as if you had added a whole
                                 new HTML element into the markup, rather than applying a class to existing
                                 elements. Pseudo-elements start with a double colon <code>::</code>.</p>
 
+                        <!-- Code Block -->
                         <pre><code>::pseudo-element-name</code></pre>
 
                         <p>For example, if you wanted to select the first line of a paragraph you could wrap it
@@ -795,11 +935,13 @@ li[class^="a" i] {
                                 if the number of words increases and decreases it will still only select the
                                 first line.</p>
 
+                        <!-- Code Block -->
                         <pre><code>article p::first-line {
 <span class="code-block-tab-1">font-size: 120%;</span>
 <span class="code-block-tab-1">font-weight: bold;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60article&#62
 <span class="code-block-tab-1">&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62</span>
 
@@ -811,6 +953,7 @@ li[class^="a" i] {
 
                         <p>can see that this selects the first line of both paragraphs.</p>
 
+                        <!-- Combining pseudo-classes and pseudo-elements -->
                         <h2>Combining pseudo-classes and pseudo-elements</h2>
                         <p>If you wanted to make the first line of the first paragraph bold you could chain the
                                 <code>:first-child</code> and <code>::first-line</code> selectors together. Try
@@ -818,11 +961,13 @@ li[class^="a" i] {
                                 that we want to select the first line, of the first &#60p&#62 element, which is
                                 inside an <code>&#60article&#62</code> element.</p>
 
+                        <!-- Code Block -->
                         <pre><code>article p:first-child::first-line {
 <span class="code-block-tab-1">font-size: 120%;</span>
 <span class="code-block-tab-1">font-weight: bold;</span>
 }</code></pre>
 
+                        <!-- Generatign content with ::before and ::after -->
                         <h2>Generatign content with ::before and ::after</h2>
                         <p>There are a couple of special pseudo-elements, which are used along with the <a
                                         href="https://developer.mozilla.org/en-US/docs/Web/CSS/content"
@@ -837,10 +982,12 @@ li[class^="a" i] {
                                 <code>::after</code> and see the text inserted at the end of the element instead
                                 of the beginning.</p>
 
+                        <!-- Code Block -->
                         <pre><code>.box::before {
 <span class="code-block-tab-1">content: "This should show before the other content."</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62</code></pre>
 
                         <p>Inserting strings of text from CSS isn't really something we do very often on the web
@@ -851,10 +998,12 @@ li[class^="a" i] {
                                 little arrow added in the example below, which is a visual indicator that we
                                 wouldn't want read out by a screenreader:</p>
 
+                        <!-- Code Block -->
                         <pre><code>.box::after {
 <span class="code-block-tab-1">content: " ➥"</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62</code></pre>
 
                         <p>These pseudo-elements are also frequently used to insert an empty string, which can
@@ -865,7 +1014,8 @@ li[class^="a" i] {
                                         block</code> in order that we can style them with a width and height. We
                                 then use CSS to style them just like any element. You can play around with the
                                 CSS and change how these look and behave.</p>
-
+                        
+                        <!-- Code Block -->
                         <pre><code>.box::before {
 <span class="code-block-tab-1">content: "";</span>
 <span class="code-block-tab-1">display: block;</span>
@@ -875,6 +1025,7 @@ li[class^="a" i] {
 <span class="code-block-tab-1">border: 1px solid black;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60p class="box"&#62Content in the box in my HTML page.&#60/p&#62</code></pre>
 
                         <p>The use of the <code>::before</code> and <code>::after</code> pseudo-elements along
@@ -892,6 +1043,7 @@ li[class^="a" i] {
                                         target="_blank">content</a> property to see what is being added to the
                                 document.</p>
 
+                        <!-- Reference section -->
                         <h2>Reference section</h2>
                         <p>There are a large number of pseudo-classes and pseudo-elements, and it is useful to
                                 have a list to refer to. Please refer to the <a
@@ -900,9 +1052,12 @@ li[class^="a" i] {
                                 things that are available for you to target.</p>
 
                 </section>
-                <section class="main-section" id="Combinators_and_multiple_selectors">
+
+                <!-- Combinators and Multiple Selectors -->
+                <section class="main-section" id="Combinators_and_Multiple_Selectors">
                         <header>Combinators and Multiple Selectors</header>
 
+                        <!-- Descendant selector -->
                         <h2>Descendant selector</h2>
                         <p>You have already come across descendant selectors in previous lessons — selectors
                                 with spaces in between them:</p>
@@ -915,13 +1070,16 @@ li[class^="a" i] {
                         <p>In the example below we are matching only the <code>&#60p&#62</code> element which is
                                 inside an element with a class of <code>.box</code>.</p>
 
+                        <!-- Code Block -->
                         <pre><code>.box p {
 <span class="code-block-tab-1">color: red;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60div class="box"&#62&#60p>Text in .box&#60/p&#62&#60/div&#62
 &#60p&#62Text not in .box&#60/p&#62</code></pre>
 
+                        <!-- Child combinator -->
                         <h2>Child combinator</h2>
                         <p>The child combinator is a greater-than symbol (<code>></code>), which matches only
                                 when the selectors select elements that are direct children. Descendants further
@@ -939,11 +1097,13 @@ li[class^="a" i] {
                         <p>If you remove the <code>></code> that designates this as a child combinator, you end
                                 up with a descendant selector and all <code>&#60li&#62</code> elements will get
                                 a red border.</p>
-
+                        
+                        <!-- Code Block -->
                         <pre><code>ul > li {
 <span class="code-block-tab-1">border-top: 5px solid red;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60ul&#62
 <span class="code-block-tab-1">&#60li&#62Unordered item&#60/li&#62</span>
 <span class="code-block-tab-1">&#60li&#62Unordered item</span>
@@ -954,6 +1114,7 @@ li[class^="a" i] {
 <span class="code-block-tab-1">&#60/li&#62</span>
 &#60/ul&#62</code></pre>
 
+                        <!-- Adjacent sibling -->
                         <h2>Adjacent sibling</h2>
                         <p>The adjacent sibling selector (<code>+</code>) is used to select something if it is
                                 right next to another element at the same level of the hierarchy. For example,
@@ -971,6 +1132,7 @@ li[class^="a" i] {
                                 paragraph is no longer matched by the selector and so does not get the
                                 background and foreground color applied when the element is adjacent.</p>
 
+                        <!-- Code Block -->
                         <pre><code>h1 + p {
 <span class="code-block-tab-1">font-weight: bold;</span>
 <span class="code-block-tab-1">background-color: #333;</span>
@@ -978,18 +1140,21 @@ li[class^="a" i] {
 <span class="code-block-tab-1">padding: .5em;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60article&#62
 <span class="code-block-tab-1">&#60h1&#62A heading&#60/h1&#62</span>
 <span class="code-block-tab-1">&#60p&#62Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.&#60/p&#62</span>
 <span class="code-block-tab-1">&#60p&#62Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.&#60/p&#62</span>
 &#60/article&#62</code></pre>
 
+                        <!-- General sibling -->
                         <h2>General sibling</h2>
                         <p>If you want to select siblings of an element even if they are not directly adjacent,
                                 then you can use the general sibling combinator (<code>~</code>). To select all
                                 <code>&#60img&#62</code> elements that come anywhere after
                                 <code>&#60p&#62</code> elements, we'd do this:</p>
 
+                        <!-- Code Block -->
                         <pre><code>p ~ img</code></pre>
 
                         <p>In the example below we are selecting all <code>&#60p&#62</code> elements that come
@@ -997,6 +1162,7 @@ li[class^="a" i] {
                                 <code>&#60div&#62</code> in the document as well, the <code>&#60p&#62</code>
                                 that comes after it is selected.</p>
 
+                        <!-- Code Block -->
                         <pre><code>h1 ~ p {
 <span class="code-block-tab-1">font-weight: bold;</span>
 <span class="code-block-tab-1">background-color: #333;</span>
@@ -1004,6 +1170,7 @@ li[class^="a" i] {
 <span class="code-block-tab-1">padding: .5em;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60article&#62
 <span class="code-block-tab-1">&#60h1&#62A heading&#60/h1&#62</span>
 <span class="code-block-tab-1">&#60p&#62I am a paragraph.&#60/p&#62</span>
@@ -1011,12 +1178,14 @@ li[class^="a" i] {
 <span class="code-block-tab-1">&#60p&#62I am another paragraph.&#60/p&#62</span>
 &#60/article&#62</code></pre>
 
+                        <!-- Using Combinators -->
                         <h2>Using combinators</h2>
                         <p>You can combine any of the selectors that we discovered in previous lessons with
                                 combinators in order to pick out part of your document. For example if we want
                                 to select list items with a class of "a", which are direct children of a
                                 <code>&#60ul&#62</code>, I could use the following.</p>
-
+                        
+                        <!-- Code Block -->
                         <pre><code>ul > li[class="a"] { }</code></pre>
 
                         <p>Take care however when creating big lists of selectors that select very specific
@@ -1028,9 +1197,12 @@ li[class^="a" i] {
                                 you need to get to something in your document and are unable to access the HTML,
                                 perhaps due to it being generated by a CMS.</p>
                 </section>
-                <section class="main-section" id="CSS_values_and_units">
+
+                <!-- CSS Values and Units Section -->
+                <section class="main-section" id="CSS_Values_and_Units">
                         <header>CSS Values and Units</header>
 
+                        <!-- What is a CSS Value? -->
                         <h2>What is a CSS value?</h2>
                         <p>In CSS specifications and on the property pages here on MDN you will be able to spot
                                 values as they will be surrounded by angle brackets, such as
@@ -1042,6 +1214,7 @@ li[class^="a" i] {
                         <p>In the following example we have set the color of our heading using a keyword, and
                                 the background using the <code>rgb()</code> function:</p>
 
+                        <!-- Code Block -->
                         <pre><code>h1 {
 <span class="code-block-tab-1">color: black;</span>
 <span class="code-block-tab-1">background-color: rgb(197, 93, 161);</span>
@@ -1060,26 +1233,31 @@ li[class^="a" i] {
                         <p>Let's have a look at some of the types of value and unit you may frequently
                                 encounter, with examples so that you can try out different possible values.</p>
 
+                        <!-- Numbers, lengths, and percentages -->
                         <h2>Numbers, lengths, and percentages</h2>
                         <p>There are various numeric data types that you might find yourself using in CSS.
                                 Please refer to the table on the <a
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units"
                                         target="_blank">MDN</a> website.</p>
 
+                        <!-- Lenghts -->
                         <span class="h3-title">
                                 <p>Lengths</p>
                         </span>
+
                         <p>The numeric type you will come across most frequently is <code>&#60length&#62</code>,
                                 for example <code>10px</code> (pixels) or <code>30em</code>. There are two types
                                 of lengths used in CSS — relative and absolute. It's important to know the
                                 difference in order to understand how big things will become.</p>
 
+                        <!-- Absolute lenght units -->
                         <h3>Absolute lenght units</h3>
 
                         <p>Please refer to the table on the <a
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units"
                                         target="_blank">MDN</a> websit.</p>
 
+                        <!-- Relative length units -->
                         <h3>Relative length units</h3>
                         <p>Relative length units are relative to something else, perhaps the size of the parent
                                 element's font, or the size of the viewport. The benefit of using relative units
@@ -1090,6 +1268,7 @@ li[class^="a" i] {
                                         target="_blank">MDN</a> website to see a list of the different units.
                         </p>
 
+                        <!-- Exploring an example -->
                         <h3>Exploring an example</h3>
 
                         <p>In the example below you can see how some relative and absolute length units behave.
@@ -1110,7 +1289,8 @@ li[class^="a" i] {
                                 class of <code>.wrapper</code>. Change this value to <code>1.5em</code> and you
                                 will see that the font size of all the elements increases, but only the last
                                 item will get wider, as the width is relative to that font size.</p>
-
+                        
+                        <!-- Code Block -->
                         <pre><code>.wrapper {
 <span class="code-block-tab-1">font-size: 1em;</span>
 }
@@ -1127,12 +1307,14 @@ li[class^="a" i] {
 <span class="code-block-tab-1">width: 10em;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60div class="wrapper"&#62
 <span class="code-block-tab-1">&#60div class="box px"&#62I am 200px wide&#60/div&#62</span>
 <span class="code-block-tab-1">&#60div class="box vw"&#62I am 10vw wide&#60/div&#62</span>
 <span class="code-block-tab-1">&#60div class="box em"&#62I am 10em wide&#60/div&#62</span>
 &#60/div&#62</code></pre>
 
+                        <!-- ems and rems -->
                         <h3>ems and rems</h3>
                         <p><code>em</code> and <code>rem</code> are the two relative lengths you are likely to
                                 encounter most frequently when sizing anything from boxes to text. It's worth
@@ -1163,6 +1345,7 @@ li[class^="a" i] {
                                 CSS you will see that everything else changes relative to it — both
                                 <code>rem</code>- and <code>em</code>-sized text.</p>
 
+                        <!-- Code Block -->
                         <pre><code>html {
 <span class="code-block-tab-1">font-size: 16px;</span>
 }
@@ -1175,6 +1358,7 @@ li[class^="a" i] {
 <span class="code-block-tab-1">font-size: 1.3rem;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60ul class="ems"&#62
 <span class="code-block-tab-1">&#60li&#62One&#60/li&#62</span>
 <span class="code-block-tab-1">&#60li&#62Two&#60/li&#62</span>
@@ -1205,9 +1389,11 @@ li[class^="a" i] {
 <span class="code-block-tab-1">&#60/li&#62</span>
 &#60/ul&#62</code></pre>
 
+                        <!-- Percentages -->
                         <span class="h3-title">
                                 <p>Percentages</p>
                         </span>
+
                         <p>In a lot of cases a percentage is treated in the same way as a length. The thing with
                                 percentages is that they are always set relative to some other value. For
                                 example, if you set an element's <code>font-size</code> as a percentage it will
@@ -1226,9 +1412,11 @@ li[class^="a" i] {
                                 percentage. If the allowed value only includes <code>&#60length&#62</code>, it
                                 is not possible to use a percentage.</p>
 
+                        <!-- Numbers -->
                         <span class="h3-title">
                                 <p>Numbers</p>
                         </span>
+
                         <p>Some values accept numbers, without any unit added to them. An example of a property
                                 which accepts a unitless number is the <code>opacity</code> property, which
                                 controls the opacity of an element (how transparent it is). This property
@@ -1239,6 +1427,7 @@ li[class^="a" i] {
                                         href="https://mdn.github.io/css-examples/learn/values-units/length.html"
                                         target="_blank">MDN</a> website</p>
 
+                        <!-- Color -->
                         <h2>Color</h2>
                         <p>There are many ways to specify color in CSS, some of which are more recently
                                 implemented than others. The same color values can be used everywhere in CSS,
@@ -1250,9 +1439,11 @@ li[class^="a" i] {
                                 256 = 16,777,216.) Let's have a look at some of the ways in which we can specify
                                 colors in CSS.</p>
 
+                        <!-- Color Keywords -->
                         <span class="h3-title">
                                 <p>Color Keywords</p>
                         </span>
+
                         <p>Quite often in examples here in the learn section or elsewhere on MDN you will see
                                 the color keywords used, as they are a simple and understandable way of
                                 specifying color. There are a number of these keywords, some of which have
@@ -1262,9 +1453,11 @@ li[class^="a" i] {
                         <p><b>Try playing with different color values in the live examples below, to get more of
                                         an idea how they work.</b></p>
 
+                        <!-- Hexadecimal RGB Values -->
                         <span class="h3-title">
                                 <p>Hexadecimal RGB values</p>
                         </span>
+
                         <p>The next type of color value you are likely to encounter is hexadecimal codes. Each
                                 hex value consists of a hash/pound symbol (#) followed by six hexadecimal
                                 numbers, each of which can take one of 16 values between 0 and f (which
@@ -1280,9 +1473,11 @@ li[class^="a" i] {
                                         href="https://mdn.github.io/css-examples/learn/values-units/length.html"
                                         target="_blank">MDN</a> website</p>
 
+                        <!-- RGB and RGBA Values -->
                         <span class="h3-title">
                                 <p>RGB and RGBA values</p>
                         </span>
+
                         <p>The third scheme we'll talk about here is RGB. An RGB value is a function —
                                 <code>rgb()</code> — which is given three parameters that represent the red,
                                 green, and blue channel values of the colors, in much the same way as hex
@@ -1305,11 +1500,13 @@ li[class^="a" i] {
                                         target="_blank">MDN</a> website I have added a background image to the
                                 containing block of our colored boxes. I have then set the boxes to have
                                 different opacity values — notice how the background shows through more when the
-                                alpha channel value is smaller</p>
+                                alpha channel value is smaller.</p>
 
+                        <!-- HSL and HSLA Values -->
                         <span class="h3-title">
                                 <p>HSL and HSLA values</p>
                         </span>
+
                         <p>Slightly less well-supported than RGB is the HSL color model (not supported on old
                                 versions of IE), which was implemented after much interest from designers.
                                 Instead of red, green, and blue values, the <code>hsl()</code> function accepts
@@ -1343,6 +1540,7 @@ li[class^="a" i] {
                                 and match color models, however for consistency it is usually best if your
                                 entire project uses the same one!</p>
 
+                        <!-- Images -->
                         <h2>Images</h2>
 
                         <p>The <code>image</code> data type is used wherever an image is a valid value. This can
@@ -1352,6 +1550,7 @@ li[class^="a" i] {
                         <p>In the example below we have demonstrated an image and a gradient in use as a value
                                 for the CSS <code>background-image</code> property.</p>
 
+                        <!-- Code Block -->
                         <pre><code>.image {
 <span class="code-block-tab-1">background-image: url(star.png);</span>
 }
@@ -1360,9 +1559,11 @@ li[class^="a" i] {
 <span class="code-block-tab-1">background-image: linear-gradient(90deg, rgba(119,0,255,1) 39%, rgba(0,212,255,1) 100%);</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60div class="box image"&#62&#60/div&#62
 &#60div class="box gradient"&#62&#60/div&#62</code></pre>
 
+                        <!-- Position -->
                         <h2>Position</h2>
 
                         <p>The <code>position</code> data type represents a set of 2D coordinates, used to
@@ -1379,6 +1580,7 @@ li[class^="a" i] {
                         <p>In the following example we have positioned a background image 40px from the top and
                                 to the right of the container using a keyword.</p>
 
+                        <!-- Code Block -->
                         <pre><code>.box {
 <span class="code-block-tab-1">height: 300px;</span>
 <span class="code-block-tab-1">width: 400px;</span>
@@ -1387,8 +1589,10 @@ li[class^="a" i] {
 <span class="code-block-tab-1">background-position: right 40px;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60div class="box"&#62&#60/div&#62</code></pre>
 
+                        <!-- Strings and identifiers -->
                         <h2>Strings and identifiers</h2>
 
                         <p>Throughout the examples above, we've seen places where keywords are used as a value
@@ -1403,6 +1607,7 @@ li[class^="a" i] {
                                 the below example we use unquoted color keywords along with a quoted generated
                                 content string.</p>
 
+                        <!-- Code Block -->
                         <pre><code>.box {
 <span class="code-block-tab-1">width:400px;</span>
 <span class="code-block-tab-1">padding: 1em;</span>
@@ -1415,8 +1620,10 @@ li[class^="a" i] {
 <span class="code-block-tab-1">content: "This is a string. I know because it is quoted in the CSS."</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60div class="box"&#62&#60/div&#62</code></pre>
 
+                        <!-- Functions -->
                         <h2>Functions</h2>
 
                         <p>The final type of value we will take a look at is the group of values known as
@@ -1441,6 +1648,7 @@ li[class^="a" i] {
                                 parent will be, so we use <code>calc()</code> to tell the browser to do it for
                                 us.</p>
 
+                        <!-- Code Block -->
                         <pre><code>.wrapper {
 <span class="code-block-tab-1">width: 400px;</span>
 }
@@ -1449,14 +1657,18 @@ li[class^="a" i] {
 <span class="code-block-tab-1">width: calc(20% + 100px);</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60div class="wrapper"&#62
 <span class="code-block-tab-1">&#60div class="box"&#62My width is calculated.&#60/div&#62</span>
 &#60/div&#62</code></pre>
 
                 </section>
-                <section class="main-section" id="Cascade_and_inheritance">
+
+                <!-- Cascade and Inheritance -->
+                <section class="main-section" id="Cascade_and_Inheritance">
                         <header>Cascade and Inheritance</header>
 
+                        <!-- Conflicting Rules -->
                         <h2>Conflicting rules</h2>
 
                         <p>CSS stands for Cascading Style Sheets, and that first word <i>cascading</i> is
@@ -1481,9 +1693,11 @@ li[class^="a" i] {
                                 This can seem like a set of tricky concepts to understand, however, as you
                                 practice writing CSS the way that it works will become more obvious to you.</p>
 
+                        <!-- The cascade -->
                         <span class="h3-title">
                                 <p>The cascade</p>
                         </span>
+
                         <p>Stylesheets <b>cascade</b> — at a very simple level this means that the order of CSS
                                 rules matter; when two rules apply that have equal specificity the one that
                                 comes last in the CSS is the one that will be used.</p>
@@ -1493,6 +1707,7 @@ li[class^="a" i] {
                                 selector and therefore carry the same specificity, so the last one in the source
                                 order wins.</p>
 
+                        <!-- Code Block -->
                         <pre><code>h1 {
 <span class="code-block-tab-1">color: red;</span>
 }
@@ -1501,11 +1716,14 @@ h1 {
 <span class="code-block-tab-1">color: blue;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60h1&#62This is my heading.&#60/h1&#62</code></pre>
 
+                        <!-- Specificity -->
                         <span class="h3-title">
                                 <p>Specificity</p>
                         </span>
+
                         <p>Specificity is how the browser decides which rule applies if multiple rules have
                                 different selectors, but could still apply to the same element. It is basically
                                 a measure of how specific a selector's selection will be:</p>
@@ -1523,6 +1741,7 @@ h1 {
                                 its rule a higher specificity, and so it will be applied even though the rule
                                 with the element selector appears further down in the source order.</p>
 
+                        <!-- Code Block -->
                         <pre><code>.main-heading {
 <span class="code-block-tab-1">color: red;</span>
 }
@@ -1531,8 +1750,10 @@ h1 {
 <span class="code-block-tab-1">color: blue;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60h1 class="main-heading"&#62This is my heading.&#60/h1&#62</code></pre>
 
+                        <!-- Inheritance -->
                         <span class="h3-title">
                                 <p>Inheritance</p>
                         </span>
@@ -1545,6 +1766,7 @@ h1 {
                                 element, every element inside it will also be styled with that color and font,
                                 unless you've applied different color and font values directly to them.</p>
 
+                        <!-- Code Block -->
                         <pre><code>body {
 <span class="code-block-tab-1">color: blue;</span>
 }
@@ -1553,6 +1775,7 @@ span {
 <span class="code-block-tab-1">color: black;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60p&#62As the body has been set to have a color of blue this is inherited through the descendants.&#60/p&#62
 &#60p&#62We can change the color by targetting the element with a selector, such as this &#60span&#62span&#60/span&#62.&#60/p&#62</code></pre>
 
@@ -1560,6 +1783,7 @@ span {
                                 on an element, all of its descendants do not get a width of 50% of their
                                 parent's width. If this was the case, CSS would be very frustrating to use!</p>
 
+                        <!-- Understanding Inheritance -->
                         <h2>Understanding inheritance</h2>
                         <p>We'll start with inheritance. In the example below we have a <code>ul</code>, with
                                 two levels of unordered lists nested inside it. We have given the outer
@@ -1571,6 +1795,7 @@ span {
                                 list and applied a different color to it. This then inherits down through its
                                 children.</p>
 
+                        <!-- Code Block -->
                         <pre><code>.main {
 <span class="code-block-tab-1">color: rebeccapurple;</span>
 <span class="code-block-tab-1">border: 2px solid #ccc;</span>
@@ -1582,6 +1807,7 @@ span {
 <span class="code-block-tab-1">font-weight: bold;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60ul class="main"&#62
 <span class="code-block-tab-1">&#60li&#62Item One&#60/li&#62</span>
 <span class="code-block-tab-1">&#60li&#62Item Two</span>
@@ -1610,24 +1836,29 @@ span {
 
                         <p>Which properties are inherited by default and which aren't is largely down to common
                                 sense.</p>
-
+                        
+                        <!-- Controlling Inheritance -->
                         <span class="h3-title">
                                 <p>Controlling inheritance</p>
                         </span>
+
                         <p>CSS provides four special universal property values for controlling inheritance.
                                 Every CSS property accepts these values.</p>
 
+                        <!-- Inherit -->
                         <code class="h4-code-title">inherit</code>
 
                         <p>Sets the property value applied to a selected element to be the same as that of its
                                 parent element. Effectively, this "turns on inheritance".</p>
 
+                        <!-- Initial -->
                         <code class="h4-code-title">initial</code>
                         <p>Sets the property value applied to a selected element to be the same as the value set
                                 for that element in the browser's default style sheet. If no value is set by the
                                 browser's default style sheet and the property is naturally inherited, then the
                                 property value is set to inherit instead.</p>
 
+                        <!-- Unset -->
                         <code class="h4-code-title">unset</code>
                         <p>Resets the property to its natural value, which means that if the property is
                                 naturally inherited it acts like <code>inherit</code>, otherwise it acts like
@@ -1651,6 +1882,7 @@ span {
                                                 }</code>?</li>
                         </ol>
 
+                        <!-- Code Block -->
                         <pre><code>body {
 <span class="code-block-tab-1">color: green;</span>
 }
@@ -1667,6 +1899,7 @@ span {
 <span class="code-block-tab-1">color: unset;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60ul&#62
 <span class="code-block-tab-1">&#60li&#62Default &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62</span>
 <span class="code-block-tab-1">&#60li class="my-class-1"&#62Inherit the &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62</span>
@@ -1674,9 +1907,11 @@ span {
 <span class="code-block-tab-1">&#60li class="my-class-3"&#62Unset the &#60a href="#"&#62link&#60/a&#62 color&#60/li&#62</span>
 &#60/ul&#62</code></pre>
 
+                        <!-- Resetting all property values -->
                         <span class="h3-title">
                                 <p>Resetting all property values</p>
                         </span>
+
                         <p>The CSS shorthand property <code>all</code> can be used to apply one of these
                                 inheritance values to (almost) all properties at once. Its value can be any one
                                 of the inheritance values (<code>inherit</code>, <code>initial</code>,
@@ -1688,6 +1923,7 @@ span {
                                 blockquote element itself, the second has a class applied to the blockquote
                                 which sets the value of <code>all</code> to <code>unset</code>.</p>
 
+                        <!-- Code Block -->
                         <pre><code>blockquote {
 <span class="code-block-tab-1">background-color: red;</span>
 <span class="code-block-tab-1">border: 2px solid green;</span>
@@ -1697,6 +1933,7 @@ span {
 <span class="code-block-tab-1">all: unset;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60blockquote&#62
 <span class="code-block-tab-1">&#60p&#62This blockquote is styled&#60/p&#62</span>
 &#60/blockquote&#62
@@ -1708,6 +1945,7 @@ span {
                         <p>Try setting the value of <code>all</code> to some of the other available values and
                                 observe what the difference is.</p>
 
+                        <!-- Understanding the cascade -->
                         <h2>Understanding the cascade</h2>
                         <p>We now understand why a paragraph nested deep in the structure of your HTML is the
                                 same color as the CSS applied to the body, and from the introductory lessons we
@@ -1728,18 +1966,22 @@ span {
                         <p>We will look at these from the bottom up, to see how browsers figure out exactly what
                                 CSS should be applied.</p>
 
+                        <!-- Source Order -->
                         <span class="h3-title">
                                 <p>Source order</p>
                         </span>
+
                         <p>We have already seen how source order matters to the cascade. If you have more than
                                 one rule, which has exactly the same weight, then the one that comes last in the
                                 CSS will win. You can think of this as rules which are nearer the element itself
                                 overwriting early ones until the last one wins and gets to style the element.
                         </p>
 
+                        <!-- Specificity -->
                         <span class="h3-title">
                                 <p>Specificity</p>
                         </span>
+
                         <p>Once you understand the fact that source order matters, at some point you will run
                                 into a situation where you know that a rule comes later in the stylesheet, but
                                 an earlier, conflicting, rule is applied. This is because that earlier rule has
@@ -1762,6 +2004,7 @@ span {
                                 all headings, then the more specific values are applied to the headings with the
                                 classes.</p>
 
+                        <!-- Code Block -->
                         <pre><code>h2 {
 <span class="code-block-tab-1">font-size: 2em;</span>
 <span class="code-block-tab-1">color: #000;</span>
@@ -1776,6 +2019,7 @@ span {
 <span class="code-block-tab-1">color: rebeccapurple;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60h2&#62Heading with no class&#60/h2&#62
 &#60h2&#62class="small"&#62Heading with class of small&#60/h2&#62
 &#60h2&#62class="bright"&#62Heading with class of bright&#60/h2&#62</code></pre>
@@ -1808,6 +2052,7 @@ span {
 
                         <p>Before we move on, let's look at an example in action.</p>
 
+                        <!-- Code Block -->
                         <pre><code>/* specificity: 0101 */
 #outer a {
 <span class="code-block-tab-1">background-color: red;</span>
@@ -1861,6 +2106,7 @@ li {
 <span class="code-block-tab-1">list-style-type: none;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60div id="outer" class="container"&#62
 <span class="code-block-tab-1">&#60div id="inner" class="container"&#62</span>
 <span class="code-block-tab-2">&#60ul&#62</span>
@@ -1893,6 +2139,7 @@ li {
                                 </li>
                         </ul>
 
+                        <!-- !important -->
                         <span class="h3-title">
                                 <p>!important</p>
                         </span>
@@ -1903,6 +2150,7 @@ li {
 
                         <p>Take a look at this example where we have two paragraphs, one of which has an ID.</p>
 
+                        <!-- Code Block -->
                         <pre><code>#winning {
 <span class="code-block-tab-1">background-color: red;</span>
 <span class="code-block-tab-1">border: 1px solid black;</span>
@@ -1919,6 +2167,7 @@ p {
 <span class="code-block-tab-1">padding: 5px;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60p class="better"&#62This is a paragraph.&#60/p&#62
 &#60p class="better" id="winning"&#62One selector to rule them all!&#60/p&#62</code></pre>
 
@@ -1959,6 +2208,7 @@ p {
                                 that can't be overridden in any other way. But really, don't use it if you can
                                 avoid it.</p>
 
+                        <!-- The effect of CSS location -->
                         <h2>The effect of CSS location</h2>
                         <p>Finally, it is also useful to note that the importance of a CSS declaration depends
                                 on what stylesheet it is specified in — it is possible for users to set custom
@@ -1966,6 +2216,7 @@ p {
                                 visually impaired, and want to set the font size on all web pages they visit to
                                 be double the normal size to allow for easier reading.</p>
 
+                        <!-- To Summarize -->
                         <h2>To summarize</h2>
                         <p>Conflicting declarations will be applied in the following order, with later ones
                                 overriding earlier ones:</p>
@@ -1985,9 +2236,12 @@ p {
                                 override web developer styles, as mentioned above — this can be achieved by
                                 using <code>!important</code> in their rules.</p>
                 </section>
-                <section class="main-section" id="The_box_model">
+
+                <!-- The Box Model Section -->
+                <section class="main-section" id="The_Box_Model">
                         <header>The Box Model</header>
 
+                        <!-- Block and Inline Boxes -->
                         <h2>Block and inline boxes</h2>
                         <p>In CSS we broadly have two types of box — <b>block boxes</b> and <b>inline boxes</b>.
                                 These characteristics refer to how the box behaves in terms of page flow, and in
@@ -2028,6 +2282,7 @@ p {
                                 values such as <code>block</code> and <code>inline</code>, and relates to the
                                 <b>outer</b> value of <code>display</code>.</p>
 
+                        <!-- Aside: Inner and outer display types -->
                         <h2>Aside: Inner and outer display types</h2>
                         <p>At this point we'd better also explain <b>inner</b> and <b>outer</b> display types.
                                 As mentioned above, boxes in CSS have an outer display type, which details
@@ -2053,6 +2308,7 @@ p {
                                 we said above, it is sometimes referred to as <i>normal flow</i>, because
                                 without any other instruction, our boxes lay out as block or inline boxes.</p>
 
+                        <!-- Examples of different display types -->
                         <h2>Examples of different display types</h2>
                         <p>Let's move on and have a look at some examples. Below we have three different HTML
                                 elements, all of which have an outer display type of <code>block</code>. The
@@ -2102,6 +2358,7 @@ p {
 
                         <p>In the rest of the lesson we will concentrate on the outer display type.</p>
 
+                        <!-- What is the CSS box model? -->
                         <h2>What is the CSS box model?</h2>
                         <p>The full CSS box model applies to block boxes, inline boxes only use some of the
                                 behavior defined in the box model. The model defines how the different parts of
@@ -2109,6 +2366,7 @@ p {
                                 that you can see on the page. To add some additional complexity, there is a
                                 standard and an alternate box model.</p>
 
+                        <!-- Parts of a box -->
                         <span class="h3-title">
                                 <p>Parts of a box</p>
                         </span>
@@ -2134,9 +2392,11 @@ p {
                                         target="_blank">MDN website</a> to see the diagram that shows these
                                 layers.</p>
 
+                        <!-- The standard CSS box model -->
                         <span class="h3-title">
                                 <p>The standard CSS box model</p>
                         </span>
+
                         <p>In the standard box model, if you give a box a <code>width</code> and a
                                 <code>height</code>, this defines the width and height of the <i>content</i>
                                 box. Any padding and border is then added to that width and height to get the
@@ -2146,6 +2406,7 @@ p {
                                 <code>height</code>, <code>margin</code>, <code>border</code>, and
                                 <code>padding:</code></p>
 
+                        <!-- Code Block -->
                         <pre><code>.box {
 <span class="code-block-tab-1">width: 350px;</span>
 <span class="code-block-tab-1">height: 150px;</span>
@@ -2162,6 +2423,7 @@ p {
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                         target="_blank">MDN website</a>.</p>
 
+                        <!-- The alternative CSS box model -->
                         <span class="h3-title">
                                 <p>The alternative CSS box model</p>
                         </span>
@@ -2182,6 +2444,7 @@ p {
                                         border-box</code> on it. By doing this you are telling the browser to
                                 take the border box as the area defined by any size you set.</p>
 
+                        <!-- Code Block -->
                         <pre><code>.box {
 <span class="code-block-tab-1">box-sizing: border-box;</span>
 }</code></pre>
@@ -2194,6 +2457,7 @@ p {
                                         href="https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/"
                                         target="_blank">CSS Tricks article on box-sizing</a>.</p>
 
+                        <!-- Code Block -->
                         <pre><code>html {
 <span class="code-block-tab-1">box-sizing: border-box;</span>
 }
@@ -2202,6 +2466,7 @@ p {
 <span class="code-block-tab-1">box-sizing: inherit;</span>
 }</code></pre>
 
+                        <!-- Playing with box models -->
                         <h2>Playing with box models</h2>
                         <p>In the below example, you can see two boxes. Both have a class of <code>.box</code>,
                                 which gives them the same <code>width</code>, <code>height</code>,
@@ -2217,9 +2482,11 @@ p {
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                         target="_blank">MDN website</a> for the example diagram and code.</p>
 
+                        <!-- Use browser DevTools to view the box model -->
                         <span class="h3-title">
                                 <p>Use browser DevTools to view the box model</p>
                         </span>
+
                         <p>Your <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools"
                                         target="_blank">browser developer tools</a> can make understanding the
                                 box model far easier. If you inspect an element in Firefox's DevTools, you can
@@ -2231,6 +2498,7 @@ p {
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                         target="_blank">MDN website</a>.</p>
 
+                        <!-- Margins, padding, and borders -->
                         <h2>Margins, padding, and borders</h2>
 
                         <p>You've already seen the <code>margin</code>, <code>padding</code>, and
@@ -2241,6 +2509,7 @@ p {
 
                         <p>Let's explore these properties in more detail.</p>
 
+                        <!-- Margin -->
                         <span class="h3-title">
                                 <p>Margin</p>
                         </span>
@@ -2284,6 +2553,7 @@ p {
                                 creating space with margins and don't get the space you expect, this is probably
                                 what is happening.</p>
 
+                        <!-- Borders -->
                         <span class="h3-title">
                                 <p>Borders</p>
                         </span>
@@ -2305,6 +2575,7 @@ p {
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                         target="_blank">MDN website</a>.</p>
 
+                        <!-- Padding -->
                         <span class="h3-title">
                                 <p>Padding</p>
                         </span>
@@ -2329,6 +2600,7 @@ p {
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                         target="_blank">MDN website</a>.</p>
 
+                        <!-- The Box Model and Inline Boxes -->
                         <h2>The box model and inline boxes</h2>
 
                         <p>All of the above applies fully to block boxes. Some of the properties can apply to
@@ -2346,6 +2618,7 @@ p {
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                         target="_blank">MDN website</a>.</p>
 
+                        <!-- Code Block -->
                         <pre><code>span {
 <span class="code-block-tab-1">margin: 20px;</span>
 <span class="code-block-tab-1">padding: 20px;</span>
@@ -2355,8 +2628,10 @@ p {
 <span class="code-block-tab-1">border: 2px solid blue;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60p&#62I am a paragraph and this is a &#60span&#62span&#60/span&#62 inside that paragraph. A span is an inline element and so does not respect width and height.&#60/p&#62</code></pre>
 
+                        <!-- Using Display: Inline-block -->
                         <h2>Using display: inline-block</h2>
 
                         <p>There is a special value of <code>display</code>, which provides a middle ground
@@ -2383,6 +2658,7 @@ p {
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                         target="_blank">MDN website</a>.</p>
 
+                        <!-- Code Block -->
                         <pre><code>span {
 <span class="code-block-tab-1">margin: 20px;</span>
 <span class="code-block-tab-1">padding: 20px;</span>
@@ -2393,6 +2669,7 @@ p {
 <span class="code-block-tab-1">display: inline-block;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60p&#62I am a paragraph and this is a &#60span&#62span&#60/span&#62 inside that paragraph. A span is an inline element and so does not respect width and height.&#60/p&#62</code></pre>
 
                         <p>Where this can be useful is when you want to give a link a larger hit area by adding
@@ -2412,6 +2689,7 @@ p {
                                         href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
                                         target="_blank">MDN website</a>.</p>
 
+                        <!-- Code Block -->
                         <pre><code>.links-list a {
 <span class="code-block-tab-1">background-color: rgb(179,57,81);</span>
 <span class="code-block-tab-1">color: #fff;</span>
@@ -2424,6 +2702,7 @@ p {
 <span class="code-block-tab-1">color: #fff;</span>
 }</code></pre>
 
+                        <!-- Code Block -->
                         <pre><code>&#60nav&#62
 <span class="code-block-tab-1">&#60ul class="links-list"&#62</span>
 <span class="code-block-tab-2">&#60li&#62&#60a href=""&#62Link one&#60/a&#62&#60/li&#62</span>
@@ -2433,6 +2712,8 @@ p {
 &#60/nav&#62</code></pre>
 
                 </section>
+
+                <!-- Reference Section -->
                 <section class="main-section" id="Reference">
                         <header>Reference</header>
 
@@ -2443,6 +2724,8 @@ p {
                         </ul>
                 </section>
         </main>
+
+        <!-- Footer Section -->
         <footer id="contact">
                 <div class="personal-contact-information">
                         <a href="mailto:sonoffavor@gmail.com?subject=feedback" class="fa fa-envelope"></a>
@@ -2450,6 +2733,8 @@ p {
                                 target="_blank"></a>
                 </div>
                 <p>Coded by Ben Rietman</p>
+                <p>Icons are from Fontawsome.com</p>
+                <p>© Copyright 2020</p>
         </footer>
 </body>
 
