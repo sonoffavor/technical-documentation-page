@@ -19,6 +19,33 @@ h2 {
 
 }
 
+h3 {
+    font-family: 'Alegreya', serif;
+}
+
+h4 {
+    display: inline-block;
+    background-color: #181818;
+    color: white;
+    font-family: 'Alegreya', serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+    letter-spacing: 0.6px;
+    padding: 2px 4px 2px 4px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    
+}
+
+h5 {
+    display: inline-block;
+    font-family: 'Alegreya', serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+    background-color: rgb(238, 238, 238);
+    margin: 0;
+}
+
 p {
     font-size: 1.06rem;
     font-family: 'Palanquin', sans-serif;
@@ -33,8 +60,6 @@ p {
     width: 280px;
     position: fixed;
     top: 0;
-    /* left: 0; */
-    overflow-x: hidden;
     padding-top: 15px;
     padding-left: 20px;
 }
@@ -47,7 +72,6 @@ p {
 
 #navbar a {
     display: block;
-    /* display: inline-block; */
     font-family: 'Palanquin', sans-serif;
     font-weight: 100;
     font-size: 0.9rem;
@@ -135,6 +159,7 @@ p code {
 }
 
 pre {
+    border-left: 5px solid #3d7e9a;
     background-color: rgb(238, 238, 238);
     margin: 16px 16px;
     padding: 32px;
@@ -168,28 +193,6 @@ code {
 .code-block-tab-5 {
     display: inline-block;
     margin-left: 80px;
-}
-
-.h3-title p {
-    display: inline;
-    background-color: black;
-    color: white;
-    font-family: 'Alegreya', serif;
-    font-size: 1.25rem;
-    letter-spacing: 0.6px;
-    padding: 2px 4px 2px 4px;
-}
-
-.h3-title {
-    display: block;
-    margin-top: 18px;
-    margin-bottom: 18px;
-}
-
-.h4-code-title {
-    font-size: 1.25rem;
-    background-color: rgb(238, 238, 238);
-
 }
 
 
@@ -270,88 +273,4 @@ ol li {
     font-family: 'Palanquin', sans-serif;
     font-size: 1.06rem;
     letter-spacing: 0.6px;
-}
-
-
-/* Media Queries */
-@media (max-width: 850px) {
-    
-    section {
-        padding: 50px 0;
-    }
-
-    /* Dropdown Menu */
-    .dropdown {
-        position: relative;
-        /* display: inline-block; */
-        float: right;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropbtn {
-        cursor: pointer;
-        display: inline;
-        margin: 13px 13px 13px 0;
-    }
-
-    .dropdown-content {
-        background-color: #fff;
-        display: none;
-        position: absolute;
-        right: 10px;
-        min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        
-        
-    }
-
-    .dropdown-content a {
-        text-align: right;
-    }
-    
-
-    /* Navigation Menu */
-    #navbar {
-        height: auto;
-        width: 100%;
-        position: fixed;
-        padding: 0;
-        border-bottom: solid;
-        border-width: 1px;
-        z-index: 0;
-        overflow: visible;
-    }
-
-    #navbar header {
-        display: inline-block;
-        padding-left: 10px;
-        border-bottom: none;
-    }
-
-    #navbar a {
-        padding-right: 10px;
-        padding-left: 10px;
-    }
-
-    #main-doc {
-        margin: 0 10px 0 10px;
-        padding: 0;
-    }
-
-    #contact {
-        margin-left: 0;
-        width: 100%;
-
-    }
-}
-
-@media (max-width: 320px) {
-   #navbar header {
-       font-size: 1.7rem;
-       margin-top: 3px;
-   }
-
 }
